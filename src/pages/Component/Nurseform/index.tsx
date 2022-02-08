@@ -15,6 +15,7 @@ import {
   Card,
   Space,
   Table,
+  List,
 } from 'antd';
 import style from './index.less';
 import {
@@ -262,98 +263,219 @@ const Nurseform: React.FC = () => {
                   visible={isModalVisible2}
                   onOk={handleOk2}
                   onCancel={handleCancel2}
-                  width={800}
+                  width={1000}
                   style={{ fontSize: 20 }}
                 >
                   <Row gutter={{ xs: 8 }}>
-                    <Col span={3}></Col>
-                    <Col span={18}>
+                    <Col span={22}>
                       <Card>
                         <Row>
                           <Text
-                            style={{ backgroundColor: 'black', width: '5%' }}
-                          />
-                          <Text
                             style={{
                               backgroundColor: 'black',
-                              width: '95%',
+                              width: '100%',
                               height: '50px',
                               color: 'white',
                               fontSize: 25,
+                              paddingLeft: '35px',
                             }}
                           >
                             Intra-Operative Check List:
                           </Text>
                         </Row>
-                        <strong>
-                          <Text style={{ fontSize: 20 }}>
-                            {' '}
-                            Intra-Operative Review:
-                          </Text>
-                        </strong>
-                        <Row>
-                          <Col span={2}>
-                            <Checkbox />
-                          </Col>
-                          <Col span={22}>
-                            <Text style={{ fontSize: 20 }}>Test 1</Text>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={2}>
-                            <Checkbox />
-                          </Col>
-                          <Col span={22}>
-                            <Text style={{ fontSize: 20 }}>Test 2</Text>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={2}>
-                            <Checkbox />
-                          </Col>
-                          <Col span={22}>
-                            <Text style={{ fontSize: 20 }}>Test 3</Text>
-                          </Col>
-                        </Row>
-                        <p />
-                        <strong>
-                          <Text style={{ fontSize: 20 }}> Parameters:</Text>
-                        </strong>
-                        <Form
-                          labelCol={{ span: 0 }}
-                          wrapperCol={{ span: 500 }}
-                          layout="horizontal"
-                          labelAlign={'left'}
-                        >
-                          <div>
-                            <Form.Item label="PR/min" labelCol={{ span: 4 }}>
-                              <Input style={{ width: '50%' }} />
-                            </Form.Item>
-                            <Form.Item label="BP/mmHg" labelCol={{ span: 4 }}>
-                              <Input style={{ width: '50%' }} />
-                            </Form.Item>
+                        <Row style={{ marginTop: '25px' }} gutter={16}>
+                          <Col span={24}>
                             <Form.Item
-                              label="O2 saturation"
+                              name={'Operation'}
+                              label="Operation"
                               labelCol={{ span: 4 }}
+                              labelAlign="left"
                             >
-                              <Input style={{ width: '50%' }} />
+                              <Input />
                             </Form.Item>
+                          </Col>
+                          <Col span={24}>
                             <Form.Item
-                              label="Pain score"
+                              name={'Procedure Room'}
+                              label="Procedure Room"
                               labelCol={{ span: 4 }}
+                              labelAlign="left"
                             >
-                              <Input style={{ width: '50%' }} />
+                              <Select>
+                                <Option value="OR1">OR1</Option>
+                                <Option value="OR2">OR2</Option>
+                                <Option value="OR3">OR3</Option>
+                              </Select>
                             </Form.Item>
-                          </div>
-                        </Form>
-                        <strong>
-                          <Text style={{ fontSize: 20 }}> Remarks:</Text>
-                        </strong>
+                          </Col>
+                          <Col span={12}>
+                            <Form.Item
+                              name={'Surgeon'}
+                              label="Surgeon"
+                              labelAlign="left"
+                              labelCol={{ span: 8 }}
+                            >
+                              <Select>
+                                <Option value="Surgone A">Surgone A</Option>
+                                <Option value="Surgone B">Surgone B</Option>
+                                <Option value="Surgone C">Surgone C</Option>
+                              </Select>
+                            </Form.Item>
+                          </Col>
+                          <Col span={12}>
+                            <Form.Item
+                              name={'Assistant'}
+                              label="Assistant"
+                              labelAlign="left"
+                              labelCol={{ span: 8 }}
+                            >
+                              <Select>
+                                <Option value="Assistant A">Assistant A</Option>
+                                <Option value="Assistant B">Assistant B</Option>
+                                <Option value="Assistant C">Assistant C</Option>
+                              </Select>
+                            </Form.Item>
+                          </Col>
+                          <Col span={12}>
+                            <Form.Item
+                              name={'Scrub Nurse'}
+                              label="Scrub Nurse"
+                              labelAlign="left"
+                              labelCol={{ span: 8 }}
+                            >
+                              <Select>
+                                <Option value="Scrub Nurse A">
+                                  Scrub Nurse A
+                                </Option>
+                                <Option value="Scrub Nurse B">
+                                  Scrub Nurse B
+                                </Option>
+                                <Option value="Scrub Nurse C">
+                                  Scrub Nurse C
+                                </Option>
+                              </Select>
+                            </Form.Item>
+                          </Col>
+                          <Col span={12}>
+                            <Form.Item
+                              name={'Circulating Nurse'}
+                              label="Circulating Nurse"
+                              labelAlign="left"
+                              labelCol={{ span: 8 }}
+                            >
+                              <Select>
+                                <Option value="Circulating Nurse A">
+                                  Circulating Nurse A
+                                </Option>
+                                <Option value="Circulating Nurse B">
+                                  Circulating Nurse B
+                                </Option>
+                                <Option value="Circulating Nurse C">
+                                  Circulating Nurse C
+                                </Option>
+                              </Select>
+                            </Form.Item>
+                          </Col>
+                          <Col span={12}>
+                            <Form.Item
+                              name={'Surgery Start'}
+                              label="Surgery Start"
+                              labelAlign="left"
+                              labelCol={{ span: 8 }}
+                            >
+                              <DatePicker
+                                showTime
+                                showSecond={false}
+                                style={{ width: '100%' }}
+                              />
+                            </Form.Item>
+                          </Col>
+                          <Col span={12}>
+                            <Form.Item
+                              name={'Surgery End'}
+                              label="Surgery End"
+                              labelAlign="left"
+                              labelCol={{ span: 8 }}
+                            >
+                              <DatePicker
+                                showTime
+                                showSecond={false}
+                                style={{ width: '100%' }}
+                              />
+                            </Form.Item>
+                          </Col>
+                          <Col span={12}>
+                            <Form.Item
+                              name={'?????????'}
+                              label="?????????"
+                              labelAlign="left"
+                              labelCol={{ span: 8 }}
+                            >
+                              <DatePicker
+                                showTime
+                                showSecond={false}
+                                style={{ width: '100%' }}
+                              />
+                            </Form.Item>
+                          </Col>
+                        </Row>
+                        <Row gutter={16}>
+                          <Col span={12}>
+                            <List
+                              header={<div>Sign In</div>}
+                              bordered
+                              dataSource={[
+                                'Patient Identification',
+                                '????????????',
+                                'Site of Operation',
+                              ]}
+                              renderItem={(item) => (
+                                <List.Item>
+                                  <Checkbox>{item}</Checkbox>
+                                </List.Item>
+                              )}
+                              footer={
+                                <>
+                                  <div>?????????</div>
+                                  <div>
+                                    <TextArea />
+                                  </div>
+                                </>
+                              }
+                            />
+                          </Col>
+                          <Col span={12}>
+                            <List
+                              header={<div>Sign Out</div>}
+                              bordered
+                              dataSource={[
+                                '????????????',
+                                '????????????',
+                                '????????????',
+                              ]}
+                              renderItem={(item) => (
+                                <List.Item>
+                                  <Checkbox>{item}</Checkbox>
+                                </List.Item>
+                              )}
+                              footer={
+                                <>
+                                  <div>?????????</div>
+                                  <div>
+                                    <TextArea />
+                                  </div>
+                                </>
+                              }
+                            />
+                          </Col>
+                        </Row>
+
+                        <Text style={{ fontSize: 20 }}> Remarks:</Text>
+
                         <TextArea style={{ height: 80 }} />
-                        <p />
-                        <strong>
-                          <Text style={{ fontSize: 20 }}> Recorded by:</Text>
-                        </strong>
+
+                        <Text style={{ fontSize: 20 }}> Recorded by:</Text>
+
                         <Row>
                           <Input style={{ width: '60%' }} />
                           <Text style={{ fontSize: 20 }}>@</Text>
@@ -382,12 +504,11 @@ const Nurseform: React.FC = () => {
                   visible={isModalVisible}
                   onOk={handleOk}
                   onCancel={handleCancel}
-                  width={1800}
+                  width={1400}
                   style={{ fontSize: 20 }}
                 >
                   <Row gutter={{ xs: 8 }}>
-                    <Col span={3}></Col>
-                    <Col span={8}>
+                    <Col span={11}>
                       <Card>
                         <Row>
                           <Text
@@ -494,9 +615,9 @@ const Nurseform: React.FC = () => {
                       </Card>
                     </Col>
 
-                    <Col span={3}></Col>
+                    <Col span={2}></Col>
 
-                    <Col span={8}>
+                    <Col span={11}>
                       <Card>
                         <Row>
                           <Text

@@ -14,6 +14,7 @@ import {
   Space,
   Modal,
   Typography,
+  Radio,
 } from 'antd';
 import style from './index.less';
 
@@ -45,6 +46,11 @@ const KTPHhomescreenNewVersion: React.FC = () => {
   const [fall, setClass1] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalVisible2, setIsModalVisible2] = useState(false);
+  const [pregnantModalVisible, setPregnantModalVisible] = useState(false);
+  const [isPregnantConsentSigned, setIsPregnantConsentSigned] = useState(false);
+  const [patientAlertModalVisible, setPatientAlertModalVisible] = useState(
+    false,
+  );
 
   const handleBtnClick1 = () => {
     setClass1((pre) => !pre);
@@ -189,10 +195,14 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <Col span={12}>
                 <Form.Item label="Document Type" name="DocumentType">
                   <Select defaultValue="Select one" style={{ width: '49%' }}>
-                    <Option value="P">P</Option>
+                    <Option value="SC">SC</Option>
+                    <Option value="PR">PR</Option>
+                    <Option value="Non-residence">Non-residence</Option>
+                    <Option value="PG">PG</Option>
+                    <Option value="MG">MG</Option>
                   </Select>
                   <span> </span>
-                  <Input style={{ width: '49%' }} placeholder="PG"></Input>
+                  <Input style={{ width: '49%' }} placeholder="CHAS"></Input>
                 </Form.Item>
               </Col>
             </Row>
@@ -449,7 +459,18 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               labelCol={{ span: 4 }}
               labelAlign={'left'}
             >
-              <Input />
+              <Form.Item name="languageFromSAP">
+                <Input />
+              </Form.Item>
+              <Form.Item name="languageFromUI">
+                <Select>
+                  <Option value="English">English</Option>
+                  <Option value="Chinese">Chinese</Option>
+                  <Option value="Malay">Malay</Option>
+                  <Option value="Tamil">Tamil</Option>
+                  <Option value="Others">Others</Option>
+                </Select>
+              </Form.Item>
             </Form.Item>
             <Row gutter={{ xs: 4, sm: 8 }}>
               <Col span={24}>
@@ -509,16 +530,28 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     <pre></pre>
                     <pre></pre>
                     <pre></pre>
+                    <Space direction="vertical">
+                      <Button
+                        style={{ width: 120 }}
+                        type="ghost"
+                        danger
+                        htmlType="submit"
+                        onClick={() => {
+                          setPatientAlertModalVisible(true);
+                        }}
+                      >
+                        Patient Alert
+                      </Button>
 
-                    <Button
-                      style={{ width: 120 }}
-                      type="primary"
-                      htmlType="submit"
-                      onClick={showModal2}
-                    >
-                      Dialog
-                    </Button>
-
+                      <Button
+                        style={{ width: 120 }}
+                        type="primary"
+                        htmlType="submit"
+                        onClick={showModal2}
+                      >
+                        Dialog
+                      </Button>
+                    </Space>
                     <Modal
                       title="Dialog"
                       visible={isModalVisible2}
@@ -556,6 +589,18 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       <Text>Saved on 7/Jan/2021 17:08 </Text>
 
                       <p />
+                    </Modal>
+                    <Modal
+                      visible={patientAlertModalVisible}
+                      title="Patient Alert"
+                      onOk={() => {
+                        setPatientAlertModalVisible(false);
+                      }}
+                      width={500}
+                      bodyStyle={{ height: 300 }}
+                      style={{ fontSize: 20, left: -500, top: 720 }}
+                    >
+                      Paitent alert content here ...
                     </Modal>
                   </Col>
 
@@ -815,6 +860,16 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   </Button>
                 </Col>
               </Row>
+              <Row>
+                <Col span={2}>
+                  <Checkbox />
+                </Col>
+                <Col span={22}>
+                  <Button type="text" style={{ color: '#0645AD', height: 5 }}>
+                    Cancer
+                  </Button>
+                </Col>
+              </Row>
 
               <pre></pre>
 
@@ -824,7 +879,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 layout="vertical"
               >
                 <Form.Item
-                  label="Medical condition(s) not stated above"
+                  label="Past or present medical condition not stated above"
                   name="Ltmp"
                 >
                   <TextArea style={{ height: 90 }} />
@@ -841,12 +896,12 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 >
                   <TextArea style={{ height: 90 }} />
                 </Form.Item>
-                <Form.Item
+                {/* <Form.Item
                   label="Do you have any significant past medical or family history"
                   name="Pasthistory"
                 >
                   <TextArea style={{ height: 90 }} />
-                </Form.Item>
+                </Form.Item> */}
               </Form>
             </Col>
             <Col span={12}>
@@ -932,9 +987,44 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     <pre></pre>
                     <Row>
                       {' '}
-                      <Button size="large" style={{ width: '60%' }}>
-                        Pregnant
+                      <Button
+                        size="large"
+                        style={{ width: '60%' }}
+                        onClick={() => {
+                          setPregnantModalVisible(true);
+                        }}
+                      >
+                        {isPregnantConsentSigned
+                          ? 'Pregnant (Yes) (Signed)'
+                          : 'Pregnant'}
                       </Button>
+                      <Modal
+                        visible={pregnantModalVisible}
+                        title="Pregnant Consent"
+                        onOk={() => {
+                          setPregnantModalVisible(false);
+                          setIsPregnantConsentSigned(true);
+                        }}
+                        width={'30%'}
+                      >
+                        <Row gutter={[16, 24]}>
+                          <Col span={7}>Is Preganant :</Col>
+                          <Col span={12}>
+                            <Radio.Group>
+                              <Radio value={true}>Yes</Radio>
+                              <Radio value={false}>No</Radio>
+                            </Radio.Group>
+                          </Col>
+                          <Col span={7}>EDD Date :</Col>
+                          <Col span={12}>
+                            <DatePicker />
+                          </Col>
+                          <Col span={7}>Sign Consent of X-Ray :</Col>
+                          <Col span={12}>
+                            <TextArea />
+                          </Col>
+                        </Row>
+                      </Modal>
                     </Row>
                     <Row style={{ marginBottom: 20 }}></Row>
 
@@ -1020,6 +1110,11 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             <Col>
               <Button type="primary" htmlType="submit">
                 Search Patient
+              </Button>
+            </Col>
+            <Col>
+              <Button type="primary" htmlType="submit">
+                Audit
               </Button>
             </Col>
           </Row>
