@@ -952,7 +952,7 @@ const Nurseform: React.FC = () => {
                   delete
                 </Button>
               </Row>
-              <TextArea style={{ height: 800 }} />
+              <TextArea style={{ height: 1000 }} />
             </TabPane>
           </Tabs>
         </Col>
