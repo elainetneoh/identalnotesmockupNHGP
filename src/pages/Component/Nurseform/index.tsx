@@ -403,11 +403,10 @@ const Nurseform: React.FC = () => {
                                 style={{ width: '100%' }}
                               />
                             </Form.Item>
-                          </Col>
-                          <Col span={12}>
+
                             <Form.Item
-                              name={'?????????'}
-                              label="?????????"
+                              name={'Time Out'}
+                              label="Time Out"
                               labelAlign="left"
                               labelCol={{ span: 8 }}
                             >
@@ -426,7 +425,7 @@ const Nurseform: React.FC = () => {
                               bordered
                               dataSource={[
                                 'Patient Identification',
-                                '????????????',
+                                'Confirmed Consent',
                                 'Site of Operation',
                               ]}
                               renderItem={(item) => (
@@ -436,7 +435,7 @@ const Nurseform: React.FC = () => {
                               )}
                               footer={
                                 <>
-                                  <div>?????????</div>
+                                  <div>Allergy</div>
                                   <div>
                                     <TextArea />
                                   </div>
@@ -449,9 +448,9 @@ const Nurseform: React.FC = () => {
                               header={<div>Sign Out</div>}
                               bordered
                               dataSource={[
-                                '????????????',
-                                '????????????',
-                                '????????????',
+                                'Instruments',
+                                'Sharps and Swabs',
+                                'Specimens',
                               ]}
                               renderItem={(item) => (
                                 <List.Item>
@@ -460,7 +459,7 @@ const Nurseform: React.FC = () => {
                               )}
                               footer={
                                 <>
-                                  <div>?????????</div>
+                                  <div>Post-op concern and management </div>
                                   <div>
                                     <TextArea />
                                   </div>
