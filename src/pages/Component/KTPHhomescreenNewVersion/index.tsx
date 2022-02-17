@@ -173,14 +173,14 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             wrapperCol={{ span: 200 }}
             layout="horizontal"
           >
-            <Form.Item
+            {/* <Form.Item
               label="Old NRIC/FIN"
               name="OldNRIC/FIN"
               labelCol={{ span: 4 }}
               labelAlign={'left'}
             >
               <Input />
-            </Form.Item>
+            </Form.Item> */}
             <Form.Item
               label="Name"
               name="Name"
