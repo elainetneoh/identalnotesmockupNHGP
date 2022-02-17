@@ -241,6 +241,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   htmlType="submit"
                   style={{ width: '30%' }}
                   onClick={showModal}
+                  className={fall ? style.fallrish : style.nonfallrisk}
                 >
                   Financial Assistance
                 </Button>
