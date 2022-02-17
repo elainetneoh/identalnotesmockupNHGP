@@ -64,7 +64,38 @@ const data2 = [
     procedurecode: 'DLA001',
     unit: '1',
     price: '35',
-    toothnumber: '17',
+    toothnumber: (
+      <select>
+        <option>17</option>
+        <option value="11">11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>18</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
+        <option>32</option>
+        <option>33</option>
+        <option>34</option>
+        <option>35</option>
+        <option>36</option>
+        <option>37</option>
+        <option>38</option>
+        <option>41</option>
+        <option>42</option>
+        <option>43</option>
+        <option>44</option>
+        <option>45</option>
+        <option>46</option>
+        <option>47</option>
+        <option>48</option>
+      </select>
+    ),
   },
   // {
   //   key: '2',
@@ -182,7 +213,10 @@ const ProcedureTertiary: React.FC = () => {
             <CaretRightOutlined style={{ fontSize: 25, color: 'royalblue' }} />
             <StepForwardOutlined style={{ fontSize: 25, color: 'royalblue' }} />
             <pre> </pre>
-            <Select style={{ width: '10%' }}>
+            <Select
+              style={{ width: '10%' }}
+              defaultValue={{ value: 'Completed' }}
+            >
               <Option value="Completed">Completed</Option>
             </Select>
             <pre> </pre>
@@ -196,7 +230,7 @@ const ProcedureTertiary: React.FC = () => {
             <pre> </pre>
             <Button>Unlock</Button>
             <pre> </pre>
-            <Select style={{ width: '5%' }}>
+            <Select style={{ width: '5%' }} defaultValue={{ value: 'Print' }}>
               <Option value="Print">Print</Option>
             </Select>
             <pre> </pre>
@@ -495,7 +529,38 @@ const ProcedureTertiary: React.FC = () => {
                       >
                         <Column
                           //  title="Tooth No."
-                          title="10"
+                          title={
+                            <select>
+                              <option value="END">11</option>
+                              <option>12</option>
+                              <option>13</option>
+                              <option>14</option>
+                              <option>15</option>
+                              <option>16</option>
+                              <option>17</option>
+                              <option>18</option>
+                              <option>27</option>
+                              <option>28</option>
+                              <option>29</option>
+                              <option>30</option>
+                              <option>31</option>
+                              <option>32</option>
+                              <option>33</option>
+                              <option>34</option>
+                              <option>35</option>
+                              <option>36</option>
+                              <option>37</option>
+                              <option>38</option>
+                              <option>41</option>
+                              <option>42</option>
+                              <option>43</option>
+                              <option>44</option>
+                              <option>45</option>
+                              <option>46</option>
+                              <option>47</option>
+                              <option>48</option>
+                            </select>
+                          }
                           dataIndex="toothnumber"
                           key="toothnumber"
                           width="5%"

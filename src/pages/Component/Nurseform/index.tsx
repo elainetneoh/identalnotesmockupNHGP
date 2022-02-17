@@ -85,7 +85,7 @@ const Nurseform: React.FC = () => {
     {
       key: '1',
       consumables: 'Implant, Crown, Simple',
-      code: 'DLH012',
+      code: 'BPC012',
       unit: '1',
       price: '300',
       lotnumber: 'LOT00332211',
@@ -93,7 +93,7 @@ const Nurseform: React.FC = () => {
     {
       key: '1',
       consumables: 'Create and fix',
-      code: 'DLH013',
+      code: 'HPB013',
       unit: '2',
       price: '200',
       lotnumber: 'LOT00332212',
@@ -101,7 +101,7 @@ const Nurseform: React.FC = () => {
     {
       key: '1',
       consumables: 'Replace',
-      code: 'DLH014',
+      code: 'HKK014',
       unit: '3',
       price: '100',
       lotnumber: 'LOT00332213',
@@ -109,7 +109,7 @@ const Nurseform: React.FC = () => {
     {
       key: '1',
       consumables: 'Crown',
-      code: 'DLH014',
+      code: 'PLK014',
       unit: '4',
       price: '700',
       lotnumber: 'LOT00332214',
@@ -117,7 +117,7 @@ const Nurseform: React.FC = () => {
     {
       key: '1',
       consumables: 'Simple',
-      code: 'DLH014',
+      code: 'HDR014',
       unit: '5',
       price: '800',
       lotnumber: 'LOT00332215',
