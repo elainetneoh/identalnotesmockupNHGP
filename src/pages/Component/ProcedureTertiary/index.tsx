@@ -667,11 +667,15 @@ const ProcedureTertiary: React.FC = () => {
                 >
                   <Card>
                     <Row>
-                      <Text style={{ fontSize: 20 }}>i) END Template</Text>
+                      <Text style={{ fontSize: 20 }}>
+                        <strong>i) END Template</strong>
+                      </Text>
                     </Row>
 
                     <Row>
-                      <Text style={{ fontSize: 20 }}>ii) TOSP Template</Text>
+                      <Text style={{ fontSize: 20 }}>
+                        <strong>ii) TOSP Template</strong>
+                      </Text>
                     </Row>
                     <Row>
                       <Col span={3}>
