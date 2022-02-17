@@ -633,10 +633,20 @@ const ProcedureTertiary: React.FC = () => {
             <Col span={1}>
               <Text>Notes</Text>
             </Col>
-            <Col span={15} />
-            <Col>
+            <Col span={11} />
+            <Col span={12}>
               <Row>
-                <Button onClick={showModal2}>Care Plan</Button>
+                <Button style={{ color: 'black', width: '13%' }}>
+                  Department
+                </Button>
+
+                <pre style={{ fontSize: '30' }}> </pre>
+                <Button
+                  onClick={showModal2}
+                  style={{ color: 'black', width: '13%' }}
+                >
+                  Care Plan
+                </Button>
                 <Modal
                   title="Care Plan"
                   visible={isModalVisible2}
@@ -821,13 +831,17 @@ const ProcedureTertiary: React.FC = () => {
                 </Modal>
 
                 <pre style={{ fontSize: '30' }}> </pre>
-                <Button style={{ color: 'red' }}>Time Out</Button>
+                <Button style={{ color: 'black', width: '13%' }}>
+                  Time Out
+                </Button>
                 <pre> </pre>
-                <Button>Audit1</Button>
+                <Button style={{ color: 'black', width: '13%' }}>Audit1</Button>
                 <pre> </pre>
-                <Button style={{ color: 'red' }}>Audit2</Button>
+                <Button style={{ color: 'black', width: '13%' }}>Audit2</Button>
                 <pre> </pre>
-                <Button style={{ color: 'gray' }}>Addendum</Button>
+                <Button style={{ color: 'black', width: '13%' }}>
+                  Addendum
+                </Button>
                 <pre> </pre>
                 <Button>Template</Button>
               </Row>
@@ -849,13 +863,19 @@ const ProcedureTertiary: React.FC = () => {
                         className="boldheader"
                         extra={
                           <div>
+                            {/* <Button
+                              onClick={buttonClick}
+                              style={{ color: 'red' }}
+                            >
+                               END Template
+                            </Button> */}
+                            {/* <span> </span>
                             <Button
                               onClick={buttonClick}
                               style={{ color: 'red' }}
                             >
-                              Template
-                            </Button>
-                            <span> </span>
+                              TOSP Template
+                            </Button> */}
                           </div>
                         }
                       >
@@ -870,14 +890,14 @@ const ProcedureTertiary: React.FC = () => {
                         header="Procedure"
                         key="1"
                         className="boldheader"
-                        extra={
-                          <Button
-                            onClick={buttonClick}
-                            style={{ color: 'red' }}
-                          >
-                            Template
-                          </Button>
-                        }
+                        // extra={
+                        //   <Button
+                        //     onClick={buttonClick}
+                        //     style={{ color: 'red' }}
+                        //   >
+                        //     Template
+                        //   </Button>
+                        // }
                       >
                         <CKEditor
                           style={{ width: '90%' }}
@@ -890,14 +910,14 @@ const ProcedureTertiary: React.FC = () => {
                         header="CarePlan"
                         key="1"
                         className="boldheader"
-                        extra={
-                          <Button
-                            onClick={buttonClick}
-                            style={{ color: 'red' }}
-                          >
-                            Template
-                          </Button>
-                        }
+                        // extra={
+                        //   <Button
+                        //     onClick={buttonClick}
+                        //     style={{ color: 'red' }}
+                        //   >
+                        //     Template
+                        //   </Button>
+                        // }
                       >
                         <CKEditor
                           style={{ width: '90%' }}
