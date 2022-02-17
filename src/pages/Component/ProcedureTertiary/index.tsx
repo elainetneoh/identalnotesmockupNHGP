@@ -160,6 +160,7 @@ const ProcedureTertiary: React.FC = () => {
       <Row>
         <Col span={21}>
           <Row>
+            <Button>Archive</Button>
             <StepBackwardFilled style={{ fontSize: 25, color: 'royalblue' }} />
             <CaretLeftFilled style={{ fontSize: 25, color: 'royalblue' }} />
             <Input style={{ width: '2%', height: '30px' }} />
