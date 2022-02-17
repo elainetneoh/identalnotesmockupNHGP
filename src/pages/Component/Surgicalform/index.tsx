@@ -284,12 +284,13 @@ const Surgicalform: React.FC = () => {
                 wrapperCol={{ span: 200 }}
                 layout="vertical"
               >
-                <Form.Item labelAlign={'left'} label="Fixed diagnosis">
+                <Form.Item labelAlign={'left'} label="">
                   <Table style={{ width: '90%' }} pagination={false}>
                     <Column
-                      title="Diagnosis"
-                      dataIndex="diagnosis"
-                      key="diagnosis"
+                      title="No."
+                      dataIndex="number"
+                      key="number"
+                      width="5%"
                     />
                     <Column
                       title="Code"
@@ -297,11 +298,18 @@ const Surgicalform: React.FC = () => {
                       key="code"
                       width="10%"
                     />
+                    <Column
+                      title="Description"
+                      dataIndex="description"
+                      key="description"
+                      width="80%"
+                    />
                   </Table>
                 </Form.Item>
-                <Form.Item labelAlign={'left'} label="Other diagnosis">
+
+                {/* <Form.Item labelAlign={'left'} label="Other diagnosis">
                   <TextArea style={{ height: 100, width: '90%' }} />
-                </Form.Item>
+                </Form.Item> */}
               </Form>
             </Col>
           </Row>
@@ -361,7 +369,7 @@ const Surgicalform: React.FC = () => {
               </Form>
             </Col>
           </Row>
-          <Row>
+          {/* <Row>
             <Col span={24}>
               <Divider orientation="left">Discharge Advice</Divider>
               <Form
@@ -374,7 +382,7 @@ const Surgicalform: React.FC = () => {
                 </Form.Item>
               </Form>
             </Col>
-          </Row>
+          </Row> */}
         </Col>
 
         <Col span={3}>

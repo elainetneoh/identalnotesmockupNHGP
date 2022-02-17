@@ -48,9 +48,10 @@ const KTPHhomescreenNewVersion: React.FC = () => {
   const [isModalVisible2, setIsModalVisible2] = useState(false);
   const [pregnantModalVisible, setPregnantModalVisible] = useState(false);
   const [isPregnantConsentSigned, setIsPregnantConsentSigned] = useState(false);
-  const [patientAlertModalVisible, setPatientAlertModalVisible] = useState(
-    false,
-  );
+  const [EDDDate, setEDDDateVisible] = useState(true);
+  const [Signature, setSignatureVisible] = useState(true);
+  const [patientAlertModalVisible, setPatientAlertModalVisible] =
+    useState(false);
 
   const handleBtnClick1 = () => {
     setClass1((pre) => !pre);
@@ -86,10 +87,21 @@ const KTPHhomescreenNewVersion: React.FC = () => {
     setIsModalVisible2(false);
   };
 
+  const showwEDD = () => {
+    setEDDDateVisible(false);
+    setSignatureVisible(true);
+  };
+
+  const noshowwEDD = () => {
+    setEDDDateVisible(true);
+    setSignatureVisible(false);
+  };
+
   return (
     <div className={style.KTPHhome}>
       <Row gutter={{ sm: 8 }}>
         <Col span={10}>
+          <Divider orientation="left">Personal Details </Divider>
           <Form
             labelCol={{ span: 0 }}
             wrapperCol={{ span: 100 }}
@@ -104,18 +116,14 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <Row>
                 <Input style={{ width: '55%' }} />
                 <pre> </pre>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  style={{ width: '20%' }}
-                >
+                <Button htmlType="submit" style={{ width: '21%' }}>
                   Verify
                 </Button>
                 <pre> </pre>
                 <Button
-                  type="primary"
+                  // type="primary"
                   htmlType="submit"
-                  style={{ width: '20%' }}
+                  style={{ width: '21%' }}
                 >
                   Label
                 </Button>
@@ -137,18 +145,22 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <Row>
                 <Input style={{ width: '55%' }} />
                 <pre> </pre>
+
+                <Input style={{ width: '10%' }} placeholder="Lab No" />
+                <pre> </pre>
+
                 <Button
-                  type="primary"
+                  // type="primary"
                   htmlType="submit"
-                  style={{ width: '20%' }}
+                  style={{ width: '16%' }}
                 >
                   Generate
                 </Button>
                 <pre> </pre>
                 <Button
-                  type="primary"
+                  // type="primary"
                   htmlType="submit"
-                  style={{ width: '20%' }}
+                  style={{ width: '15%' }}
                 >
                   UIN Label
                 </Button>
@@ -177,22 +189,23 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             >
               <Input />
             </Form.Item>
-            <Row gutter={{ xs: 4, sm: 16, md: 24, lg: 32 }}>
-              <Col span={12}>
-                <Form.Item
+
+            {/* <Row gutter={{ xs: 4, sm: 16, md: 24, lg: 32 }}> */}
+            {/* <Col span={12}> */}
+            {/* <Form.Item
                   label="Gender"
                   name="Gender"
-                  labelCol={{ span: 8 }}
+                  labelCol={{ span: 4 }}
                   labelAlign={'left'}
                 >
-                  <Select defaultValue="Select one" style={{ width: '80%' }}>
+                  <Select defaultValue="Select one" style={{ width: '30%' }}>
                     <Option value="Male">M</Option>
                     <Option value="Female">F</Option>
                   </Select>
-                </Form.Item>
-              </Col>
+                </Form.Item> */}
+            {/* </Col> */}
 
-              <Col span={12}>
+            {/* <Col span={12}>
                 <Form.Item label="Document Type" name="DocumentType">
                   <Select defaultValue="Select one" style={{ width: '49%' }}>
                     <Option value="SC">SC</Option>
@@ -204,26 +217,29 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <span> </span>
                   <Input style={{ width: '49%' }} placeholder="CHAS"></Input>
                 </Form.Item>
-              </Col>
-            </Row>
+              </Col> */}
+            {/* </Row> */}
 
-            <Row gutter={{ xs: 4, sm: 16, md: 24, lg: 32 }}>
-              <Col span={12}>
-                <Form.Item
-                  label="Date of Birth"
-                  name="Dateofbirth"
-                  labelCol={{ span: 8 }}
-                  labelAlign={'left'}
-                >
-                  <DatePicker style={{ width: '80%' }}></DatePicker>
-                </Form.Item>
-              </Col>
+            {/* <Row gutter={{ xs: 4, sm: 16, md: 24, lg: 32 }}> */}
+            {/* <Col span={12}> */}
+            <Form.Item
+              label="Date of Birth"
+              name="Dateofbirth"
+              // labelCol={{ span: 8 }}
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Row>
+                <DatePicker style={{ width: '30%' }}></DatePicker>
+                {/* </Form.Item> */}
+                {/* </Col> */}
 
-              <Col span={12}>
+                {/* <Col span={10}> */}
+                <pre> </pre>
                 <Button
                   type="primary"
                   htmlType="submit"
-                  style={{ width: '100%' }}
+                  style={{ width: '30%' }}
                   onClick={showModal}
                 >
                   Financial Assistance
@@ -345,16 +361,149 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     <p />
                   </Card>
                 </Modal>
+              </Row>
+            </Form.Item>
 
-                {/*<Form.Item label="Document Type" name="DocumentType">
+            {/*<Form.Item label="Document Type" name="DocumentType">
                   <Select defaultValue="Select one" style={{ width: '49%' }}>
                     <Option value="P">P</Option>
                   </Select>
                   <span> </span>
                   <Input style={{ width: '49%' }} placeholder='PG'></Input>
                 </Form.Item>*/}
-              </Col>
-            </Row>
+            {/* </Col> */}
+            {/* </Row> */}
+
+            <Form.Item
+              label="Language"
+              name="PatientLanguage"
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Form.Item name="languageFromSAP">
+                {/* <Row>
+                 <Col span={7}> */}
+                <Row>
+                  <Select style={{ width: '30%' }}>
+                    <Option value="English">English</Option>
+                    <Option value="Chinese">Chinese</Option>
+                    <Option value="Malay">Malay</Option>
+                    <Option value="Tamil">Tamil</Option>
+                    <Option value="Others">Others</Option>
+                  </Select>
+                  {/* </Col> */}
+
+                  <pre> </pre>
+
+                  {/* <Col span={8}> */}
+                  <Select style={{ width: '30%' }}>
+                    <Option value="English">English</Option>
+                    <Option value="Chinese">Chinese</Option>
+                    <Option value="Malay">Malay</Option>
+                    <Option value="Tamil">Tamil</Option>
+                    <Option value="Others">Others</Option>
+                  </Select>
+                </Row>
+                {/* </Col>
+                </Row> */}
+              </Form.Item>
+
+              {/* <Form.Item name="languageFromUI">
+                <Select style={{ width: '40%' }}>
+                  <Option value="English">English</Option>
+                  <Option value="Chinese">Chinese</Option>
+                  <Option value="Malay">Malay</Option>
+                  <Option value="Tamil">Tamil</Option>
+                  <Option value="Others">Others</Option>
+                </Select>
+              </Form.Item> */}
+            </Form.Item>
+            <Form.Item
+              label="Referral Source"
+              name="ReferralSource"
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Row>
+                <Select defaultValue="TTSH" style={{ width: '30%' }}>
+                  <Option value="TTHS">TTHS</Option>
+                  <Option value="KTPH">KTPH</Option>
+                </Select>
+
+                <pre> </pre>
+
+                <Button htmlType="submit" style={{ width: '30%' }}>
+                  Refresh CMIS
+                </Button>
+              </Row>
+            </Form.Item>
+            <Form.Item
+              label="Gender"
+              name="Gender"
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Select defaultValue="Select one" style={{ width: '30%' }}>
+                <Option value="Male">M</Option>
+                <Option value="Female">F</Option>
+              </Select>
+            </Form.Item>
+
+            <Form.Item
+              label="Nationality"
+              name="Nationality"
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Input style={{ width: '30%' }} />
+            </Form.Item>
+
+            {/* <Row gutter={{ xs: 4, sm: 16, md: 24, lg: 32 }}>
+            <Col span={12}> */}
+
+            <Form.Item
+              label="Document Type"
+              name="DocumentType"
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Select defaultValue="Select one" style={{ width: '30%' }}>
+                <Option value="SC">SC</Option>
+                <Option value="PR">PR</Option>
+                <Option value="Non-residence">Non-residence</Option>
+                <Option value="PG">PG</Option>
+                <Option value="MG">MG</Option>
+              </Select>
+              {/* <span> </span>
+                  <Input style={{ width: '49%' }} placeholder="CHAS"></Input> */}
+            </Form.Item>
+            {/* </Col> */}
+
+            <Form.Item
+              label="CHAS"
+              name="CHAS"
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Select defaultValue="Select one" style={{ width: '30%' }}>
+                <Option value="NIL">NIL</Option>
+                <Option value="Blue">Blue</Option>
+                <Option value="Orange">Orange</Option>
+              </Select>
+            </Form.Item>
+
+            {/* <Row>
+                  <Col span={14}> */}
+            {/*  */}
+            {/* </Col> */}
+            {/* <Col span={6}> */}
+
+            {/* </Col>
+                </Row> */}
+
+            {/* </Row> */}
+
+            <Divider orientation="left">Contact Details</Divider>
 
             <Form.Item
               label="Home no"
@@ -381,9 +530,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <Row>
                 <Input style={{ width: '91%' }} />
                 <pre> </pre>
-                <Button type="primary" htmlType="submit">
-                  SMS
-                </Button>
+                <Button htmlType="submit">SMS</Button>
               </Row>
             </Form.Item>
             <Form.Item
@@ -394,14 +541,14 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             >
               <Input />
             </Form.Item>
-            <Form.Item
+            {/* <Form.Item
               label="Nationality"
               name="Nationality"
               labelCol={{ span: 4 }}
               labelAlign={'left'}
             >
               <Input />
-            </Form.Item>
+            </Form.Item> */}
           </Form>
           <Row>
             <Col span={4}>
@@ -416,17 +563,17 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Row gutter={{ xs: 2 }}>
                   <Col span={8}>
                     <Form.Item label="Building No" name="Buildingnumber">
-                      <Input style={{ width: '70%' }} />
+                      <Input style={{ width: '90%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={8}>
                     <Form.Item label="Floor" name="Floor">
-                      <Input style={{ width: '70%' }} />
+                      <Input style={{ width: '90%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={8}>
                     <Form.Item label="Unit" name="Unit">
-                      <Input style={{ width: '70%' }} />
+                      <Input style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                 </Row>
@@ -436,12 +583,12 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Row gutter={{ xs: 2 }}>
                   <Col span={8}>
                     <Form.Item label="Postal Code" name="Postalcode">
-                      <Input style={{ width: '70%' }} />
+                      <Input style={{ width: '90%' }} />
                     </Form.Item>
                   </Col>
-                  <Col span={12}>
+                  <Col span={8}>
                     <Form.Item label="Country" name="Country">
-                      <Input />
+                      <Input style={{ width: '90%' }} />
                     </Form.Item>
                   </Col>
                 </Row>
@@ -453,28 +600,11 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             wrapperCol={{ span: 200 }}
             layout="horizontal"
           >
-            <Form.Item
-              label="Language"
-              name="PatientLanguage"
-              labelCol={{ span: 4 }}
-              labelAlign={'left'}
-            >
-              <Form.Item name="languageFromSAP">
-                <Input />
-              </Form.Item>
-              <Form.Item name="languageFromUI">
-                <Select>
-                  <Option value="English">English</Option>
-                  <Option value="Chinese">Chinese</Option>
-                  <Option value="Malay">Malay</Option>
-                  <Option value="Tamil">Tamil</Option>
-                  <Option value="Others">Others</Option>
-                </Select>
-              </Form.Item>
-            </Form.Item>
+            <Divider orientation="left">Alerts</Divider>
+
             <Row gutter={{ xs: 4, sm: 8 }}>
               <Col span={24}>
-                <Row>
+                {/* <Row>
                   <Col span={14}>
                     <Form.Item
                       label="Referral Source"
@@ -490,14 +620,13 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   </Col>
                   <Col span={6}>
                     <Button
-                      type="primary"
                       htmlType="submit"
                       style={{ width: '100%' }}
                     >
                       Refresh CMIS
                     </Button>
                   </Col>
-                </Row>
+                </Row> */}
                 <Form.Item
                   label="Allergy"
                   name="Allergy"
@@ -545,7 +674,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
 
                       <Button
                         style={{ width: 120 }}
-                        type="primary"
+                        // type="primary"
                         htmlType="submit"
                         onClick={showModal2}
                       >
@@ -764,7 +893,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Button
                     type="text"
                     onClick={handleBtnClick3}
-                    style={{ color: '#0645AD', height: 5 }}
+                    style={{ color: 'black', height: 5 }}
                   >
                     Chest pain
                   </Button>
@@ -778,7 +907,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Button
                     type="text"
                     onClick={handleBtnClick2}
-                    style={{ color: '#0645AD', height: 5 }}
+                    style={{ color: 'black', height: 5 }}
                   >
                     Breathlessness
                   </Button>
@@ -789,7 +918,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Checkbox />
                 </Col>
                 <Col span={22}>
-                  <Button type="text" style={{ color: '#0645AD', height: 5 }}>
+                  <Button type="text" style={{ color: 'black', height: 5 }}>
                     Palpitations
                   </Button>
                 </Col>
@@ -805,7 +934,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Checkbox />
                 </Col>
                 <Col span={22}>
-                  <Button type="text" style={{ color: '#0645AD', height: 5 }}>
+                  <Button type="text" style={{ color: 'black', height: 5 }}>
                     Heart Disease
                   </Button>
                 </Col>
@@ -815,7 +944,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Checkbox />
                 </Col>
                 <Col span={22}>
-                  <Button type="text" style={{ color: '#0645AD', height: 5 }}>
+                  <Button type="text" style={{ color: 'black', height: 5 }}>
                     High Blood Pressure
                   </Button>
                 </Col>
@@ -825,7 +954,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Checkbox />
                 </Col>
                 <Col span={22}>
-                  <Button type="text" style={{ color: '#0645AD', height: 5 }}>
+                  <Button type="text" style={{ color: 'black', height: 5 }}>
                     Chronic Cough/Asthma
                   </Button>
                 </Col>
@@ -835,7 +964,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Checkbox />
                 </Col>
                 <Col span={22}>
-                  <Button type="text" style={{ color: '#0645AD', height: 5 }}>
+                  <Button type="text" style={{ color: 'black', height: 5 }}>
                     Diabetes
                   </Button>
                 </Col>
@@ -845,7 +974,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Checkbox />
                 </Col>
                 <Col span={22}>
-                  <Button type="text" style={{ color: '#0645AD', height: 5 }}>
+                  <Button type="text" style={{ color: 'black', height: 5 }}>
                     Stroke
                   </Button>
                 </Col>
@@ -855,7 +984,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Checkbox />
                 </Col>
                 <Col span={22}>
-                  <Button type="text" style={{ color: '#0645AD', height: 5 }}>
+                  <Button type="text" style={{ color: 'black', height: 5 }}>
                     Epilepsy
                   </Button>
                 </Col>
@@ -865,7 +994,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Checkbox />
                 </Col>
                 <Col span={22}>
-                  <Button type="text" style={{ color: '#0645AD', height: 5 }}>
+                  <Button type="text" style={{ color: 'black', height: 5 }}>
                     Cancer
                   </Button>
                 </Col>
@@ -882,19 +1011,19 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   label="Past or present medical condition not stated above"
                   name="Ltmp"
                 >
-                  <TextArea style={{ height: 90 }} />
+                  <TextArea style={{ height: 120 }} />
                 </Form.Item>
                 <Form.Item label="Are you on long term medication " name="Ltmp">
-                  <TextArea style={{ height: 90 }} />
+                  <TextArea style={{ height: 120 }} />
                 </Form.Item>
                 <Form.Item label="Do you have any allergies" name="allergies">
-                  <TextArea style={{ height: 90 }} />
+                  <TextArea style={{ height: 120 }} />
                 </Form.Item>
                 <Form.Item
                   label="Are you a carrier of any infectious desease eg.Hepatitis B, HIV"
                   name="Infectious"
                 >
-                  <TextArea style={{ height: 90 }} />
+                  <TextArea style={{ height: 120 }} />
                 </Form.Item>
                 {/* <Form.Item
                   label="Do you have any significant past medical or family history"
@@ -996,11 +1125,11 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       >
                         {isPregnantConsentSigned
                           ? 'Pregnant (Yes) (Signed)'
-                          : 'Pregnant'}
+                          : 'Pregnancy'}
                       </Button>
                       <Modal
                         visible={pregnantModalVisible}
-                        title="Pregnant Consent"
+                        title="Pregnancy"
                         onOk={() => {
                           setPregnantModalVisible(false);
                           setIsPregnantConsentSigned(true);
@@ -1008,18 +1137,45 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         width={'30%'}
                       >
                         <Row gutter={[16, 24]}>
-                          <Col span={7}>Is Preganant :</Col>
+                          <Col span={7}>Is Pregnant :</Col>
                           <Col span={12}>
-                            <Radio.Group>
-                              <Radio value={true}>Yes</Radio>
-                              <Radio value={false}>No</Radio>
+                            <Radio.Group buttonStyle="solid">
+                              <Radio.Button
+                                onClick={showwEDD}
+                                type="primary"
+                                value={true}
+                              >
+                                Yes
+                              </Radio.Button>
+                              <Radio.Button value={false} onClick={noshowwEDD}>
+                                No
+                              </Radio.Button>
                             </Radio.Group>
                           </Col>
-                          <Col span={7}>EDD Date :</Col>
-                          <Col span={12}>
+                          <Col span={7} hidden={EDDDate}>
+                            EDD Date :
+                          </Col>
+                          <Col span={12} hidden={EDDDate}>
+                            <DatePicker />
+                          </Col>
+
+                          <Col span={7} hidden={Signature}>
+                            Signature :
+                          </Col>
+                          <Col span={12} hidden={Signature}>
+                            <TextArea />
+                          </Col>
+                          <Col span={7} hidden={Signature}>
+                            Date of Signature :
+                          </Col>
+                          <Col span={12} hidden={Signature}>
                             <DatePicker />
                           </Col>
                           <Col span={7}>Sign Consent of X-Ray :</Col>
+                          <Col span={12}>
+                            <TextArea />
+                          </Col>
+                          <Col span={7}>Remarks :</Col>
                           <Col span={12}>
                             <TextArea />
                           </Col>
@@ -1056,9 +1212,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         <Input style={{ width: '90%' }} />
                       </Form.Item>
                       <Form.Item>
-                        <Button type="primary" htmlType="submit">
-                          Confirm
-                        </Button>
+                        <Button htmlType="submit">Confirm</Button>
                       </Form.Item>
                     </Form>
                   </Col>
@@ -1085,7 +1239,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             layout="vertical"
           >
             <Form.Item label="Comment" name="Comment">
-              <TextArea style={{ height: 100 }} />
+              <TextArea style={{ height: 470 }} />
             </Form.Item>
           </Form>
         </Col>
@@ -1094,26 +1248,25 @@ const KTPHhomescreenNewVersion: React.FC = () => {
         <Col span={12}>
           <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
             <Col>
-              <Button type="primary" htmlType="submit">
-                New/Retrieve Patient
-              </Button>
+              <Button htmlType="submit">New/Retrieve Patient</Button>
             </Col>
             <Col>
               <Button
-                type="primary"
-                style={{ background: 'orange', border: 'orange' }}
+                //type="primary"
+                // style={{ background: 'orange', border: 'orange' }}
                 htmlType="submit"
               >
                 Examine
               </Button>
             </Col>
             <Col>
-              <Button type="primary" htmlType="submit">
-                Search Patient
-              </Button>
+              <Button htmlType="submit">Search Patient</Button>
             </Col>
-            <Col>
-              <Button type="primary" htmlType="submit">
+            <Col offset={9}>
+              <Button
+                htmlType="submit"
+                style={{ width: '130%', background: 'orange' }}
+              >
                 Audit
               </Button>
             </Col>
@@ -1122,24 +1275,16 @@ const KTPHhomescreenNewVersion: React.FC = () => {
         <Col span={12}>
           <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
             <Col>
-              <Button type="primary" htmlType="submit">
-                Blank Form
-              </Button>
+              <Button htmlType="submit">Blank Form</Button>
             </Col>
             <Col>
-              <Button type="primary" htmlType="submit">
-                Print
-              </Button>
+              <Button htmlType="submit">Print</Button>
             </Col>
             <Col>
-              <Button type="primary" htmlType="submit">
-                Save
-              </Button>
+              <Button htmlType="submit">Save</Button>
             </Col>
             <Col>
-              <Button type="primary" htmlType="submit">
-                Cancel
-              </Button>
+              <Button htmlType="submit">Cancel</Button>
             </Col>
           </Row>
         </Col>

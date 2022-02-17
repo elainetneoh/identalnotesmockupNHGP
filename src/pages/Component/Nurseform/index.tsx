@@ -85,7 +85,7 @@ const Nurseform: React.FC = () => {
     {
       key: '1',
       consumables: 'Implant, Crown, Simple',
-      consumablescode: 'DLH012',
+      code: 'DLH012',
       unit: '1',
       price: '300',
       lotnumber: 'LOT00332211',
@@ -188,14 +188,15 @@ const Nurseform: React.FC = () => {
             </Col>
           </Row>
           <Divider />
-          <Divider />
+
           <div style={{ color: 'red' }}>
             *This will be linked to TOSP procedure for Billing
           </div>
 
           <Row>
             <Col span={21}>
-              <Form.Item label="Material and consumables">
+              {/* <Form.Item label="Material and consumables"> */}
+              <Form.Item label="">
                 <Table
                   style={{ width: '99%' }}
                   pagination={false}
@@ -205,13 +206,9 @@ const Nurseform: React.FC = () => {
                     title="Consumables"
                     dataIndex="consumables"
                     key="consumables"
+                    width="8%"
                   />
-                  <Column
-                    title="Consumables code"
-                    dataIndex="consumablescode"
-                    key="consumablescode"
-                    width="10%"
-                  />
+                  <Column title="Code" dataIndex="code" key="code" width="5%" />
                   <Column title="Unit" dataIndex="unit" key="unit" width="5%" />
                   <Column
                     title="Price"
@@ -223,10 +220,10 @@ const Nurseform: React.FC = () => {
                     title="Lot Number"
                     dataIndex="lotnumber"
                     key="lotnumber"
-                    width="15%"
+                    width="5%"
                   />
                   <Column
-                    width="15%"
+                    width="5%"
                     title={() => {
                       return (
                         <div>
@@ -239,7 +236,7 @@ const Nurseform: React.FC = () => {
                     key="action"
                     render={() => (
                       <Space size="middle">
-                        <a>Edit</a>
+                        {/* <a>Edit</a> */}
                         <a>Delete</a>
                       </Space>
                     )}
@@ -253,7 +250,7 @@ const Nurseform: React.FC = () => {
             <Col span={1}>
               <Text>Notes</Text>
             </Col>
-            <Col span={15} />
+            <Col span={17} />
             <Col>
               <Row>
                 {/*start*/}
