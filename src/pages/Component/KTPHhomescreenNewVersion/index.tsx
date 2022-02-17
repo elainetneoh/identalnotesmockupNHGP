@@ -146,7 +146,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Input style={{ width: '55%' }} />
                 <pre> </pre>
 
-                <Input style={{ width: '10%' }} placeholder="Lab No" />
+                <Input style={{ width: '10%' }} placeholder="Lab" />
                 <pre> </pre>
 
                 <Button
@@ -1173,10 +1173,11 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           <Col span={12} hidden={Signature}>
                             <DatePicker />
                           </Col>
-                          <Col span={7}>Sign Consent of X-Ray :</Col>
-                          <Col span={12}>
+                          {/* <Col span={7}>Sign Consent of X-Ray :</Col> */}
+
+                          {/* <Col span={12}>
                             <TextArea />
-                          </Col>
+                          </Col> */}
                           <Col span={7}>Remarks :</Col>
                           <Col span={12}>
                             <TextArea />
