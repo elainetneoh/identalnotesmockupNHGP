@@ -59,26 +59,28 @@ const data1 = [
 const data2 = [
   {
     key: '1',
-    procedure: 'Consultation',
+    // procedure: 'Consultation',
+    procedure: 'PERIAPICAL SURGERY(Tooth :17,19,22)',
     procedurecode: 'DLA001',
     unit: '1',
     price: '35',
-    toothnumber: '21',
+    toothnumber: '17',
   },
-  {
-    key: '2',
-    procedure:
-      'Teeth (4 or more), Impacted, Removal of Bone with Division of Teeth',
-    procedurecode: 'SSF010T',
-    unit: '1',
-    price: '4B',
-    toothnumber: '24',
-  },
+  // {
+  //   key: '2',
+  //   procedure:
+  //     'Teeth (4 or more), Impacted, Removal of Bone with Division of Teeth',
+  //   procedurecode: 'SSF010T',
+  //   unit: '1',
+  //   price: '4B',
+  //   toothnumber: '24',
+  // },
 ];
 const data3 = [
   {
     key: '1',
-    consumables: 'Implant, Crown, Simple',
+    // consumables: 'Implant, Crown, Simple',
+    consumables: 'SPECIAL TRAY',
     consumablescode: 'DLH012',
     unit: '1',
     price: '300',
@@ -138,6 +140,7 @@ const ProcedureTertiary: React.FC = () => {
   const handleCancel2 = () => {
     setIsModalVisible2(false);
   };
+
   console.log(moment());
   return (
     <div className={style.ProcedureTer}>
@@ -190,7 +193,7 @@ const ProcedureTertiary: React.FC = () => {
               layout="horizontal"
             >
               <Form.Item label="Case No">
-                <Input style={{ width: '80%' }} />
+                <Input style={{ width: '129%' }} />
               </Form.Item>
             </Form>
           </Row>
@@ -223,10 +226,10 @@ const ProcedureTertiary: React.FC = () => {
                   <Col span={7}>
                     <Form.Item
                       label="Visit Type"
-                      labelCol={{ span: 6 }}
+                      labelCol={{ span: 4 }}
                       labelAlign={'left'}
                     >
-                      <Select style={{ width: '90%' }} />
+                      <Select style={{ width: '70%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={5}>
@@ -381,7 +384,8 @@ const ProcedureTertiary: React.FC = () => {
               </Form>
             </Col>
           </Row>
-          <Divider />
+          {/* <Divider /> */}
+
           <Row gutter={{ xs: 4 }}>
             <Col span={22}>
               <Form
@@ -390,7 +394,7 @@ const ProcedureTertiary: React.FC = () => {
                 layout="horizontal"
               >
                 <Row>
-                  <Col span={17}>
+                  <Col span={13}>
                     <Form.Item
                       label="Diagnoses"
                       labelCol={{ span: 4 }}
@@ -400,24 +404,26 @@ const ProcedureTertiary: React.FC = () => {
                         style={{ width: '99%' }}
                         pagination={false}
                         dataSource={data1}
+                        size="small"
                       >
                         <Column
-                          title="Diagnosis"
+                          title="Transposed/rotated tooth"
                           dataIndex="diagnosis"
                           key="diagnosis"
                         />
+
                         <Column
-                          title="Diagnoses Code"
+                          title="5243"
                           dataIndex="diagnosescode"
                           key="diagnosescode"
                           width="15%"
                         />
                         <Column
-                          width="20%"
+                          width="15%"
                           title={() => {
                             return (
                               <div>
-                                <Button type="primary" icon={<PlusOutlined />}>
+                                <Button type="primary" style={{ width: '80%' }}>
                                   Add
                                 </Button>
                               </div>
@@ -425,10 +431,15 @@ const ProcedureTertiary: React.FC = () => {
                           }}
                           key="action"
                           render={() => (
-                            <Space size="middle">
-                              {/* <a>Edit</a> */}
-                              <a>Delete</a>
-                            </Space>
+                            // <Space size="middle">
+                            //   {/* <a>Edit</a> */}
+                            //   <a >Delete</a>
+                            // </Space>
+                            <div>
+                              <Button type="primary" style={{ width: '80%' }}>
+                                Delete
+                              </Button>
+                            </div>
                           )}
                         />
                       </Table>
@@ -453,40 +464,47 @@ const ProcedureTertiary: React.FC = () => {
                     </Form.Item>
                   </Col>
                 </Row>
-                <Divider />
+                {/* <Divider /> */}
                 <Row>
-                  <Col span={21}>
+                  <Col span={17}>
                     <Form.Item label="Consult/Rev/Procedure">
                       <Table
-                        style={{ width: '99%' }}
+                        // style={{ width: '100%' }}
                         pagination={false}
                         dataSource={data2}
+                        size="small"
                       >
                         <Column
-                          title="Tooth No."
+                          //  title="Tooth No."
+                          title="10"
                           dataIndex="toothnumber"
                           key="toothnumber"
                           width="5%"
                         />
                         <Column
-                          title="Procedure"
+                          // title="Procedure"
+                          title="CONSULTATION(PACKAGE)"
                           dataIndex="procedure"
                           key="procedure"
+                          width="70%"
                         />
                         <Column
-                          title="Procedure code"
+                          // title="Procedure code"
+                          title="DLA000"
                           dataIndex="procedurecode"
                           key="procedurecode"
                           width="10%"
                         />
                         <Column
-                          title="Unit"
+                          // title="Unit"
+                          title="1"
                           dataIndex="unit"
                           key="unit"
                           width="5%"
                         />
                         <Column
-                          title="Price"
+                          // title="Price"
+                          title="0"
                           dataIndex="price"
                           key="price"
                           width="5%"
@@ -495,7 +513,11 @@ const ProcedureTertiary: React.FC = () => {
                           title={() => {
                             return (
                               <div>
-                                <Button type="primary" icon={<PlusOutlined />}>
+                                {/* <Button type="primary" icon={<PlusOutlined />}> */}
+                                <Button
+                                  type="primary"
+                                  style={{ width: '100%' }}
+                                >
                                   Add
                                 </Button>
                               </div>
@@ -503,17 +525,21 @@ const ProcedureTertiary: React.FC = () => {
                           }}
                           key="action"
                           render={() => (
-                            <Space size="middle">
-                              <a>Edit</a>
-                              <a>Delete</a>
-                            </Space>
+                            // <Space size="middle">
+                            //   {/* <a>Edit</a> */}
+                            //   <a>Delete</a>
+                            // </Space>
+                            <Button type="primary" style={{ width: '100%' }}>
+                              Delete
+                            </Button>
                           )}
                         />
                       </Table>
                     </Form.Item>
                   </Col>
+                  <Col span={2}></Col>
                   <Col span={3}>
-                    <Button style={{ width: '95%' }} onClick={showModal}>
+                    <Button style={{ width: '70%' }} onClick={showModal}>
                       Chart
                     </Button>
                     <Modal
@@ -528,51 +554,57 @@ const ProcedureTertiary: React.FC = () => {
                   </Col>
                 </Row>
               </Form>
-              <Divider />
+              {/* <Divider /> */}
 
               <Row>
                 <Col span={21}>
                   <Form.Item label="Xray/Lab/Consumables">
                     <Table
-                      style={{ width: '99%' }}
+                      style={{ width: '80%' }}
                       pagination={false}
                       dataSource={data3}
+                      size="small"
                     >
                       <Column
-                        title="Consumables"
+                        // title="Consumables"
+                        title="LAB SERVICES"
                         dataIndex="consumables"
                         key="consumables"
+                        width="70%"
                       />
                       <Column
-                        title="Consumables code"
+                        // title="Consumables code"
+                        title="DLL051"
                         dataIndex="consumablescode"
                         key="consumablescode"
                         width="10%"
                       />
                       <Column
-                        title="Unit"
+                        // title="Unit"
+                        title="1"
                         dataIndex="unit"
                         key="unit"
                         width="5%"
                       />
                       <Column
-                        title="Price"
+                        // title="Price"
+                        title="21"
                         dataIndex="price"
                         key="price"
                         width="5%"
                       />
-                      <Column
+                      {/* <Column
                         title="Lot Number"
                         dataIndex="lotnumber"
                         key="lotnumber"
                         width="15%"
-                      />
+                      /> */}
                       <Column
-                        width="15%"
+                        width="10%"
                         title={() => {
                           return (
                             <div>
-                              <Button type="primary" icon={<PlusOutlined />}>
+                              <Button type="primary" style={{ width: '90%' }}>
                                 Add
                               </Button>
                             </div>
@@ -580,10 +612,13 @@ const ProcedureTertiary: React.FC = () => {
                         }}
                         key="action"
                         render={() => (
-                          <Space size="middle">
-                            <a>Edit</a>
-                            <a>Delete</a>
-                          </Space>
+                          // <Space size="middle">
+                          //   {/* <a>Edit</a> */}
+                          //   <a>Delete</a>
+                          // </Space>
+                          <Button type="primary" style={{ width: '90%' }}>
+                            Delete
+                          </Button>
                         )}
                       />
                     </Table>
@@ -597,7 +632,7 @@ const ProcedureTertiary: React.FC = () => {
             <Col span={1}>
               <Text>Notes</Text>
             </Col>
-            <Col span={12} />
+            <Col span={15} />
             <Col>
               <Row>
                 <Button onClick={showModal2}>Care Plan</Button>
@@ -826,7 +861,8 @@ const ProcedureTertiary: React.FC = () => {
                         <CKEditor
                           style={{ width: '90%' }}
                           editor={ClassicEditor}
-                          data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
+                          // data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
+                          data="<div style='text-decoration: underline;'><strong>Complaint History:<br>(Dental/Social)<br><br><br>Examination Findings: <br>Investigation <br><br><br> Treatment:<br>Prescription<br>Next Visit<br><br><br>Patient Education:<br>Material</strong></div>"
                         />
                       </Panel>
                       <Panel
