@@ -149,7 +149,7 @@ const ProcedureTertiary: React.FC = () => {
               key="1"
               className="boldheader"
             >
-              <Image src={capture} style={{ height: 300 }} />
+              <Image src={capture} style={{ height: 200 }} />
             </Panel>
           </Collapse>
         </Col>
@@ -182,8 +182,8 @@ const ProcedureTertiary: React.FC = () => {
               <Option value="Print">Print</Option>
             </Select>
             <pre> </pre>
-            <Button style={{ width: '9%' }}>Prescribe Drug</Button>
-            <pre> </pre>
+            {/* <Button style={{ width: '9%' }}>Prescribe Drug</Button>
+            <pre> </pre> */}
             <Form
               labelCol={{ span: 0 }}
               wrapperCol={{ span: 200 }}
@@ -220,7 +220,15 @@ const ProcedureTertiary: React.FC = () => {
                       <Select style={{ width: '90%' }} />
                     </Form.Item>
                   </Col>
-                  <Col span={7}></Col>
+                  <Col span={7}>
+                    <Form.Item
+                      label="Visit Type"
+                      labelCol={{ span: 6 }}
+                      labelAlign={'left'}
+                    >
+                      <Select style={{ width: '90%' }} />
+                    </Form.Item>
+                  </Col>
                   <Col span={5}>
                     <Row>
                       <pre> </pre>
@@ -351,13 +359,13 @@ const ProcedureTertiary: React.FC = () => {
                     </Form.Item>
                   </Col>
                   <Col span={6}>
-                    <Form.Item
+                    {/* <Form.Item
                       label="Visit Type"
                       labelCol={{ span: 6 }}
                       labelAlign={'left'}
                     >
                       <Select style={{ width: '90%' }} />
-                    </Form.Item>
+                    </Form.Item> */}
                   </Col>
 
                   <Col span={1} />
@@ -418,7 +426,7 @@ const ProcedureTertiary: React.FC = () => {
                           key="action"
                           render={() => (
                             <Space size="middle">
-                              <a>Edit</a>
+                              {/* <a>Edit</a> */}
                               <a>Delete</a>
                             </Space>
                           )}

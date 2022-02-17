@@ -90,6 +90,22 @@ const Nurseform: React.FC = () => {
       price: '300',
       lotnumber: 'LOT00332211',
     },
+    {
+      key: '1',
+      consumables: 'Create and fix',
+      code: 'DLH013',
+      unit: '2',
+      price: '200',
+      lotnumber: 'LOT00332212',
+    },
+    {
+      key: '1',
+      consumables: 'Replace',
+      code: 'DLH014',
+      unit: '3',
+      price: '100',
+      lotnumber: 'LOT00332213',
+    },
   ];
   console.log(moment());
   return (
@@ -156,10 +172,10 @@ const Nurseform: React.FC = () => {
                   <Col>
                     <Form.Item
                       label="Time in"
-                      labelCol={{ span: 8 }}
+                      labelCol={{ span: 9 }}
                       labelAlign={'left'}
                     >
-                      <TimePicker format={format} />
+                      <TimePicker format={format} style={{ width: '110%' }} />
                     </Form.Item>
                   </Col>
                 </Row>
@@ -177,10 +193,10 @@ const Nurseform: React.FC = () => {
                   <Col>
                     <Form.Item
                       label="Time out"
-                      labelCol={{ span: 8 }}
+                      labelCol={{ span: 9 }}
                       labelAlign={'left'}
                     >
-                      <TimePicker format={format} />
+                      <TimePicker format={format} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                 </Row>
@@ -949,7 +965,7 @@ const Nurseform: React.FC = () => {
                   delete
                 </Button>
               </Row>
-              <TextArea style={{ height: 1000 }} />
+              <TextArea style={{ height: 1100 }} />
             </TabPane>
           </Tabs>
         </Col>
