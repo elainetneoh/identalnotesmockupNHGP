@@ -437,24 +437,28 @@ const ProcedureTertiary: React.FC = () => {
                           width="15%"
                           title={() => {
                             return (
-                              <div>
-                                <Button type="primary" style={{ width: '80%' }}>
-                                  Add
-                                </Button>
-                              </div>
+                              // <div>
+                              //   <Button  style={{ width: '80%' }}>
+                              //     Add
+                              //   </Button>
+                              // </div>
+                              <Space size="middle">
+                                <a>Add</a>
+                                <a>Delete</a>
+                              </Space>
                             );
                           }}
                           key="action"
                           render={() => (
-                            // <Space size="middle">
-                            //   {/* <a>Edit</a> */}
-                            //   <a >Delete</a>
-                            // </Space>
-                            <div>
-                              <Button type="primary" style={{ width: '80%' }}>
-                                Delete
-                              </Button>
-                            </div>
+                            <Space size="middle">
+                              <a>Add</a>
+                              <a>Delete</a>
+                            </Space>
+                            // <div>
+                            //   <Button  style={{ width: '80%' }}>
+                            //     Delete
+                            //   </Button>
+                            // </div>
                           )}
                         />
                       </Table>
@@ -529,12 +533,17 @@ const ProcedureTertiary: React.FC = () => {
                             return (
                               <div>
                                 {/* <Button type="primary" icon={<PlusOutlined />}> */}
-                                <Button
+                                {/* <Button
                                   type="primary"
                                   style={{ width: '100%' }}
                                 >
                                   Add
-                                </Button>
+                                </Button> */}
+
+                                <Space size="middle">
+                                  <a>Add</a>
+                                  <a>Delete</a>
+                                </Space>
                               </div>
                             );
                           }}
@@ -544,9 +553,13 @@ const ProcedureTertiary: React.FC = () => {
                             //   {/* <a>Edit</a> */}
                             //   <a>Delete</a>
                             // </Space>
-                            <Button type="primary" style={{ width: '100%' }}>
-                              Delete
-                            </Button>
+                            // <Button type="primary" style={{ width: '100%' }}>
+                            //   Delete
+                            // </Button>
+                            <Space size="middle">
+                              <a>Add</a>
+                              <a>Delete</a>
+                            </Space>
                           )}
                         />
                       </Table>
@@ -618,11 +631,15 @@ const ProcedureTertiary: React.FC = () => {
                         width="10%"
                         title={() => {
                           return (
-                            <div>
-                              <Button type="primary" style={{ width: '85%' }}>
-                                Add
-                              </Button>
-                            </div>
+                            // <div>
+                            //   <Button type="primary" style={{ width: '85%' }}>
+                            //     Add
+                            //   </Button>
+                            // </div>
+                            <Space size="middle">
+                              <a>Add</a>
+                              <a>Delete</a>
+                            </Space>
                           );
                         }}
                         key="action"
@@ -631,9 +648,13 @@ const ProcedureTertiary: React.FC = () => {
                           //   {/* <a>Edit</a> */}
                           //   <a>Delete</a>
                           // </Space>
-                          <Button type="primary" style={{ width: '85%' }}>
-                            Delete
-                          </Button>
+                          // <Button type="primary" style={{ width: '85%' }}>
+                          //   Delete
+                          // </Button>
+                          <Space size="middle">
+                            <a>Add</a>
+                            <a>Delete</a>
+                          </Space>
                         )}
                       />
                     </Table>
@@ -647,84 +668,134 @@ const ProcedureTertiary: React.FC = () => {
             <Col span={1}>
               <Text>Notes</Text>
             </Col>
-            <Col span={11} />
+            <Col span={10} />
             <Col span={12}>
               <Row>
                 <Button
-                  style={{ color: 'black', width: '13%' }}
+                  style={{ color: 'black', width: '18%' }}
                   onClick={showModaldepartment}
                 >
-                  Department
+                  Departmental Template
                 </Button>
 
                 <Modal
-                  title="Department"
+                  title="Template for Procedure"
                   visible={IsModaldepartmentVisible}
                   onOk={handleOkdepartment}
                   onCancel={handleCanceldepartment}
-                  width={600}
                   style={{ fontSize: 20 }}
+                  width={1300}
+                  bodyStyle={{ height: 600 }}
                 >
-                  <Card>
-                    <Row>
-                      <Text style={{ fontSize: 20 }}>
-                        <strong>i) END Template</strong>
+                  <Row>
+                    <Col>
+                      <Text>
+                        <Button>Append</Button>
                       </Text>
-                    </Row>
+                    </Col>
+                    <pre> </pre>
 
-                    <Row>
-                      <Text style={{ fontSize: 20 }}>
-                        <strong>ii) TOSP Template</strong>
-                      </Text>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Pre-Op Procedure</Text>
-                      </Col>
-                    </Row>
+                    <Col>
+                      <Button style={{ width: 80 }}>Insert</Button>
+                    </Col>
 
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>
-                          Procedure Description
-                        </Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Findings</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>
-                          Operative Procedure
-                        </Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>
-                          Post-Operative Instruction
-                        </Text>
-                      </Col>
-                    </Row>
-                  </Card>
+                    <pre> </pre>
+
+                    <Col>
+                      <Button>Overwrite</Button>
+                    </Col>
+                  </Row>
+
+                  <pre> </pre>
+
+                  <Row gutter={{ sm: 8 }}>
+                    <Col span={24}>
+                      <Form
+                        labelCol={{ span: 2 }}
+                        wrapperCol={{ span: 100 }}
+                        layout="horizontal"
+                      >
+                        <Form.Item
+                          label="Template Code"
+                          name="Template Code"
+                          labelCol={{ span: 3 }}
+                          labelAlign={'left'}
+                        >
+                          <Row>
+                            <Select
+                              style={{ width: '150%' }}
+                              defaultValue={{ value: 'TOSPTemplate' }}
+                            >
+                              <Option value="END">END Template</Option>
+                              <Option value="TOSPTemplate">
+                                TOSP Template
+                              </Option>
+                            </Select>
+
+                            {/* <Button
+                                type="primary"
+                                htmlType="submit"
+                                style={{ width: '10%' }}
+                              >
+                                Find
+                              </Button> */}
+                          </Row>
+                        </Form.Item>
+
+                        <CKEditor
+                          style={{ width: '90%' }}
+                          editor={ClassicEditor}
+                          // data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
+                          data="<div style='text-decoration: underline;'><strong>Pre-op Procedure: <br><br><br> Procedure Description: <br><br><br>Findings:<br><br><br>Operative Procedure:<br><Br><br>Post-Operative Instruction:</strong></div>"
+                        />
+                        <pre> </pre>
+
+                        <Form.Item
+                          label="Sort Order"
+                          name="Sort Order"
+                          labelCol={{ span: 2 }}
+                          labelAlign={'left'}
+                        >
+                          <Row>
+                            <Input
+                              style={{ width: '7%' }}
+                              placeholder="2"
+                            ></Input>
+
+                            <pre> </pre>
+                          </Row>
+                        </Form.Item>
+
+                        <Form.Item
+                          name="Sort Order"
+                          labelCol={{ span: 2 }}
+                          labelAlign={'left'}
+                        >
+                          <Row>
+                            <Col>
+                              {' '}
+                              <Button type="primary">New</Button>
+                            </Col>
+                            <pre> </pre>
+                            <Col>
+                              {' '}
+                              <Button type="primary">Save</Button>
+                            </Col>
+                            <pre> </pre>
+                            <Col>
+                              {' '}
+                              <Button type="primary">Delete</Button>
+                            </Col>
+                            <pre> </pre>
+                            <Col>
+                              {' '}
+                              <Button type="primary">Cancel</Button>
+                            </Col>
+                          </Row>
+                        </Form.Item>
+                      </Form>
+                    </Col>
+                  </Row>
                 </Modal>
 
                 <pre style={{ fontSize: '30' }}> </pre>
@@ -930,7 +1001,9 @@ const ProcedureTertiary: React.FC = () => {
                   Addendum
                 </Button>
                 <pre> </pre>
-                <Button>Template</Button>
+                <Button style={{ color: 'black', width: '12%' }}>
+                  Template
+                </Button>
               </Row>
             </Col>
           </Row>
@@ -970,7 +1043,7 @@ const ProcedureTertiary: React.FC = () => {
                           style={{ width: '90%' }}
                           editor={ClassicEditor}
                           // data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
-                          data="<div style='text-decoration: underline;'><strong>Complaint History:<br>(Dental/Social)<br><br><br>Examination Findings: <br>Investigation <br><br><br> Treatment:<br>Prescription<br>Next Visit<br><br><br>Patient Education:<br>Material</strong></div>"
+                          data="<div style='text-decoration: underline;'><strong>Complaint History(Dental/Social): <br><br><br>Examination Findings Investigation: <br><br><br> Treatment/Prescription/Next Visit:<br><br><br>Patient Education Material:</strong></div>"
                         />
                       </Panel>
                       <Panel

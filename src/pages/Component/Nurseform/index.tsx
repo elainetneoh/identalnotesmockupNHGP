@@ -255,18 +255,16 @@ const Nurseform: React.FC = () => {
                     width="5%"
                   />
                   <Column
-                    width="5%"
+                    width="1%"
                     title={() => {
                       return (
-                        <div>
-                          <Button type="primary">Add</Button>
-                        </div>
+                        <div>{/* <Button type="primary">Add</Button> */}</div>
                       );
                     }}
                     key="action"
                     render={() => (
                       <Space size="middle">
-                        {/* <a>Edit</a> */}
+                        <a>Add </a>
                         <a>Delete</a>
                       </Space>
                     )}

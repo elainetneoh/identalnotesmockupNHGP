@@ -1242,7 +1242,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             layout="vertical"
           >
             <Form.Item label="Comment" name="Comment">
-              <TextArea style={{ height: 470 }} />
+              <TextArea style={{ height: 440 }} />
             </Form.Item>
           </Form>
         </Col>
@@ -1275,7 +1275,8 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             </Col>
           </Row>
         </Col>
-        <Col span={12}>
+
+        <Col span={9}>
           <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
             <Col>
               <Button htmlType="submit">Blank Form</Button>
