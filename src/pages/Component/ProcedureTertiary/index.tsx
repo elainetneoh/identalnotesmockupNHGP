@@ -141,6 +141,20 @@ const ProcedureTertiary: React.FC = () => {
     setIsModalVisible2(false);
   };
 
+  const [IsModaldepartmentVisible, setIsModaldepartmentVisible] =
+    useState(false);
+  const showModaldepartment = () => {
+    setIsModaldepartmentVisible(true);
+  };
+
+  const handleOkdepartment = () => {
+    setIsModaldepartmentVisible(false);
+  };
+
+  const handleCanceldepartment = () => {
+    setIsModaldepartmentVisible(false);
+  };
+
   console.log(moment());
   return (
     <div className={style.ProcedureTer}>
@@ -194,7 +208,7 @@ const ProcedureTertiary: React.FC = () => {
               layout="horizontal"
             >
               <Form.Item label="Case No">
-                <Input style={{ width: '129%' }} />
+                <Input style={{ width: '87%' }} />
               </Form.Item>
             </Form>
           </Row>
@@ -605,7 +619,7 @@ const ProcedureTertiary: React.FC = () => {
                         title={() => {
                           return (
                             <div>
-                              <Button type="primary" style={{ width: '90%' }}>
+                              <Button type="primary" style={{ width: '85%' }}>
                                 Add
                               </Button>
                             </div>
@@ -617,7 +631,7 @@ const ProcedureTertiary: React.FC = () => {
                           //   {/* <a>Edit</a> */}
                           //   <a>Delete</a>
                           // </Space>
-                          <Button type="primary" style={{ width: '90%' }}>
+                          <Button type="primary" style={{ width: '85%' }}>
                             Delete
                           </Button>
                         )}
@@ -636,9 +650,78 @@ const ProcedureTertiary: React.FC = () => {
             <Col span={11} />
             <Col span={12}>
               <Row>
-                <Button style={{ color: 'black', width: '13%' }}>
+                <Button
+                  style={{ color: 'black', width: '13%' }}
+                  onClick={showModaldepartment}
+                >
                   Department
                 </Button>
+
+                <Modal
+                  title="Department"
+                  visible={IsModaldepartmentVisible}
+                  onOk={handleOkdepartment}
+                  onCancel={handleCanceldepartment}
+                  width={600}
+                  style={{ fontSize: 20 }}
+                >
+                  <Card>
+                    <Row>
+                      <Text style={{ fontSize: 20 }}>i) END Template</Text>
+                    </Row>
+
+                    <Row>
+                      <Text style={{ fontSize: 20 }}>ii) TOSP Template</Text>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Pre-Op Procedure</Text>
+                      </Col>
+                    </Row>
+
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Procedure Description
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Findings</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Operative Procedure
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Post-Operative Instruction
+                        </Text>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Modal>
 
                 <pre style={{ fontSize: '30' }}> </pre>
                 <Button

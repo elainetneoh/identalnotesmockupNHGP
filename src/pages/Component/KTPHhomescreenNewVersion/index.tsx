@@ -662,8 +662,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     <Space direction="vertical">
                       <Button
                         style={{ width: 120 }}
+                        className={fall ? style.fallrish : style.nonfallrisk}
                         type="ghost"
-                        danger
+                        // danger
                         htmlType="submit"
                         onClick={() => {
                           setPatientAlertModalVisible(true);

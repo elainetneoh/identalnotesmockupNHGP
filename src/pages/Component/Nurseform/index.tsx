@@ -106,6 +106,22 @@ const Nurseform: React.FC = () => {
       price: '100',
       lotnumber: 'LOT00332213',
     },
+    {
+      key: '1',
+      consumables: 'Crown',
+      code: 'DLH014',
+      unit: '4',
+      price: '700',
+      lotnumber: 'LOT00332214',
+    },
+    {
+      key: '1',
+      consumables: 'Simple',
+      code: 'DLH014',
+      unit: '5',
+      price: '800',
+      lotnumber: 'LOT00332215',
+    },
   ];
   console.log(moment());
   return (
@@ -243,9 +259,7 @@ const Nurseform: React.FC = () => {
                     title={() => {
                       return (
                         <div>
-                          <Button type="primary" icon={<PlusOutlined />}>
-                            Add
-                          </Button>
+                          <Button type="primary">Add</Button>
                         </div>
                       );
                     }}
@@ -965,7 +979,7 @@ const Nurseform: React.FC = () => {
                   delete
                 </Button>
               </Row>
-              <TextArea style={{ height: 1100 }} />
+              <TextArea style={{ height: 1200 }} />
             </TabPane>
           </Tabs>
         </Col>
