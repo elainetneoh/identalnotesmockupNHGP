@@ -650,10 +650,10 @@ const ProcedureTertiary: React.FC = () => {
               {/* <Divider /> */}
 
               <Row>
-                <Col span={21}>
+                <Col span={17}>
                   <Form.Item label="Xray/Lab/Consumables">
                     <Table
-                      style={{ width: '80%' }}
+                      // style={{ width: '80%' }}
                       pagination={false}
                       dataSource={data3}
                       size="small"
@@ -1108,7 +1108,7 @@ const ProcedureTertiary: React.FC = () => {
                           style={{ width: '90%' }}
                           editor={ClassicEditor}
                           // data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
-                          data="<div style='text-decoration: underline;'><strong>Complaint History(Dental/Social): <br><br><br>Examination Findings Investigation: <br><br><br> Treatment/Prescription/Next Visit:<br><br><br>Patient Education Material:</strong></div>"
+                          data="<div   style='height:100px;background-color:red'><strong>Complaint/History(Dental/Social): <br><br><br>Examination/ Findings /Investigation: <br><br><br> Diagnosis/Treatment/Prescription/Next Visit:<br><br><br>Patient Education Material:</strong></div>"
                         />
                       </Panel>
                       <Panel

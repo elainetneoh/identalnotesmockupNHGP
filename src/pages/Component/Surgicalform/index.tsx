@@ -133,7 +133,7 @@ const Surgicalform: React.FC = () => {
               </Form>
             </Col>
           </Row>
-          <Row>
+          {/* <Row>
             <Col span={24}>
               <Divider orientation="left">Preoperative Review</Divider>
               <Form
@@ -178,7 +178,7 @@ const Surgicalform: React.FC = () => {
                 </Form.Item>
               </Form>
             </Col>
-          </Row>
+          </Row> */}
           <Row>
             <Col span={24}>
               <Divider orientation="left">Operative Details</Divider>
@@ -214,7 +214,7 @@ const Surgicalform: React.FC = () => {
           </Row>
           <Row>
             <Col span={24}>
-              <Divider orientation="left">Operators</Divider>
+              {/* <Divider orientation="left">Operators</Divider> */}
               <Form
                 labelCol={{ span: 0 }}
                 wrapperCol={{ span: 200 }}
@@ -315,16 +315,22 @@ const Surgicalform: React.FC = () => {
           </Row>
           <Row>
             <Col span={24}>
-              <Divider orientation="left">Operation Details</Divider>
+              <Divider orientation="left">Operation Description</Divider>
               <Form
                 labelCol={{ span: 0 }}
                 wrapperCol={{ span: 200 }}
                 layout="vertical"
               >
-                <Form.Item labelAlign={'left'} label="Operation">
+                <Form.Item labelAlign={'left'} label="">
                   <Table style={{ width: '90%' }} pagination={false}>
-                    <Column
+                    {/* <Column
                       title="Operation"
+                      dataIndex="operation"
+                      key="operation"
+                    /> */}
+
+                    <Column
+                      title="Description"
                       dataIndex="operation"
                       key="operation"
                     />
@@ -335,15 +341,15 @@ const Surgicalform: React.FC = () => {
                       key="code"
                       width="10%"
                     />
-                    <Column
+                    {/* <Column
                       title="Table"
                       dataIndex="table"
                       key="table"
                       width="10%"
-                    />
+                    /> */}
                   </Table>
                 </Form.Item>
-                <Form.Item labelAlign={'left'} label="Operation description">
+                {/* <Form.Item labelAlign={'left'} label="Operation description">
                   <TextArea style={{ height: 100, width: '90%' }} />
                 </Form.Item>
                 <Form.Item labelAlign={'left'} label="Findings">
@@ -351,13 +357,13 @@ const Surgicalform: React.FC = () => {
                 </Form.Item>
                 <Form.Item labelAlign={'left'} label="Operative procedure">
                   <TextArea style={{ height: 100, width: '90%' }} />
-                </Form.Item>
+                </Form.Item> */}
               </Form>
             </Col>
           </Row>
           <Row>
             <Col span={24}>
-              <Divider orientation="left">Post-Operative Medication</Divider>
+              {/* <Divider orientation="left">Post-Operative Medication</Divider>
               <Form
                 labelCol={{ span: 0 }}
                 wrapperCol={{ span: 200 }}
@@ -365,6 +371,17 @@ const Surgicalform: React.FC = () => {
               >
                 <Form.Item labelAlign={'left'} label="Medication">
                   <TextArea style={{ height: 100, width: '90%' }} />
+                </Form.Item>
+              </Form> */}
+
+              <Divider orientation="left">Operative Procedure</Divider>
+              <Form
+                labelCol={{ span: 0 }}
+                wrapperCol={{ span: 200 }}
+                layout="vertical"
+              >
+                <Form.Item labelAlign={'left'} label="">
+                  <TextArea style={{ height: 200, width: '90%' }} />
                 </Form.Item>
               </Form>
             </Col>
@@ -386,7 +403,7 @@ const Surgicalform: React.FC = () => {
         </Col>
 
         <Col span={3}>
-          <Tabs tabPosition="bottom" style={{ height: 2000 }}>
+          <Tabs tabPosition="bottom" style={{ height: 1500 }}>
             <TabPane tab="Care Plan" key="3">
               <Row>
                 <Button type="primary" icon={<PlusOutlined />}>
@@ -397,7 +414,7 @@ const Surgicalform: React.FC = () => {
                   delete
                 </Button>
               </Row>
-              <TextArea style={{ height: 1900 }} />
+              <TextArea style={{ height: 1400 }} />
             </TabPane>
             <TabPane tab="Image" key="1">
               <Row>
@@ -409,7 +426,7 @@ const Surgicalform: React.FC = () => {
                   delete
                 </Button>
               </Row>
-              <TextArea style={{ height: 1900 }} />
+              <TextArea style={{ height: 1400 }} />
             </TabPane>
             <TabPane tab="Instrument" key="2">
               <Row>
@@ -421,7 +438,7 @@ const Surgicalform: React.FC = () => {
                   delete
                 </Button>
               </Row>
-              <TextArea style={{ height: 1900 }} />
+              <TextArea style={{ height: 1400 }} />
             </TabPane>
           </Tabs>
         </Col>
