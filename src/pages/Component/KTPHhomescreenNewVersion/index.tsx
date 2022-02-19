@@ -146,13 +146,13 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Input style={{ width: '55%' }} />
                 <pre> </pre>
 
-                <Input style={{ width: '10%' }} placeholder="Lab" />
-                <pre> </pre>
+                {/* <Input style={{ width: '10%' }} placeholder="Lab" />
+                <pre> </pre> */}
 
                 <Button
                   // type="primary"
                   htmlType="submit"
-                  style={{ width: '16%' }}
+                  style={{ width: '21%' }}
                 >
                   Generate
                 </Button>
@@ -160,7 +160,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Button
                   // type="primary"
                   htmlType="submit"
-                  style={{ width: '15%' }}
+                  style={{ width: '21%' }}
                 >
                   UIN Label
                 </Button>
@@ -222,6 +222,69 @@ const KTPHhomescreenNewVersion: React.FC = () => {
 
             {/* <Row gutter={{ xs: 4, sm: 16, md: 24, lg: 32 }}> */}
             {/* <Col span={12}> */}
+
+            <Form.Item
+              label="Referral Source"
+              name="ReferralSource"
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Row>
+                <Select defaultValue="TTSH" style={{ width: '30%' }}>
+                  <Option value="TTHS">TTHS</Option>
+                  <Option value="KTPH">KTPH</Option>
+                </Select>
+
+                <pre> </pre>
+
+                <Form.Item
+                  label="Document Type"
+                  name="DocumentType"
+                  labelCol={{ span: 6 }}
+                  style={{ width: '65%' }}
+                  labelAlign={'left'}
+                >
+                  <Select defaultValue="Select one" style={{ width: '50%' }}>
+                    <Option value="SC">SC</Option>
+                    <Option value="PR">PR</Option>
+                    <Option value="Non-residence">Non-residence</Option>
+                    <Option value="PG">PG</Option>
+                    <Option value="MG">MG</Option>
+                  </Select>
+                </Form.Item>
+              </Row>
+            </Form.Item>
+
+            <Form.Item
+              label="Gender"
+              name="Gender"
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Row>
+                <Select defaultValue="Select one" style={{ width: '30%' }}>
+                  <Option value="Male">M</Option>
+                  <Option value="Female">F</Option>
+                </Select>
+
+                <pre> </pre>
+
+                <Form.Item
+                  label="CHAS"
+                  name="CHAS"
+                  labelCol={{ span: 6 }}
+                  style={{ width: '65%' }}
+                  labelAlign={'left'}
+                >
+                  <Select defaultValue="Select one" style={{ width: '50%' }}>
+                    <Option value="NIL">NIL</Option>
+                    <Option value="Blue">Blue</Option>
+                    <Option value="Orange">Orange</Option>
+                  </Select>
+                </Form.Item>
+              </Row>
+            </Form.Item>
+
             <Form.Item
               label="Date of Birth"
               name="Dateofbirth"
@@ -419,36 +482,6 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 </Select>
               </Form.Item> */}
             </Form.Item>
-            <Form.Item
-              label="Referral Source"
-              name="ReferralSource"
-              labelCol={{ span: 4 }}
-              labelAlign={'left'}
-            >
-              <Row>
-                <Select defaultValue="TTSH" style={{ width: '30%' }}>
-                  <Option value="TTHS">TTHS</Option>
-                  <Option value="KTPH">KTPH</Option>
-                </Select>
-
-                <pre> </pre>
-
-                <Button htmlType="submit" style={{ width: '30%' }}>
-                  Refresh CMIS
-                </Button>
-              </Row>
-            </Form.Item>
-            <Form.Item
-              label="Gender"
-              name="Gender"
-              labelCol={{ span: 4 }}
-              labelAlign={'left'}
-            >
-              <Select defaultValue="Select one" style={{ width: '30%' }}>
-                <Option value="Male">M</Option>
-                <Option value="Female">F</Option>
-              </Select>
-            </Form.Item>
 
             <Form.Item
               label="Nationality"
@@ -462,25 +495,25 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             {/* <Row gutter={{ xs: 4, sm: 16, md: 24, lg: 32 }}>
             <Col span={12}> */}
 
-            <Form.Item
+            {/* <Form.Item
               label="Document Type"
               name="DocumentType"
               labelCol={{ span: 4 }}
               labelAlign={'left'}
-            >
-              <Select defaultValue="Select one" style={{ width: '30%' }}>
+            > */}
+            {/* <Select defaultValue="Select one" style={{ width: '30%' }}>
                 <Option value="SC">SC</Option>
                 <Option value="PR">PR</Option>
                 <Option value="Non-residence">Non-residence</Option>
                 <Option value="PG">PG</Option>
                 <Option value="MG">MG</Option>
-              </Select>
-              {/* <span> </span>
+              </Select> */}
+            {/* <span> </span>
                   <Input style={{ width: '49%' }} placeholder="CHAS"></Input> */}
-            </Form.Item>
+            {/* </Form.Item> */}
             {/* </Col> */}
 
-            <Form.Item
+            {/* <Form.Item
               label="CHAS"
               name="CHAS"
               labelCol={{ span: 4 }}
@@ -491,7 +524,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Option value="Blue">Blue</Option>
                 <Option value="Orange">Orange</Option>
               </Select>
-            </Form.Item>
+            </Form.Item> */}
 
             {/* <Row>
                   <Col span={14}> */}
@@ -529,7 +562,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               labelAlign={'left'}
             >
               <Row>
-                <Input style={{ width: '91%' }} />
+                <Input style={{ width: '90%' }} />
                 <pre> </pre>
                 <Button htmlType="submit">SMS</Button>
               </Row>
@@ -602,6 +635,29 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             layout="horizontal"
           >
             <Divider orientation="left">Alerts</Divider>
+
+            {/* <Row>
+              <Col span={20}></Col>
+
+              <Col span={3}>
+            <Button htmlType="submit" style={{ width: '130%' }}>
+                  Refresh CMIS
+                </Button>
+
+                </Col>
+            </Row> */}
+
+            <Form.Item
+
+            // labelCol={{ span: 4 }}
+            // labelAlign={'right'}
+            >
+              <Col offset={20}>
+                <Button htmlType="submit" style={{ width: '100%' }}>
+                  Refresh CMIS
+                </Button>
+              </Col>
+            </Form.Item>
 
             <Row gutter={{ xs: 4, sm: 8 }}>
               <Col span={24}>
@@ -736,13 +792,66 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   </Col>
 
                   <Col span={20}>
-                    <TextArea style={{ height: 300 }}></TextArea>
+                    <TextArea style={{ height: 250 }}></TextArea>
                   </Col>
                 </Row>
 
                 <pre></pre>
               </Col>
             </Row>
+
+            <Form.Item name="Comment">
+              {/* <Button htmlType="submit">New/Retrieve Patient</Button>
+           
+            <span> </span>
+              <Button
+                //type="primary"
+                // style={{ background: 'orange', border: 'orange' }}
+                htmlType="submit"
+              >
+                Examine
+              </Button>
+
+              <span> </span>
+          
+              <Button htmlType="submit">Search Patient</Button>
+         
+             <pre> </pre>
+              
+              <Button 
+                htmlType="submit"
+                style={{ width: '10%', background: 'orange' }}
+              >
+                Audit
+              </Button>
+               */}
+
+              <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
+                <Col>
+                  <Button htmlType="submit">New/Retrieve Patient</Button>
+                </Col>
+                <Col>
+                  <Button
+                    //type="primary"
+                    // style={{ background: 'orange', border: 'orange' }}
+                    htmlType="submit"
+                  >
+                    Examine
+                  </Button>
+                </Col>
+                <Col>
+                  <Button htmlType="submit">Search Patient</Button>
+                </Col>
+                <Col offset={11}>
+                  <Button
+                    htmlType="submit"
+                    style={{ width: '130%', background: 'orange' }}
+                  >
+                    Audit
+                  </Button>
+                </Col>
+              </Row>
+            </Form.Item>
           </Form>
         </Col>
         、<Col span={0} />
@@ -1242,14 +1351,25 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             layout="vertical"
           >
             <Form.Item label="Comment" name="Comment">
-              <TextArea style={{ height: 440 }} />
+              <TextArea style={{ height: 370 }} />
+            </Form.Item>
+
+            <Form.Item name="Comment">
+              <Button>Blank Form</Button>
+              <span> </span>
+              <Button htmlType="submit">Print</Button>
+              <span> </span>
+              <Button htmlType="submit">Save</Button>
+              <span> </span>
+              <Button htmlType="submit">Cancel</Button>
             </Form.Item>
           </Form>
         </Col>
       </Row>
+
       <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
-        <Col span={12}>
-          <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
+        <Col span={10}>
+          {/* <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
             <Col>
               <Button htmlType="submit">New/Retrieve Patient</Button>
             </Col>
@@ -1265,7 +1385,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             <Col>
               <Button htmlType="submit">Search Patient</Button>
             </Col>
-            <Col offset={9}>
+            <Col offset={10}>
               <Button
                 htmlType="submit"
                 style={{ width: '130%', background: 'orange' }}
@@ -1273,10 +1393,12 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 Audit
               </Button>
             </Col>
-          </Row>
+          </Row> */}
         </Col>
 
-        <Col span={9}>
+        <Col span={2}></Col>
+
+        {/* <Col span={9}>
           <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
             <Col>
               <Button htmlType="submit">Blank Form</Button>
@@ -1291,7 +1413,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <Button htmlType="submit">Cancel</Button>
             </Col>
           </Row>
-        </Col>
+        </Col> */}
       </Row>
     </div>
   );
