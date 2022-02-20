@@ -233,6 +233,7 @@ const Nurseform: React.FC = () => {
                   style={{ width: '99%' }}
                   pagination={false}
                   dataSource={data3}
+                  size="small"
                 >
                   <Column
                     title="Consumables"
@@ -462,7 +463,7 @@ const Nurseform: React.FC = () => {
                                 <>
                                   <div>Allergy</div>
                                   <div>
-                                    <TextArea />
+                                    <TextArea style={{ height: 150 }} />
                                   </div>
                                 </>
                               }
@@ -486,7 +487,7 @@ const Nurseform: React.FC = () => {
                                 <>
                                   <div>Post-op concern and management </div>
                                   <div>
-                                    <TextArea />
+                                    <TextArea style={{ height: 150 }} />
                                   </div>
                                 </>
                               }
@@ -501,15 +502,21 @@ const Nurseform: React.FC = () => {
                         <Text style={{ fontSize: 20 }}> Recorded by:</Text>
 
                         <Row>
-                          <Input style={{ width: '60%' }} />
+                          <Input style={{ width: '65%' }} />
                           <Text style={{ fontSize: 20 }}>@</Text>
-                          <TimePicker style={{ width: '30%' }} />
+                          <TimePicker style={{ width: '32%' }} />
                         </Row>
                         <p />
                         <Row>
-                          <Col span={19} />
+                          <Col span={21} />
                           <Col>
-                            <Button style={{ fontSize: 20, height: '40px' }}>
+                            <Button
+                              style={{
+                                fontSize: 20,
+                                height: '40px',
+                                width: '100%',
+                              }}
+                            >
                               Export
                             </Button>
                           </Col>

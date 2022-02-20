@@ -49,6 +49,17 @@ function buttonClick(e: any) {
   e.stopPropagation();
 }
 
+const children = [];
+for (let i = 11; i < 19; i++) {
+  children.push(<Option key={i}>{i}</Option>);
+}
+
+function handleChange(value: any) {
+  console.log(`selected ${value}`);
+  const z = `${value}`;
+  console.log({ z });
+}
+
 const data1 = [
   {
     key: '1',
@@ -60,41 +71,21 @@ const data2 = [
   {
     key: '1',
     // procedure: 'Consultation',
-    procedure: 'PERIAPICAL SURGERY(Tooth :17,19,22)',
+    procedure: 'PERIAPICAL SURGERY (Tooth :17, 19, 22) ',
     procedurecode: 'DLA001',
     unit: '1',
     price: '35',
     toothnumber: (
-      <select>
-        <option>17</option>
-        <option value="11">11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-        <option>16</option>
-        <option>18</option>
-        <option>27</option>
-        <option>28</option>
-        <option>29</option>
-        <option>30</option>
-        <option>31</option>
-        <option>32</option>
-        <option>33</option>
-        <option>34</option>
-        <option>35</option>
-        <option>36</option>
-        <option>37</option>
-        <option>38</option>
-        <option>41</option>
-        <option>42</option>
-        <option>43</option>
-        <option>44</option>
-        <option>45</option>
-        <option>46</option>
-        <option>47</option>
-        <option>48</option>
-      </select>
+      <Select
+        mode="multiple"
+        allowClear
+        style={{ width: '100%' }}
+        placeholder="Please select"
+        defaultValue={['17', '19', '22']}
+        onChange={handleChange}
+      >
+        {children}
+      </Select>
     ),
   },
   // {
@@ -186,6 +177,15 @@ const ProcedureTertiary: React.FC = () => {
     setIsModaldepartmentVisible(false);
   };
 
+  const children = [];
+  for (let i = 11; i < 19; i++) {
+    children.push(<Option key={i}>{i}</Option>);
+  }
+
+  function handleChange(value: any) {
+    console.log(`selected ${value}`);
+  }
+
   console.log(moment());
   return (
     <div className={style.ProcedureTer}>
@@ -242,7 +242,7 @@ const ProcedureTertiary: React.FC = () => {
               layout="horizontal"
             >
               <Form.Item label="Case No">
-                <Input style={{ width: '87%' }} />
+                <Input style={{ width: '78%' }} />
               </Form.Item>
             </Form>
           </Row>
@@ -275,10 +275,10 @@ const ProcedureTertiary: React.FC = () => {
                   <Col span={7}>
                     <Form.Item
                       label="Visit Type"
-                      labelCol={{ span: 4 }}
+                      labelCol={{ span: 5 }}
                       labelAlign={'left'}
                     >
-                      <Select style={{ width: '70%' }} />
+                      <Select style={{ width: '64%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={5}>
@@ -411,13 +411,13 @@ const ProcedureTertiary: React.FC = () => {
                     </Form.Item>
                   </Col>
                   <Col span={6}>
-                    {/* <Form.Item
-                      label="Visit Type"
+                    <Form.Item
+                      label="Dental Assistant"
                       labelCol={{ span: 6 }}
                       labelAlign={'left'}
                     >
-                      <Select style={{ width: '90%' }} />
-                    </Form.Item> */}
+                      <Select style={{ width: '78%' }} />
+                    </Form.Item>
                   </Col>
 
                   <Col span={1} />
@@ -500,20 +500,20 @@ const ProcedureTertiary: React.FC = () => {
                   </Col>
 
                   <Col span={1}></Col>
-                  <Col span={4}>
+                  <Col span={3}>
                     <Form.Item
                       label="Time in"
-                      labelCol={{ span: 8 }}
+                      labelCol={{ span: 7 }}
                       labelAlign={'left'}
                     >
-                      <TimePicker format={format} />
+                      <TimePicker format={format} style={{ width: '100%' }} />
                     </Form.Item>
                     <Form.Item
                       label="Time Out"
-                      labelCol={{ span: 8 }}
+                      labelCol={{ span: 7 }}
                       labelAlign={'left'}
                     >
-                      <TimePicker format={format} />
+                      <TimePicker format={format} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                 </Row>
@@ -530,40 +530,20 @@ const ProcedureTertiary: React.FC = () => {
                         <Column
                           //  title="Tooth No."
                           title={
-                            <select>
-                              <option value="END">11</option>
-                              <option>12</option>
-                              <option>13</option>
-                              <option>14</option>
-                              <option>15</option>
-                              <option>16</option>
-                              <option>17</option>
-                              <option>18</option>
-                              <option>27</option>
-                              <option>28</option>
-                              <option>29</option>
-                              <option>30</option>
-                              <option>31</option>
-                              <option>32</option>
-                              <option>33</option>
-                              <option>34</option>
-                              <option>35</option>
-                              <option>36</option>
-                              <option>37</option>
-                              <option>38</option>
-                              <option>41</option>
-                              <option>42</option>
-                              <option>43</option>
-                              <option>44</option>
-                              <option>45</option>
-                              <option>46</option>
-                              <option>47</option>
-                              <option>48</option>
-                            </select>
+                            <Select
+                              mode="multiple"
+                              allowClear
+                              style={{ width: '100%' }}
+                              placeholder="Please select"
+                              defaultValue={['11']}
+                              onChange={handleChange}
+                            >
+                              {children}
+                            </Select>
                           }
                           dataIndex="toothnumber"
                           key="toothnumber"
-                          width="5%"
+                          width="25%"
                         />
                         <Column
                           // title="Procedure"
@@ -1131,7 +1111,7 @@ const ProcedureTertiary: React.FC = () => {
                         />
                       </Panel>
 
-                      <Panel
+                      {/* <Panel
                         header="CarePlan"
                         key="1"
                         className="boldheader"
@@ -1150,7 +1130,7 @@ const ProcedureTertiary: React.FC = () => {
                           data="<br></br>"
                           //data="<div style='text-decoration: underline;'><strong>Complaint/History(Dental / Social): <br><br>Examination/Findings/Investigations: <br><br>Diagnosis/Treatment/Prescription/Next Visit: <br><br>Patient Education Material: <br></strong></div>"
                         />
-                      </Panel>
+                      </Panel> */}
                     </Collapse>
                   </div>
                 </Form.Item>

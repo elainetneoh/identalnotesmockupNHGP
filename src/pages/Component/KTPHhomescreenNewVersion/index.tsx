@@ -96,6 +96,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
     setEDDDateVisible(true);
     setSignatureVisible(false);
   };
+  const divStyle = { color: 'blue' };
 
   return (
     <div className={style.KTPHhome}>
@@ -842,13 +843,18 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Col>
                   <Button htmlType="submit">Search Patient</Button>
                 </Col>
-                <Col offset={11}>
-                  <Button
+                <Col offset={9}>
+                  {/* <Button
                     htmlType="submit"
                     style={{ width: '130%', background: 'orange' }}
                   >
                     Audit
-                  </Button>
+                  </Button> */}
+
+                  <Select defaultValue="DA" style={{ width: '117%' }}>
+                    <Option value="DA">Document Audit</Option>
+                    <Option value="XA">Xray Audit</Option>
+                  </Select>
                 </Col>
               </Row>
             </Form.Item>
@@ -1229,21 +1235,27 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       {' '}
                       <Button
                         size="large"
-                        style={{ width: '60%' }}
+                        style={{
+                          width: '60%',
+                          backgroundColor: isPregnantConsentSigned
+                            ? 'red'
+                            : 'white',
+                        }}
                         onClick={() => {
                           setPregnantModalVisible(true);
                         }}
                       >
                         {isPregnantConsentSigned
-                          ? 'Pregnant (Yes) (Signed)'
-                          : 'Pregnancy'}
+                          ? 'Pregnancy'
+                          : // ? 'Pregnancy '
+                            'Pregnancy'}
                       </Button>
                       <Modal
                         visible={pregnantModalVisible}
                         title="Pregnancy"
                         onOk={() => {
                           setPregnantModalVisible(false);
-                          setIsPregnantConsentSigned(true);
+                          //  setIsPregnantConsentSigned(true);
                         }}
                         width={'30%'}
                       >
@@ -1252,13 +1264,26 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           <Col span={12}>
                             <Radio.Group buttonStyle="solid">
                               <Radio.Button
-                                onClick={showwEDD}
+                                onClick={() => {
+                                  showwEDD();
+                                  setIsPregnantConsentSigned(true);
+                                }}
+                                //  onClick={() =>{ setIsPregnantConsentSigned(true);setEDDDateVisible(false);
+                                // setSignatureVisible(true);}}
                                 type="primary"
                                 value={true}
                               >
                                 Yes
                               </Radio.Button>
-                              <Radio.Button value={false} onClick={noshowwEDD}>
+                              <Radio.Button
+                                value={false}
+                                onClick={() => {
+                                  noshowwEDD();
+                                  setIsPregnantConsentSigned(false);
+                                }}
+                              >
+                                {/* //  onClick={() =>{ setIsPregnantConsentSigned(false);setEDDDateVisible(true); */}
+                                {/* //      setSignatureVisible(false);}}> */}
                                 No
                               </Radio.Button>
                             </Radio.Group>
