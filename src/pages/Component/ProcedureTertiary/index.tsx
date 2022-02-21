@@ -242,7 +242,7 @@ const ProcedureTertiary: React.FC = () => {
               layout="horizontal"
             >
               <Form.Item label="Case No">
-                <Input style={{ width: '78%' }} />
+                <Input style={{ width: '65%' }} />
               </Form.Item>
             </Form>
           </Row>
