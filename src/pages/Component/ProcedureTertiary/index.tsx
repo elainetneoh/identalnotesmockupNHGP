@@ -32,8 +32,8 @@ import moment from 'moment';
 // @ts-ignore
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 // @ts-ignore
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-//import Editor from '@medisys/ckeditor5-custom-build';
+//import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Editor from '@medisys/ckeditor5-custom-build';
 // import {Highlight} from '@ckeditor/ckeditor5-highlight'
 import { Divider } from 'antd';
 import { Modal, Image } from 'antd';
@@ -791,7 +791,7 @@ const ProcedureTertiary: React.FC = () => {
 
                         <CKEditor
                           style={{ width: '90%' }}
-                          editor={ClassicEditor}
+                          editor={Editor}
                           // data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
                           data="<div style='  background-color: rgb(25, 156, 25)'><strong>Pre-op Procedure: <br><br><br> Procedure Description: <br><br><br>Findings:<br><br><br>Operative Procedure:<br><Br><br>Post-Operative Instruction:</strong></div>"
                         />
@@ -1087,10 +1087,26 @@ const ProcedureTertiary: React.FC = () => {
                         }
                       >
                         <CKEditor
-                          style={{ width: '90%' }}
-                          editor={ClassicEditor}
+                          //style={{ width: '90%'}}
+
+                          editor={Editor}
+                          // config={{
+                          //   toolbar: [
+                          //     'bold',
+                          //     'italic',
+                          //     'underline',
+                          //     'bulletedList',
+                          //     'numberedList',
+                          //     'link',
+                          //     '|',
+                          //     'imageUpload',
+                          //     'highlight'
+                          //   ],
+
+                          // }}
                           // data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
-                          data="<strong>Complaint/History(Dental/Social): <br><br><br>Examination/ Findings /Investigation: <br><br><br> Diagnosis/Treatment/Prescription/Next Visit:<br><br><br>Patient Education Material:"
+                          // data= "<p>Complaint/History(Dental/Social): <br><br><br>Examination/ Findings /Investigation: <br><br><br> Diagnosis/Treatment/Prescription/Next Visit:<br><br><br>Patient Education Material:</p>"
+                          data='<p><span style="background-color:hsl(180, 75%, 60%);">Complaint/History(Dental/Social):&nbsp;</span><br><br><br><span style="background-color:hsl(60, 75%, 60%);">Examination/ Findings /Investigation:&nbsp;</span><br><br><br><span style="background-color:hsl(90, 75%, 60%);">Diagnosis/Treatment/Prescription/Next Visit:</span><br><br><br><span style="background-color:hsl(30, 75%, 60%);">Patient Education Material:<br><br></span></p>'
                         />
                       </Panel>
                       <Panel
@@ -1108,7 +1124,7 @@ const ProcedureTertiary: React.FC = () => {
                       >
                         <CKEditor
                           style={{ width: '90%' }}
-                          editor={ClassicEditor}
+                          editor={Editor}
                           data="<br></br>"
                         />
                       </Panel>

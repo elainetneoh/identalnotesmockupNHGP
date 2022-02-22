@@ -29,7 +29,8 @@ import moment from 'moment';
 // @ts-ignore
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 // @ts-ignore
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+//import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Editor from '@medisys/ckeditor5-custom-build';
 import { Divider } from 'antd';
 import { Collapse } from 'antd';
 
@@ -382,7 +383,7 @@ const PatientEducation: React.FC = () => {
                   <div className="App">
                     <CKEditor
                       style={{ width: '90%' }}
-                      editor={ClassicEditor}
+                      editor={Editor}
                       data="<br><br><br>"
                     />
                   </div>
