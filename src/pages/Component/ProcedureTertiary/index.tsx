@@ -33,6 +33,8 @@ import moment from 'moment';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 // @ts-ignore
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+//import Editor from '@medisys/ckeditor5-custom-build';
+// import {Highlight} from '@ckeditor/ckeditor5-highlight'
 import { Divider } from 'antd';
 import { Modal, Image } from 'antd';
 import dentalChart from './images/DentalChart.jpeg';
@@ -191,7 +193,7 @@ const ProcedureTertiary: React.FC = () => {
     <div className={style.ProcedureTer}>
       <Row className={style.fixedHeader}>
         <Col span={24}>
-          <Collapse defaultActiveKey={['1']}>
+          <Collapse defaultActiveKey={['2']}>
             <Panel
               header="Complaint/History (Dental / Social)"
               key="1"
@@ -242,7 +244,7 @@ const ProcedureTertiary: React.FC = () => {
               layout="horizontal"
             >
               <Form.Item label="Case No">
-                <Input style={{ width: '65%' }} />
+                <Input style={{ width: '76%' }} />
               </Form.Item>
             </Form>
           </Row>
@@ -791,7 +793,7 @@ const ProcedureTertiary: React.FC = () => {
                           style={{ width: '90%' }}
                           editor={ClassicEditor}
                           // data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
-                          data="<div style='text-decoration: underline;'><strong>Pre-op Procedure: <br><br><br> Procedure Description: <br><br><br>Findings:<br><br><br>Operative Procedure:<br><Br><br>Post-Operative Instruction:</strong></div>"
+                          data="<div style='  background-color: rgb(25, 156, 25)'><strong>Pre-op Procedure: <br><br><br> Procedure Description: <br><br><br>Findings:<br><br><br>Operative Procedure:<br><Br><br>Post-Operative Instruction:</strong></div>"
                         />
                         <pre> </pre>
 
@@ -1088,7 +1090,7 @@ const ProcedureTertiary: React.FC = () => {
                           style={{ width: '90%' }}
                           editor={ClassicEditor}
                           // data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
-                          data="<div   style='height:100px;background-color:red'><strong>Complaint/History(Dental/Social): <br><br><br>Examination/ Findings /Investigation: <br><br><br> Diagnosis/Treatment/Prescription/Next Visit:<br><br><br>Patient Education Material:</strong></div>"
+                          data="<strong>Complaint/History(Dental/Social): <br><br><br>Examination/ Findings /Investigation: <br><br><br> Diagnosis/Treatment/Prescription/Next Visit:<br><br><br>Patient Education Material:"
                         />
                       </Panel>
                       <Panel

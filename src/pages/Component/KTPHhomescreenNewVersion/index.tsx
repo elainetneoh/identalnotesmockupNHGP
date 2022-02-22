@@ -47,6 +47,8 @@ const KTPHhomescreenNewVersion: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalVisible2, setIsModalVisible2] = useState(false);
   const [pregnantModalVisible, setPregnantModalVisible] = useState(false);
+  const [pregnantHistoryModalVisible, setPregnantHistoryModalVisible] =
+    useState(false);
   const [isPregnantConsentSigned, setIsPregnantConsentSigned] = useState(false);
   const [EDDDate, setEDDDateVisible] = useState(true);
   const [Signature, setSignatureVisible] = useState(true);
@@ -1259,7 +1261,96 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         }}
                         width={'30%'}
                       >
+                        {/* <Row >
+
+                          <Col span={10} offset={19}>
+                            <Button
+                              style={{ width: "50%" }}
+                              onClick={() => {
+                                setPregnantHistoryModalVisible(true);
+                              }}>Pregnant History</Button>
+
+
+
+                            <Modal
+                              visible={pregnantHistoryModalVisible}
+                              title="Pregnancy History"
+                              onOk={() => {
+                                setPregnantHistoryModalVisible(false);
+                              }}
+                              width={'10%'}
+                              bodyStyle={{ height: 200 }}
+
+                            ></Modal>
+
+                          </Col>
+                        </Row> */}
+
                         <Row gutter={[16, 24]}>
+                          <Col span={20} offset={19}>
+                            <Button
+                              onClick={() => {
+                                setPregnantHistoryModalVisible(true);
+                              }}
+                            >
+                              Pregnant History
+                            </Button>
+
+                            <Modal
+                              visible={pregnantHistoryModalVisible}
+                              title="Pregnancy History"
+                              onOk={() => {
+                                setPregnantHistoryModalVisible(false);
+                              }}
+                              width={'20%'}
+                              bodyStyle={{ height: 200 }}
+                            >
+                              <Row style={{ marginBottom: 8 }}>
+                                <Col span={7}>Pregnant Date:</Col>
+                                <Col>
+                                  {' '}
+                                  <DatePicker></DatePicker>
+                                </Col>
+                              </Row>
+
+                              <Row style={{ marginBottom: 8 }}>
+                                <Col span={7}></Col>
+                                <Col>
+                                  {' '}
+                                  <DatePicker></DatePicker>
+                                </Col>
+                              </Row>
+                              <Row style={{ marginBottom: 8 }}>
+                                <Col span={7}></Col>
+                                <Col>
+                                  {' '}
+                                  <DatePicker></DatePicker>
+                                </Col>
+                              </Row>
+                              <Row style={{ marginBottom: 8 }}>
+                                <Col span={7}></Col>
+                                <Col>
+                                  <DatePicker></DatePicker>
+                                </Col>
+                              </Row>
+                              <Row style={{ marginBottom: 8 }}>
+                                <Col span={7}></Col>
+                                <Col>
+                                  {' '}
+                                  <DatePicker></DatePicker>
+                                </Col>
+                              </Row>
+                            </Modal>
+                          </Col>
+
+                          <Col span={7}>NRIC :</Col>
+                          <Col span={12}>
+                            <Input placeholder="S1234567D"></Input>
+                          </Col>
+                          <Col span={7}>Patient Name :</Col>
+                          <Col span={12}>
+                            <Input placeholder="Elaine Liu"></Input>
+                          </Col>
                           <Col span={7}>Is Pregnant :</Col>
                           <Col span={12}>
                             <Radio.Group buttonStyle="solid">

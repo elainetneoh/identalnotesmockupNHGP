@@ -122,6 +122,14 @@ const Nurseform: React.FC = () => {
       price: '800',
       lotnumber: 'LOT00332215',
     },
+    {
+      key: '1',
+      consumables: ' wipes, gloves and disposable aprons',
+      code: 'HEA011',
+      unit: '3',
+      price: '500',
+      lotnumber: 'LOT00332216',
+    },
   ];
   console.log(moment());
   return (
@@ -231,7 +239,12 @@ const Nurseform: React.FC = () => {
               <Form.Item label="">
                 <Table
                   style={{ width: '99%' }}
-                  pagination={false}
+                  //pagination={false}
+                  pagination={{
+                    defaultPageSize: 5,
+                    showSizeChanger: true,
+                    pageSizeOptions: ['10', '20', '30'],
+                  }}
                   dataSource={data3}
                   size="small"
                 >
