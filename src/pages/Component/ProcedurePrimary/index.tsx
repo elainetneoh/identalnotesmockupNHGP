@@ -44,7 +44,7 @@ const { Column } = Table;
 
 const data = [
   {
-    key: '1',
+    key: '2',
     procedure: 'Filling (3surface)',
     procedurecode: 'DBK003',
     unit: '1',
@@ -108,15 +108,25 @@ const ProcedurePrimary: React.FC = () => {
             <pre> </pre>
             <Button style={{ color: 'red' }}>Audit(REST)</Button>
             <pre> </pre>
-            <Button>Prescribe Drug</Button>
+            <Button style={{ width: '8%' }}>Prescribe Drug</Button>
+            <pre> </pre>
+            <pre> </pre>
+            <pre> </pre>
             <pre> </pre>
             <Form
               labelCol={{ span: 0 }}
-              wrapperCol={{ span: 200 }}
+              wrapperCol={{ span: 50 }}
               layout="horizontal"
             >
-              <Form.Item label="Visit No">
-                <Input style={{ width: '70%' }} />
+              {/* <Form.Item label="Visit No">
+                <Input style={{ width: '100%' }} />
+              </Form.Item> */}
+              <Form.Item
+                label="Visit No"
+                labelCol={{ span: 8 }}
+                labelAlign={'left'}
+              >
+                <Input style={{ width: '150%' }} />
               </Form.Item>
             </Form>
           </Row>
@@ -147,7 +157,11 @@ const ProcedurePrimary: React.FC = () => {
                     </Form.Item>
                   </Col>
                   <Col span={5}>
-                    <Form.Item label="Location">
+                    <Form.Item
+                      label="Location"
+                      labelCol={{ span: 5 }}
+                      labelAlign={'left'}
+                    >
                       <Input style={{ width: '90%' }} />
                     </Form.Item>
                   </Col>
@@ -201,8 +215,8 @@ const ProcedurePrimary: React.FC = () => {
 
                   <Col span={5}>
                     <Form.Item
-                      label="Visit Type"
-                      labelCol={{ span: 6 }}
+                      label="VIsit Type"
+                      labelCol={{ span: 5 }}
                       labelAlign={'left'}
                     >
                       <Select style={{ width: '90%' }}>
@@ -210,6 +224,7 @@ const ProcedurePrimary: React.FC = () => {
                       </Select>
                     </Form.Item>
                   </Col>
+
                   <Col span={5}>
                     <Form.Item
                       label="Time Out"

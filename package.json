@@ -20,6 +20,7 @@
     ]
   },
   "dependencies": {
+    "@ant-design/pro-form": "^1.54.0",
     "@ant-design/pro-layout": "^6.5.0",
     "@ckeditor/ckeditor5-highlight": "^32.0.0",
     "@ckeditor/ckeditor5-react": "^3.0.3",

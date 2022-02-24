@@ -83,7 +83,7 @@ const NEHRhomescreen: React.FC = () => {
                     <Button
                       type="primary"
                       htmlType="submit"
-                      style={{ width: '20%' }}
+                      style={{ width: '21%' }}
                     >
                       Verify
                     </Button>
@@ -91,7 +91,7 @@ const NEHRhomescreen: React.FC = () => {
                     <Button
                       type="primary"
                       htmlType="submit"
-                      style={{ width: '20%' }}
+                      style={{ width: '21%' }}
                     >
                       Label
                     </Button>
@@ -116,7 +116,7 @@ const NEHRhomescreen: React.FC = () => {
                     <Button
                       type="primary"
                       htmlType="submit"
-                      style={{ width: '20%' }}
+                      style={{ width: '21%' }}
                     >
                       Generate
                     </Button>
@@ -124,7 +124,7 @@ const NEHRhomescreen: React.FC = () => {
                     <Button
                       type="primary"
                       htmlType="submit"
-                      style={{ width: '20%' }}
+                      style={{ width: '21%' }}
                     >
                       UIN Label
                     </Button>
@@ -133,7 +133,7 @@ const NEHRhomescreen: React.FC = () => {
               </Form>
               <Form
                 labelCol={{ span: 0 }}
-                wrapperCol={{ span: 100 }}
+                //wrapperCol={{ span: 200 }}
                 layout="horizontal"
               >
                 <Form.Item
@@ -143,8 +143,8 @@ const NEHRhomescreen: React.FC = () => {
                   labelAlign={'left'}
                 >
                   <Row>
-                    <Input style={{ width: '97%' }} />
-                    <pre> </pre>
+                    <Input style={{ width: '100%' }} />
+
                     {/* <Button type="primary" htmlType="submit">
                       Verify
   </Button>*/}
@@ -198,7 +198,7 @@ const NEHRhomescreen: React.FC = () => {
                   labelCol={{ span: 4 }}
                   labelAlign={'left'}
                 >
-                  <DatePicker style={{ width: '70%' }} />
+                  <DatePicker style={{ width: '100%' }} />
                 </Form.Item>
                 <Form.Item
                   label="Home no"
@@ -352,7 +352,14 @@ const NEHRhomescreen: React.FC = () => {
                   <Image src={epos_chas_Y} width={60} />
                   <Image src={epos_PG_Y} width={60} />
 
-                  <Divider></Divider>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+
                   <Image src={epos_antibioticsprogram_Y} width={60} />
                   <Image src={epicIndicator1} width={60} />
                   <Image src={epicIndicator1} width={60} />

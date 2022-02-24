@@ -19,6 +19,7 @@ import {
   Dropdown,
   Radio,
 } from 'antd';
+import Proform, { ProFormCheckbox } from '@ant-design/pro-form';
 import style from './index.less';
 import {
   StepBackwardFilled,
@@ -102,7 +103,7 @@ const data2 = [
 ];
 const data3 = [
   {
-    key: '1',
+    key: '14',
     // consumables: 'Implant, Crown, Simple',
     consumables: 'SPECIAL TRAY',
     consumablescode: 'DLH012',
@@ -877,7 +878,8 @@ const ProcedureTertiary: React.FC = () => {
                   <Card>
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        {/* <Checkbox></Checkbox> */}
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -886,11 +888,10 @@ const ProcedureTertiary: React.FC = () => {
                         <Text style={{ fontSize: 17 }}>Scaling</Text>
                       </Col>
                     </Row>
-                    <pre></pre>
 
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -899,11 +900,10 @@ const ProcedureTertiary: React.FC = () => {
                         <Text style={{ fontSize: 17 }}>Filling</Text>
                       </Col>
                     </Row>
-                    <pre></pre>
 
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -913,11 +913,9 @@ const ProcedureTertiary: React.FC = () => {
                       </Col>
                     </Row>
 
-                    <pre></pre>
-
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -928,11 +926,10 @@ const ProcedureTertiary: React.FC = () => {
                         </Text>
                       </Col>
                     </Row>
-                    <pre></pre>
 
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -944,10 +941,9 @@ const ProcedureTertiary: React.FC = () => {
                       </Col>
                     </Row>
 
-                    <pre></pre>
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -957,10 +953,9 @@ const ProcedureTertiary: React.FC = () => {
                       </Col>
                     </Row>
 
-                    <pre></pre>
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -970,10 +965,9 @@ const ProcedureTertiary: React.FC = () => {
                       </Col>
                     </Row>
 
-                    <pre></pre>
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -982,11 +976,10 @@ const ProcedureTertiary: React.FC = () => {
                         <Text style={{ fontSize: 17 }}>Orthodontics</Text>
                       </Col>
                     </Row>
-                    <pre></pre>
 
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -995,11 +988,10 @@ const ProcedureTertiary: React.FC = () => {
                         <Text style={{ fontSize: 17 }}>OMS</Text>
                       </Col>
                     </Row>
-                    <pre></pre>
 
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
@@ -1008,10 +1000,10 @@ const ProcedureTertiary: React.FC = () => {
                         <Text style={{ fontSize: 17 }}>Oral Medicine</Text>
                       </Col>
                     </Row>
-                    <pre></pre>
+
                     <Row>
                       <Col span={2}>
-                        <Checkbox></Checkbox>
+                        <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
                         <Button>Update</Button>
