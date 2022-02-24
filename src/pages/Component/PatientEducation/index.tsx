@@ -398,7 +398,7 @@ const PatientEducation: React.FC = () => {
                   <div className="App">
                     <CKEditor
                       style={{ width: '90%' }}
-                      editor={ClassicEditor}
+                      editor={Editor}
                       data="<br><br><br>"
                     />
                   </div>
@@ -413,7 +413,7 @@ const PatientEducation: React.FC = () => {
                   <div className="App">
                     <CKEditor
                       style={{ width: '90%' }}
-                      editor={ClassicEditor}
+                      editor={Editor}
                       data="<br><br><br>"
                     />
                   </div>
@@ -428,7 +428,7 @@ const PatientEducation: React.FC = () => {
                   <div className="App">
                     <CKEditor
                       style={{ width: '90%' }}
-                      editor={ClassicEditor}
+                      editor={Editor}
                       data="<br><br><br>"
                     />
                   </div>

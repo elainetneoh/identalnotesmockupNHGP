@@ -18,8 +18,9 @@ import {
   Menu,
   Dropdown,
   Radio,
+  Tooltip,
 } from 'antd';
-import Proform, { ProFormCheckbox } from '@ant-design/pro-form';
+import ProForm, { ProFormCheckbox } from '@ant-design/pro-form';
 import style from './index.less';
 import {
   StepBackwardFilled,
@@ -40,7 +41,7 @@ import { Divider } from 'antd';
 import { Modal, Image } from 'antd';
 import dentalChart from './images/DentalChart.jpeg';
 import capture from './images/Capture.png';
-
+import { useForm } from 'antd/lib/Form/Form';
 const { TextArea } = Input;
 const { Text } = Typography;
 const { Option } = Select;
@@ -56,6 +57,11 @@ const children = [];
 for (let i = 11; i < 19; i++) {
   children.push(<Option key={i}>{i}</Option>);
 }
+
+// const careplanarray = [];
+// for (let i = 0; i < 9; i++) {
+//   careplanarray.push(<Option key={i}>{i}</Option>);
+// }
 
 function handleChange(value: any) {
   console.log(`selected ${value}`);
@@ -106,7 +112,11 @@ const data3 = [
     key: '14',
     // consumables: 'Implant, Crown, Simple',
     consumables: 'SPECIAL TRAY',
-    consumablescode: 'DLH012',
+    consumablescode: (
+      <Tooltip title="description" placement="topLeft">
+        <Text>DLH012</Text>
+      </Tooltip>
+    ),
     unit: '1',
     price: '300',
     lotnumber: 'LOT00332211',
@@ -125,6 +135,11 @@ const menu = (
 );
 
 const ProcedureTertiary: React.FC = () => {
+  const formItemLayout = {
+    labelCol: { span: 7 },
+    wrapperCol: { span: 10 },
+  };
+
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const { Panel } = Collapse;
@@ -856,11 +871,22 @@ const ProcedureTertiary: React.FC = () => {
                 <Modal
                   title="Care Plan"
                   visible={isModalVisible2}
+                  //  footer={[]}
                   onOk={handleOk2}
+                  //  onOk={() => {
+                  //   handleOk2;
+                  // }}
                   onCancel={handleCancel2}
                   width={600}
                   style={{ fontSize: 20 }}
                 >
+                  {/* <ProForm
+            labelCol={{ span: 0 }}
+            wrapperCol={{ span: 200 }}
+            layout="horizontal"
+            
+          > */}
+
                   <Row>
                     <Col span={1}> </Col>
                     <Col span={3}>
@@ -875,10 +901,21 @@ const ProcedureTertiary: React.FC = () => {
                       </Text>
                     </Col>
                   </Row>
+
                   <Card>
                     <Row>
                       <Col span={2}>
-                        {/* <Checkbox></Checkbox> */}
+                        <ProFormCheckbox></ProFormCheckbox>
+                      </Col>
+                      <Col span={5}>
+                        <Button>Update</Button>
+                      </Col>
+                      <Col span={5}>
+                        <Text style={{ fontSize: 17 }}>Orthodontics</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={2}>
                         <ProFormCheckbox></ProFormCheckbox>
                       </Col>
                       <Col span={5}>
@@ -972,18 +1009,6 @@ const ProcedureTertiary: React.FC = () => {
                       <Col span={5}>
                         <Button>Update</Button>
                       </Col>
-                      <Col span={5}>
-                        <Text style={{ fontSize: 17 }}>Orthodontics</Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
                       <Col span={3}>
                         <Text style={{ fontSize: 17 }}>OMS</Text>
                       </Col>
@@ -1046,6 +1071,7 @@ const ProcedureTertiary: React.FC = () => {
               </Row>
             </Col>
           </Row>
+
           <Form
             labelCol={{ span: 0 }}
             wrapperCol={{ span: 200 }}
