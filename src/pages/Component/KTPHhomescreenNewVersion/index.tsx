@@ -44,6 +44,7 @@ const { Text } = Typography;
 const { Option } = Select;
 
 const KTPHhomescreenNewVersion: React.FC = () => {
+  let isToggledOn = true;
   const [fall, setClass1] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalVisible2, setIsModalVisible2] = useState(false);
@@ -100,6 +101,14 @@ const KTPHhomescreenNewVersion: React.FC = () => {
     setSignatureVisible(false);
   };
   const divStyle = { color: 'blue' };
+
+  function togglefunction() {
+    if (isToggledOn) {
+      setPatientAlertModalVisible(true);
+    } else {
+      setPatientAlertModalVisible(false);
+    }
+  }
 
   return (
     <div className={style.KTPHhome}>
@@ -1046,7 +1055,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     // danger
                     htmlType="submit"
                     onClick={() => {
-                      setPatientAlertModalVisible(true);
+                      togglefunction();
                     }}
                   >
                     Patient Alert
@@ -1535,7 +1544,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <div>
                 {explain === 'defualt' && (
                   <div>
-                    <TextArea style={{ height: 450 }} />
+                    <TextArea style={{ height: 420 }} />
                   </div>
                 )}
                 {explain === 'chestpain' && (
