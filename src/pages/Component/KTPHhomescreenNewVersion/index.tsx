@@ -115,7 +115,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
       <Row gutter={{ sm: 8 }}>
         <Col span={10}>
           <Divider orientation="left" style={{ borderColor: 'black' }}>
-            Personal Details{' '}
+            {/* Personal Details */}
           </Divider>
           <Form
             labelCol={{ span: 0 }}
@@ -197,7 +197,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <Input />
             </Form.Item> */}
             <Form.Item
-              label="Name"
+              label={<p style={{ fontSize: 15 }}>Name</p>}
               name="Name"
               labelCol={{ span: 4 }}
               labelAlign={'left'}
@@ -239,6 +239,70 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             {/* <Col span={12}> */}
 
             <Form.Item
+              label="Gender"
+              name="Gender"
+              labelCol={{ span: 4 }}
+              labelAlign={'left'}
+            >
+              <Row>
+                <Col span={15}>
+                  <Select defaultValue="Select one" style={{ width: '40%' }}>
+                    <Option value="Male">M</Option>
+                    <Option value="Female">F</Option>
+                  </Select>
+                </Col>
+
+                <Col span={9}>
+                  <Form.Item
+                    label="Document Type"
+                    // name="DocumentType"
+                    // labelCol={{ span: 6 }}
+                    // style={{ width: '65%' }}
+                    // labelAlign={'left'}
+                  >
+                    <Select defaultValue="Select one" style={{ width: '100%' }}>
+                      <Option value="SC">SC</Option>
+                      <Option value="PR">PR</Option>
+                      <Option value="Non-residence">Non-residence</Option>
+                      <Option value="PG">PG</Option>
+                      <Option value="MG">MG</Option>
+                    </Select>
+                  </Form.Item>
+                </Col>
+
+                {/* <Form.Item
+                  label="CHAS"
+                  name="CHAS"
+                  labelCol={{ span: 15 }}
+                  style={{ width: '65%' }}
+                 // labelAlign={'left'}
+                >
+                  <Select defaultValue="Select one" style={{ width: '100%' }}>
+                    <Option value="NIL">NIL</Option>
+                    <Option value="Blue">Blue</Option>
+                    <Option value="Orange">Orange</Option>
+                  </Select>
+                </Form.Item> */}
+
+                {/* <Form.Item
+  label="Document Type"
+  name="DocumentType"
+  labelCol={{ span: 6 }}
+  style={{ width: '65%' }}
+  labelAlign={'left'}
+>
+  <Select defaultValue="Select one" style={{ width: '50%' }}>
+    <Option value="SC">SC</Option>
+    <Option value="PR">PR</Option>
+    <Option value="Non-residence">Non-residence</Option>
+    <Option value="PG">PG</Option>
+    <Option value="MG">MG</Option>
+  </Select>
+</Form.Item> */}
+              </Row>
+            </Form.Item>
+
+            <Form.Item
               label="Date of Birth"
               name="Dateofbirth"
               // labelCol={{ span: 8 }}
@@ -256,133 +320,20 @@ const KTPHhomescreenNewVersion: React.FC = () => {
 
                 {/* <Col span={10}> */}
 
-                <Col span={6}>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    style={{ width: '150%' }}
-                    onClick={showModal}
-                    className={fall ? style.fallrish : style.nonfallrisk}
+                <Col span={9}>
+                  <Form.Item
+                    label="CHAS"
+                    name="CHAS"
+                    labelCol={{ span: 9 }}
+                    //style={{ width: '65%' }}
+                    labelAlign={'left'}
                   >
-                    Financial Assistance
-                  </Button>
-                  <Modal
-                    title="Financial"
-                    visible={isModalVisible}
-                    onOk={handleOk}
-                    onCancel={handleCancel}
-                    width={600}
-                    style={{ fontSize: 20 }}
-                  >
-                    <Card>
-                      <Row>
-                        <Col span={2}>
-                          <button>Edit</button>
-                        </Col>
-                        <pre> </pre>
-                        <Col>
-                          <button>Save</button>
-                        </Col>
-                        <pre> </pre>
-                        <Col>
-                          <button>Delete</button>
-                        </Col>
-                        <Row></Row>
-                      </Row>
-
-                      <Row gutter={{ sm: 8 }}>
-                        <Col span={10}>
-                          <Form
-                            labelCol={{ span: 0 }}
-                            wrapperCol={{ span: 100 }}
-                            layout="horizontal"
-                          >
-                            <Form.Item
-                              label="Card Type"
-                              name="cardType"
-                              labelCol={{ span: 4 }}
-                              labelAlign={'left'}
-                              style={{ width: '500px' }}
-                            >
-                              <Select
-                                defaultValue="TTSH"
-                                style={{ width: '80%' }}
-                              >
-                                <Option value="TTHS">TTHS</Option>
-                                <Option value="KTPH">KTPH</Option>
-                              </Select>
-                            </Form.Item>
-                          </Form>
-                        </Col>
-                      </Row>
-
-                      <Row gutter={{ sm: 8 }}>
-                        <Col span={10}>
-                          <Form
-                            labelCol={{ span: 0 }}
-                            wrapperCol={{ span: 100 }}
-                            layout="horizontal"
-                          >
-                            <Form.Item
-                              label="Issue Date"
-                              name="issueDate"
-                              labelCol={{ span: 4 }}
-                              labelAlign={'left'}
-                              style={{ width: '500px' }}
-                            >
-                              <DatePicker style={{ width: '80%' }}></DatePicker>
-                            </Form.Item>
-                          </Form>
-                        </Col>
-                      </Row>
-
-                      <Row gutter={{ sm: 8 }}>
-                        <Col span={10}>
-                          <Form
-                            labelCol={{ span: 0 }}
-                            wrapperCol={{ span: 100 }}
-                            layout="horizontal"
-                          >
-                            <Form.Item
-                              label="Expiry Date"
-                              name="expiryDate"
-                              labelCol={{ span: 4 }}
-                              labelAlign={'left'}
-                              style={{ width: '500px' }}
-                            >
-                              <DatePicker style={{ width: '80%' }}></DatePicker>
-                            </Form.Item>
-                          </Form>
-                        </Col>
-                      </Row>
-
-                      <Row gutter={{ sm: 8 }}>
-                        <Col span={10}>
-                          <Form
-                            labelCol={{ span: 0 }}
-                            wrapperCol={{ span: 100 }}
-                            layout="horizontal"
-                          >
-                            <Form.Item
-                              label="Remarks"
-                              name="remarks"
-                              labelCol={{ span: 4 }}
-                              labelAlign={'left'}
-                              style={{ width: '500px' }}
-                            >
-                              <TextArea style={{ width: '80%' }}></TextArea>
-                            </Form.Item>
-                          </Form>
-                        </Col>
-                      </Row>
-
-                      <Row style={{ marginBottom: 80 }}></Row>
-
-                      <Text>Updated By : Elaine - 7/Jan/2021 17:08 </Text>
-
-                      <p />
-                    </Card>
-                  </Modal>
+                    <Select defaultValue="Select one" style={{ width: '100%' }}>
+                      <Option value="NIL">NIL</Option>
+                      <Option value="Blue">Blue</Option>
+                      <Option value="Orange">Orange</Option>
+                    </Select>
+                  </Form.Item>
                 </Col>
 
                 {/* <Form.Item
@@ -556,70 +507,6 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             {/* </Row> */}
 
             <Form.Item
-              label="Gender"
-              name="Gender"
-              labelCol={{ span: 4 }}
-              labelAlign={'left'}
-            >
-              <Row>
-                <Col span={15}>
-                  <Select defaultValue="Select one" style={{ width: '40%' }}>
-                    <Option value="Male">M</Option>
-                    <Option value="Female">F</Option>
-                  </Select>
-                </Col>
-
-                <Col span={9}>
-                  <Form.Item
-                    label="Document Type"
-                    // name="DocumentType"
-                    // labelCol={{ span: 6 }}
-                    // style={{ width: '65%' }}
-                    // labelAlign={'left'}
-                  >
-                    <Select defaultValue="Select one" style={{ width: '100%' }}>
-                      <Option value="SC">SC</Option>
-                      <Option value="PR">PR</Option>
-                      <Option value="Non-residence">Non-residence</Option>
-                      <Option value="PG">PG</Option>
-                      <Option value="MG">MG</Option>
-                    </Select>
-                  </Form.Item>
-                </Col>
-
-                {/* <Form.Item
-                  label="CHAS"
-                  name="CHAS"
-                  labelCol={{ span: 15 }}
-                  style={{ width: '65%' }}
-                 // labelAlign={'left'}
-                >
-                  <Select defaultValue="Select one" style={{ width: '100%' }}>
-                    <Option value="NIL">NIL</Option>
-                    <Option value="Blue">Blue</Option>
-                    <Option value="Orange">Orange</Option>
-                  </Select>
-                </Form.Item> */}
-
-                {/* <Form.Item
-  label="Document Type"
-  name="DocumentType"
-  labelCol={{ span: 6 }}
-  style={{ width: '65%' }}
-  labelAlign={'left'}
->
-  <Select defaultValue="Select one" style={{ width: '50%' }}>
-    <Option value="SC">SC</Option>
-    <Option value="PR">PR</Option>
-    <Option value="Non-residence">Non-residence</Option>
-    <Option value="PG">PG</Option>
-    <Option value="MG">MG</Option>
-  </Select>
-</Form.Item> */}
-              </Row>
-            </Form.Item>
-
-            <Form.Item
               label="Nationality"
               name="Nationality"
               labelCol={{ span: 4 }}
@@ -634,20 +521,134 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     <Option value="PR">Indonesian</Option>
                   </Select>
                 </Col>
-                <Col span={9}>
-                  <Form.Item
-                    label="CHAS"
-                    name="CHAS"
-                    labelCol={{ span: 9 }}
-                    //style={{ width: '65%' }}
-                    labelAlign={'left'}
+
+                <Col span={6}>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    style={{ width: '150%' }}
+                    onClick={showModal}
+                    className={fall ? style.fallrish : style.nonfallrisk}
                   >
-                    <Select defaultValue="Select one" style={{ width: '100%' }}>
-                      <Option value="NIL">NIL</Option>
-                      <Option value="Blue">Blue</Option>
-                      <Option value="Orange">Orange</Option>
-                    </Select>
-                  </Form.Item>
+                    Financial Assistance
+                  </Button>
+                  <Modal
+                    title="Financial"
+                    visible={isModalVisible}
+                    onOk={handleOk}
+                    onCancel={handleCancel}
+                    width={600}
+                    style={{ fontSize: 20 }}
+                  >
+                    <Card>
+                      <Row>
+                        <Col span={2}>
+                          <button>Edit</button>
+                        </Col>
+                        <pre> </pre>
+                        <Col>
+                          <button>Save</button>
+                        </Col>
+                        <pre> </pre>
+                        <Col>
+                          <button>Delete</button>
+                        </Col>
+                        <Row></Row>
+                      </Row>
+
+                      <Row gutter={{ sm: 8 }}>
+                        <Col span={10}>
+                          <Form
+                            labelCol={{ span: 0 }}
+                            wrapperCol={{ span: 100 }}
+                            layout="horizontal"
+                          >
+                            <Form.Item
+                              label="Card Type"
+                              name="cardType"
+                              labelCol={{ span: 4 }}
+                              labelAlign={'left'}
+                              style={{ width: '500px' }}
+                            >
+                              <Select
+                                defaultValue="TTSH"
+                                style={{ width: '80%' }}
+                              >
+                                <Option value="TTHS">TTHS</Option>
+                                <Option value="KTPH">KTPH</Option>
+                              </Select>
+                            </Form.Item>
+                          </Form>
+                        </Col>
+                      </Row>
+
+                      <Row gutter={{ sm: 8 }}>
+                        <Col span={10}>
+                          <Form
+                            labelCol={{ span: 0 }}
+                            wrapperCol={{ span: 100 }}
+                            layout="horizontal"
+                          >
+                            <Form.Item
+                              label="Issue Date"
+                              name="issueDate"
+                              labelCol={{ span: 4 }}
+                              labelAlign={'left'}
+                              style={{ width: '500px' }}
+                            >
+                              <DatePicker style={{ width: '80%' }}></DatePicker>
+                            </Form.Item>
+                          </Form>
+                        </Col>
+                      </Row>
+
+                      <Row gutter={{ sm: 8 }}>
+                        <Col span={10}>
+                          <Form
+                            labelCol={{ span: 0 }}
+                            wrapperCol={{ span: 100 }}
+                            layout="horizontal"
+                          >
+                            <Form.Item
+                              label="Expiry Date"
+                              name="expiryDate"
+                              labelCol={{ span: 4 }}
+                              labelAlign={'left'}
+                              style={{ width: '500px' }}
+                            >
+                              <DatePicker style={{ width: '80%' }}></DatePicker>
+                            </Form.Item>
+                          </Form>
+                        </Col>
+                      </Row>
+
+                      <Row gutter={{ sm: 8 }}>
+                        <Col span={10}>
+                          <Form
+                            labelCol={{ span: 0 }}
+                            wrapperCol={{ span: 100 }}
+                            layout="horizontal"
+                          >
+                            <Form.Item
+                              label="Remarks"
+                              name="remarks"
+                              labelCol={{ span: 4 }}
+                              labelAlign={'left'}
+                              style={{ width: '500px' }}
+                            >
+                              <TextArea style={{ width: '80%' }}></TextArea>
+                            </Form.Item>
+                          </Form>
+                        </Col>
+                      </Row>
+
+                      <Row style={{ marginBottom: 80 }}></Row>
+
+                      <Text>Updated By : Elaine - 7/Jan/2021 17:08 </Text>
+
+                      <p />
+                    </Card>
+                  </Modal>
                 </Col>
               </Row>
             </Form.Item>
@@ -775,7 +776,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             </Form.Item>
 
             <Divider orientation="left" style={{ borderColor: 'black' }}>
-              Contact Details
+              {/* Contact Details */}
             </Divider>
 
             <Form.Item
@@ -836,12 +837,12 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Row gutter={{ xs: 2 }}>
                   <Col span={8}>
                     <Form.Item label="Building No" name="Buildingnumber">
-                      <Input style={{ width: '90%' }} />
+                      <Input style={{ width: '96%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={8}>
                     <Form.Item label="Floor" name="Floor">
-                      <Input style={{ width: '90%' }} />
+                      <Input style={{ width: '96%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={8}>
@@ -856,7 +857,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Row gutter={{ xs: 2 }}>
                   <Col span={8}>
                     <Form.Item label="Postal Code" name="Postalcode">
-                      <Input style={{ width: '90%' }} />
+                      <Input style={{ width: '96%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={8}>
@@ -1108,34 +1109,37 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               </Button>
                */}
 
-              <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
-                <Col>
+              <Row>
+                <Col span={6}>
                   <Button
                     htmlType="submit"
-                    style={{ fontSize: 18, height: 40 }}
+                    style={{ fontSize: 18, height: 40, width: '100%' }}
                   >
                     New/Retrieve Patient
                   </Button>
                 </Col>
-                <Col>
+                <pre> </pre>
+                <Col span={4}>
                   <Button
                     //type="primary"
                     // style={{ background: 'orange', border: 'orange' }}
                     htmlType="submit"
-                    style={{ fontSize: 18, height: 40 }}
+                    style={{ fontSize: 18, height: 40, width: '100%' }}
                   >
                     Examine
                   </Button>
                 </Col>
-                <Col>
+                <pre> </pre>
+                <Col span={4}>
                   <Button
                     htmlType="submit"
-                    style={{ fontSize: 18, height: 40 }}
+                    style={{ fontSize: 18, height: 40, width: '100%' }}
                   >
                     Search Patient
                   </Button>
                 </Col>
-                <Col offset={6}>
+                <pre> </pre>
+                <Col span={3} offset={4}>
                   {/* <Button
                     htmlType="submit"
                     style={{ width: '130%', background: 'orange' }}
@@ -1144,8 +1148,8 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   </Button> */}
 
                   <Select
-                    defaultValue="DA"
-                    style={{ width: '115%', fontSize: 18, height: 50 }}
+                    defaultValue="Audit"
+                    style={{ width: '180%', fontSize: 18 }}
                   >
                     <Option value="DA">Document Audit</Option>
                     <Option value="XA">Xray Audit</Option>
@@ -1155,7 +1159,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             </Form.Item>
           </Form>
         </Col>
-        、<Col span={0} />
+        <Col span={0} />
         {/*<Col span={1}>
           <Space>
             <Col>
@@ -1635,9 +1639,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         }}
                       >
                         {isPregnantConsentSigned
-                          ? 'Pregnancy'
+                          ? 'Xray'
                           : // ? 'Pregnancy '
-                            'Pregnancy'}
+                            'Xray'}
                       </Button>
                       <Modal
                         visible={pregnantModalVisible}
@@ -1771,6 +1775,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           </Col>
                           <Col span={12} hidden={EDDDate}>
                             <DatePicker />
+                            <Text> (To be deleted after 9 months)</Text>
                           </Col> */}
 
                           {/* <Col span={7} hidden={Signature}>
@@ -1781,7 +1786,10 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                             hidden={Signature}
                             style={{ height: 200 }}
                           >
-                            <TextArea style={{ height: 200 }} />
+                            <TextArea
+                              style={{ height: 200 }}
+                              placeholder="Signature"
+                            />
                           </Col>
                           {/* <Col span={7} hidden={Signature}>
                             Date of Signature :
