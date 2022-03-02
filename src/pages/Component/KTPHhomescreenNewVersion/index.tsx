@@ -15,6 +15,7 @@ import {
   Modal,
   Typography,
   Radio,
+  Popover,
 } from 'antd';
 import style from './index.less';
 
@@ -42,6 +43,8 @@ import Bottom from '../Bottom';
 const { TextArea } = Input;
 const { Text } = Typography;
 const { Option } = Select;
+const PatientAlertTitle = <span>Patient Alert</span>;
+const DialogTitle = <span>Dialog</span>;
 
 const KTPHhomescreenNewVersion: React.FC = () => {
   let isToggledOn = true;
@@ -109,6 +112,43 @@ const KTPHhomescreenNewVersion: React.FC = () => {
       setPatientAlertModalVisible(false);
     }
   }
+
+  const contentPatientAlert = (
+    <div>
+      <TextArea style={{ width: '100%', height: 250 }}></TextArea>
+    </div>
+  );
+
+  const contentDialog = (
+    <div>
+      <Row>
+        <Col>
+          <button>Clear</button>
+        </Col>
+        <pre> </pre>
+        <Col>
+          <button>Save</button>
+        </Col>
+        <pre> </pre>
+        <Col>
+          <button>Delete</button>
+        </Col>
+        <Row></Row>
+      </Row>
+
+      <Row gutter={{ sm: 8 }}>
+        <Col>
+          <TextArea style={{ width: 700, height: 200 }}></TextArea>
+        </Col>
+      </Row>
+
+      <Row style={{ marginBottom: 50 }}></Row>
+
+      <Text>Saved on 7/Jan/2021 17:08 </Text>
+
+      <p />
+    </div>
+  );
 
   return (
     <div className={style.KTPHhome}>
@@ -934,7 +974,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   labelCol={{ span: 4 }}
                   labelAlign={'left'}
                 >
-                  <TextArea style={{ width: '100%', height: 150 }} />
+                  <TextArea style={{ width: '100%', height: 250 }} />
                 </Form.Item>
 
                 <Row>
@@ -960,31 +1000,55 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     <pre></pre>
                     <pre></pre>
                     <pre></pre>
-                    <Space direction="vertical">
-                      {/* <Button
-                        style={{ width: 120 }}
-                        className={fall ? style.fallrish : style.nonfallrisk}
-                        type="ghost"
-                        // danger
-                        htmlType="submit"
-                        onClick={() => {
-                          setPatientAlertModalVisible(true);
-                        }}
-                      >
-                        Patient Alert
-                      </Button>
+                    <pre></pre>
+                    <pre></pre>
+                    <pre></pre>
+                    <pre></pre>
+                    <pre></pre>
+                    <pre></pre>
 
-                      <Button
-                        style={{ width: 120 }}
-                        // type="primary"
-                        htmlType="submit"
-                        onClick={showModal2}
+                    <Space direction="vertical">
+                      <Popover
+                        placement="rightBottom"
+                        title={PatientAlertTitle}
+                        content={contentPatientAlert}
+                        trigger="click"
+                        overlayStyle={{ width: '30%' }}
                       >
-                        Dialog
-                      </Button> */}
+                        <Button
+                          style={{ width: 120 }}
+                          className={fall ? style.fallrish : style.nonfallrisk}
+                          type="ghost"
+                          // danger
+                          htmlType="submit"
+
+                          // onClick={() => {
+                          //    setPatientAlertModalVisible(true);
+                          // }}
+                        >
+                          Patient Alert
+                        </Button>
+                      </Popover>
+
+                      <Popover
+                        placement="rightBottom"
+                        title={DialogTitle}
+                        content={contentDialog}
+                        trigger="click"
+                        overlayStyle={{ width: '30%' }}
+                      >
+                        <Button
+                          style={{ width: 120 }}
+                          // type="primary"
+                          htmlType="submit"
+                          // onClick={showModal2}
+                        >
+                          Dialog
+                        </Button>
+                      </Popover>
                     </Space>
 
-                    {/* <Modal
+                    <Modal
                       title="Dialog"
                       visible={isModalVisible2}
                       onOk={handleOk2}
@@ -1021,9 +1085,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       <Text>Saved on 7/Jan/2021 17:08 </Text>
 
                       <p />
-                    </Modal> */}
+                    </Modal>
 
-                    {/* <Modal
+                    <Modal
                       visible={patientAlertModalVisible}
                       title="Patient Alert"
                       onOk={() => {
@@ -1034,11 +1098,11 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       style={{ fontSize: 20, left: -500, top: 720 }}
                     >
                       Paitent alert content here ...
-                    </Modal> */}
+                    </Modal>
                   </Col>
 
                   <Col span={20}>
-                    <TextArea style={{ height: 150 }}></TextArea>
+                    <TextArea style={{ height: 250 }}></TextArea>
                   </Col>
                 </Row>
 
@@ -1046,7 +1110,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               </Col>
             </Row>
 
-            <Row gutter={{ xs: 4, sm: 8 }}>
+            {/* <Row gutter={{ xs: 4, sm: 8 }}>
               <Col span={4}>
                 <Space direction="vertical">
                   <Button
@@ -1071,17 +1135,15 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     Dialog
                   </Button>
                 </Space>
-              </Col>
+              </Col> */}
 
-              <Col span={20}>
+            {/* <Col span={20}>
                 <TextArea
                   style={{ height: 150 }}
                   hidden={patientAlertModalVisible}
                 ></TextArea>
-              </Col>
-            </Row>
-
-            <pre></pre>
+              </Col> */}
+            {/* </Row> */}
 
             <Form.Item>
               {/* <Button htmlType="submit">New/Retrieve Patient</Button>
@@ -1486,7 +1548,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   }
                   name="Infectious"
                 >
-                  <TextArea style={{ height: 130 }} />
+                  <TextArea style={{ height: 140 }} />
                 </Form.Item>
                 <Form.Item
                   label={<strong style={{ fontSize: '20px' }}>Comments</strong>}
@@ -1505,7 +1567,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <TextArea style={{ height: 140 ,width:490}} />
             </Form.Item> */}
 
-                  <Form.Item name="Comment">
+                  {/* <Form.Item name="Comment">
                     <Button style={{ fontSize: 18, height: 40 }}>
                       Blank Form
                     </Button>
@@ -1530,6 +1592,47 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     >
                       Cancel
                     </Button>
+                  </Form.Item> */}
+                  <Form.Item>
+                    <Row>
+                      <Col span={6}>
+                        <Button
+                          htmlType="submit"
+                          style={{ fontSize: 18, height: 40, width: '100%' }}
+                        >
+                          Blank Form
+                        </Button>
+                      </Col>
+                      <pre> </pre>
+                      <Col span={4}>
+                        <Button
+                          //type="primary"
+                          // style={{ background: 'orange', border: 'orange' }}
+                          htmlType="submit"
+                          style={{ fontSize: 18, height: 40, width: '100%' }}
+                        >
+                          Print
+                        </Button>
+                      </Col>
+                      <pre> </pre>
+                      <Col span={4}>
+                        <Button
+                          htmlType="submit"
+                          style={{ fontSize: 18, height: 40, width: '100%' }}
+                        >
+                          Save
+                        </Button>
+                      </Col>
+                      <pre> </pre>
+                      <Col span={4}>
+                        <Button
+                          htmlType="submit"
+                          style={{ fontSize: 18, height: 40, width: '100%' }}
+                        >
+                          Cancel
+                        </Button>
+                      </Col>
+                    </Row>
                   </Form.Item>
                 </Form>
                 {/* <Form.Item
