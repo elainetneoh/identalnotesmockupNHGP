@@ -19,6 +19,7 @@ import {
   Dropdown,
   Radio,
   Tooltip,
+  List,
 } from 'antd';
 import ProForm, { ProFormCheckbox } from '@ant-design/pro-form';
 import style from './index.less';
@@ -85,16 +86,17 @@ const data2 = [
     unit: '1',
     price: '35',
     toothnumber: (
-      <Select
-        mode="multiple"
-        allowClear
-        style={{ width: '100%' }}
-        placeholder="Please select"
-        defaultValue={['17', '19', '22']}
-        onChange={handleChange}
-      >
-        {children}
-      </Select>
+      // <Select
+      //   mode="multiple"
+      //   allowClear
+      //   style={{ width: '100%' }}
+      //   placeholder="Please select"
+      //   defaultValue={['17', '19', '22']}
+      //   onChange={handleChange}
+      // >
+      //   {children}
+      // </Select>
+      <Input placeholder="ToothNo"></Input>
     ),
   },
   // {
@@ -193,6 +195,30 @@ const ProcedureTertiary: React.FC = () => {
 
   const handleCanceldepartment = () => {
     setIsModaldepartmentVisible(false);
+  };
+
+  const [isModalVisibletimeout, setIsModalVisibletimeout] = useState(false);
+  const showModaltimeout = () => {
+    setIsModalVisibletimeout(true);
+  };
+  const handleOktimeout = () => {
+    setIsModalVisibletimeout(false);
+  };
+
+  const handleCanceltimeout = () => {
+    setIsModalVisibletimeout(false);
+  };
+
+  const [isModalVisiblesignout, setIsModalVisiblesignout] = useState(false);
+  const showModalsignout = () => {
+    setIsModalVisiblesignout(true);
+  };
+  const handleOksignout = () => {
+    setIsModalVisiblesignout(false);
+  };
+
+  const handleCancelsignout = () => {
+    setIsModalVisiblesignout(false);
   };
 
   const children = [];
@@ -548,16 +574,17 @@ const ProcedureTertiary: React.FC = () => {
                         <Column
                           //  title="Tooth No."
                           title={
-                            <Select
-                              mode="multiple"
-                              allowClear
-                              style={{ width: '100%' }}
-                              placeholder="Please select"
-                              defaultValue={['11']}
-                              onChange={handleChange}
-                            >
-                              {children}
-                            </Select>
+                            // <Select
+                            //   mode="multiple"
+                            //   allowClear
+                            //   style={{ width: '100%' }}
+                            //   placeholder="Please select"
+                            //   defaultValue={['11']}
+                            //   onChange={handleChange}
+                            // >
+                            //   {children}
+                            // </Select>
+                            <Input placeholder="ToothNo"></Input>
                           }
                           dataIndex="toothnumber"
                           key="toothnumber"
@@ -1053,19 +1080,129 @@ const ProcedureTertiary: React.FC = () => {
                 </Modal>
 
                 <pre style={{ fontSize: '30' }}> </pre>
-                <Button style={{ color: 'black', width: '13%' }}>
+                <Button
+                  style={{ color: 'black', width: '13%' }}
+                  onClick={showModaltimeout}
+                >
                   Time Out
                 </Button>
+
+                <Modal
+                  title=""
+                  visible={isModalVisibletimeout}
+                  onOk={handleOktimeout}
+                  onCancel={handleCanceltimeout}
+                  width={600}
+                  style={{ fontSize: 20 }}
+                >
+                  <Card>
+                    <Row>
+                      <Col span={2}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={22}>
+                        <Text style={{ fontSize: 20 }}>
+                          Pre-procedure Verification
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct patient</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct procedure</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct site</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Correct documents/radiographs
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Functioning Equipment
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Consent taken</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={2}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={22}>
+                        <Text style={{ fontSize: 20 }}>
+                          Site Marking Done (Dental Chart)
+                        </Text>
+                      </Col>
+                    </Row>
+                    <p />
+                    <strong>
+                      <Text style={{ fontSize: 20 }}> Time Out: </Text>
+                    </strong>
+                    <TimePicker />
+                    <p />
+                    <strong>
+                      <Text style={{ fontSize: 20 }}> Documented by:</Text>
+                    </strong>
+                    <Row>
+                      <Input style={{ width: '60%' }} />
+                    </Row>
+                    <p />
+                    <Row>
+                      <Col span={19} />
+                      <Col>
+                        <Button style={{ fontSize: 20, height: '40px' }}>
+                          Export
+                        </Button>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Modal>
+
                 <pre> </pre>
-                <Button style={{ color: 'black', width: '13%' }}>Audit1</Button>
+
+                <Button style={{ color: 'black', width: '12%' }}>Audit1</Button>
                 <pre> </pre>
-                <Button style={{ color: 'black', width: '13%' }}>Audit2</Button>
+                <Button style={{ color: 'black', width: '12%' }}>Audit2</Button>
                 <pre> </pre>
                 <Button style={{ color: 'black', width: '13%' }}>
                   Addendum
                 </Button>
                 <pre> </pre>
-                <Button style={{ color: 'black', width: '12%' }}>
+                <Button style={{ color: 'black', width: '13%' }}>
                   Template
                 </Button>
               </Row>
@@ -1147,7 +1284,7 @@ const ProcedureTertiary: React.FC = () => {
                         />
                       </Panel>
                       <Panel
-                        header="Procedure"
+                        header="Care Plan"
                         key="1"
                         className="boldheader"
                         // extra={

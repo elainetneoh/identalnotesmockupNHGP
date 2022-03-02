@@ -2505,7 +2505,7 @@ const NEHRhomescreen: React.FC = () => {
               </div>
 
               <p />
-              <Row style={{ marginBottom: 230 }}></Row>
+              <Row style={{ marginBottom: 370 }}></Row>
               <Button
                 className={fall ? style.fallrish : style.nonfallrisk}
                 onClick={handleBtnClick1}
@@ -2536,7 +2536,7 @@ const NEHRhomescreen: React.FC = () => {
               </Form>
               <p />
 
-              <Row>
+              {/* <Row>
                 {' '}
                 <Button size="large" style={{ width: '60%' }}>
                   Bisphosnate Therapy
@@ -2556,7 +2556,7 @@ const NEHRhomescreen: React.FC = () => {
                   Anti-coagulant Therapy
                 </Button>
               </Row>
-              <pre></pre>
+              <pre></pre> */}
 
               <Row>
                 {' '}

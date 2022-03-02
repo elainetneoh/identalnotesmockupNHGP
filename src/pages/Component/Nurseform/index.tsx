@@ -82,6 +82,29 @@ const Nurseform: React.FC = () => {
     setIsModalVisible2(false);
   };
 
+  const [isModalVisiblesignout, setIsModalVisiblesignout] = useState(false);
+  const showModalsignout = () => {
+    setIsModalVisiblesignout(true);
+  };
+  const handleOksignout = () => {
+    setIsModalVisiblesignout(false);
+  };
+
+  const handleCancelsignout = () => {
+    setIsModalVisiblesignout(false);
+  };
+
+  const [isModalVisiblefallrisk, setIsModalVisiblefallrisk] = useState(false);
+  const showModalfallrisk = () => {
+    setIsModalVisiblefallrisk(true);
+  };
+  const handleOkfallrisk = () => {
+    setIsModalVisiblefallrisk(false);
+  };
+
+  const handleCancelfallrisk = () => {
+    setIsModalVisiblefallrisk(false);
+  };
   const data3 = [
     {
       key: '1',
@@ -293,11 +316,240 @@ const Nurseform: React.FC = () => {
             <Col span={1}>
               <Text>Notes</Text>
             </Col>
-            <Col span={17} />
-            <Col>
+            <Col span={11} />
+            <Col span={12}>
               <Row>
+                <Button
+                  style={{ color: 'black', width: '15%' }}
+                  onClick={showModalfallrisk}
+                >
+                  Fall Risk
+                </Button>
+
+                <Modal
+                  title=""
+                  visible={isModalVisiblefallrisk}
+                  onOk={handleOkfallrisk}
+                  onCancel={handleCancelfallrisk}
+                  width={600}
+                  style={{ fontSize: 20 }}
+                >
+                  <Card>
+                    <Row>
+                      <Col span={2}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={22}>
+                        <Text style={{ fontSize: 20 }}>
+                          Pre-procedure Verification
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct patient</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct procedure</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct site</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Correct documents/radiographs
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Functioning Equipment
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Consent taken</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={2}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={22}>
+                        <Text style={{ fontSize: 20 }}>
+                          Site Marking Done (Dental Chart)
+                        </Text>
+                      </Col>
+                    </Row>
+                    <p />
+                    <strong>
+                      <Text style={{ fontSize: 20 }}> Time Out: </Text>
+                    </strong>
+                    <TimePicker />
+                    <p />
+                    <strong>
+                      <Text style={{ fontSize: 20 }}> Documented by:</Text>
+                    </strong>
+                    <Row>
+                      <Input style={{ width: '60%' }} />
+                    </Row>
+                    <p />
+                    <Row>
+                      <Col span={19} />
+                      <Col>
+                        <Button style={{ fontSize: 20, height: '40px' }}>
+                          Export
+                        </Button>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Modal>
+                <pre> </pre>
                 {/*start*/}
-                <Button onClick={showModal2}>INTRAOP</Button>
+                <Button
+                  style={{ color: 'black', width: '15%' }}
+                  onClick={showModalsignout}
+                >
+                  Sign Out
+                </Button>
+
+                <Modal
+                  title=""
+                  visible={isModalVisiblesignout}
+                  onOk={handleOksignout}
+                  onCancel={handleCancelsignout}
+                  width={600}
+                  style={{ fontSize: 20 }}
+                >
+                  <Card>
+                    <Row>
+                      <Col span={2}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={22}>
+                        <Text style={{ fontSize: 20 }}>
+                          Pre-procedure Verification
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct patient</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct procedure</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct site</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Correct documents/radiographs
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Functioning Equipment
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Consent taken</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={2}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={22}>
+                        <Text style={{ fontSize: 20 }}>
+                          Site Marking Done (Dental Chart)
+                        </Text>
+                      </Col>
+                    </Row>
+                    <p />
+                    <strong>
+                      <Text style={{ fontSize: 20 }}> Time Out: </Text>
+                    </strong>
+                    <TimePicker />
+                    <p />
+                    <strong>
+                      <Text style={{ fontSize: 20 }}> Documented by:</Text>
+                    </strong>
+                    <Row>
+                      <Input style={{ width: '60%' }} />
+                    </Row>
+                    <p />
+                    <Row>
+                      <Col span={19} />
+                      <Col>
+                        <Button style={{ fontSize: 20, height: '40px' }}>
+                          Export
+                        </Button>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Modal>
+                <pre> </pre>
+                <Button
+                  onClick={showModal2}
+                  style={{ color: 'black', width: '14%' }}
+                >
+                  INTRAOP
+                </Button>
                 <Modal
                   title="INTRAOP"
                   visible={isModalVisible2}
@@ -462,11 +714,18 @@ const Nurseform: React.FC = () => {
                           <Col span={12}>
                             <List
                               header={<div>Sign In</div>}
+                              // header={<div>Time Out</div>}
                               bordered
                               dataSource={[
                                 'Patient Identification',
                                 'Confirmed Consent',
                                 'Site of Operation',
+                                // 'Correct patient',
+                                // 'Correct procedure',
+                                // 'Correct site',
+                                // 'Correct radiographs/ medical records',
+                                // 'Functionality of equipment',
+                                // 'Review of anticoagulant/ antiplatelet'
                               ]}
                               renderItem={(item) => (
                                 <List.Item>
@@ -488,23 +747,41 @@ const Nurseform: React.FC = () => {
                               header={<div>Sign Out</div>}
                               bordered
                               dataSource={[
-                                'Instruments',
-                                'Sharps and Swabs',
-                                'Specimens',
+                                // 'Instruments',
+                                // 'Sharps and Swabs',
+                                // 'Specimens',
+                                <Checkbox>Instruments</Checkbox>,
+                                <Checkbox>Sharps and Swabs</Checkbox>,
+                                <Checkbox>Specimens</Checkbox>,
+                                // <Checkbox>Procedure unchanged</Checkbox>,
+                                // <Checkbox>Complete instrument and needle count</Checkbox>,
+                                // <Checkbox>Labelling of specimens (if applicable)</Checkbox>,
+                                // <Checkbox>Functioning equipment</Checkbox>,
+                                // <Row style={{ marginBottom: 70 }}></Row>,
+
+                                <Text>
+                                  {' '}
+                                  Post-op concern and management{' '}
+                                  <TextArea
+                                    style={{ height: 150 }}
+                                  ></TextArea>{' '}
+                                </Text>,
                               ]}
                               renderItem={(item) => (
                                 <List.Item>
-                                  <Checkbox>{item}</Checkbox>
+                                  {/* <Checkbox>{item}</Checkbox> */}
+                                  {item}
                                 </List.Item>
                               )}
-                              footer={
-                                <>
-                                  <div>Post-op concern and management </div>
-                                  <div>
-                                    <TextArea style={{ height: 150 }} />
-                                  </div>
-                                </>
-                              }
+                              // footer={
+                              //   <>
+
+                              //     <div>Post-op concern and management </div>
+                              //     <div>
+                              //       <TextArea style={{ height: 150 }} />
+                              //     </div>
+                              //   </>
+                              // }
                             />
                           </Col>
                         </Row>
@@ -543,7 +820,12 @@ const Nurseform: React.FC = () => {
 
                 {/*end*/}
 
-                <Button onClick={showModal}>PERIOP</Button>
+                <Button
+                  onClick={showModal}
+                  style={{ color: 'black', width: '14%' }}
+                >
+                  PERIOP
+                </Button>
                 <Modal
                   title="PERIOP"
                   visible={isModalVisible}
@@ -878,7 +1160,12 @@ const Nurseform: React.FC = () => {
                 </Modal>
                 <pre> </pre>
 
-                <Button onClick={showModal1}>Discharge</Button>
+                <Button
+                  onClick={showModal1}
+                  style={{ color: 'black', width: '15%' }}
+                >
+                  Discharge
+                </Button>
                 <Modal
                   title="Discharge"
                   visible={isModalVisible1}
@@ -961,7 +1248,9 @@ const Nurseform: React.FC = () => {
                   </Card>
                 </Modal>
                 <pre> </pre>
-                <Button>Template</Button>
+                <Button style={{ color: 'black', width: '15%' }}>
+                  Template
+                </Button>
               </Row>
             </Col>
           </Row>
