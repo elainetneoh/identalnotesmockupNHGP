@@ -44,6 +44,9 @@ import { Modal, Image } from 'antd';
 import dentalChart from './images/DentalChart.jpeg';
 import capture from './images/Capture.png';
 import { useForm } from 'antd/lib/Form/Form';
+import Orthodontics from './components/Orthodontics';
+import CarePlan from './components/CarePlan';
+
 const { TextArea } = Input;
 const { Text } = Typography;
 const { Option } = Select;
@@ -138,6 +141,9 @@ const menu = (
 );
 
 const ProcedureTertiary: React.FC = () => {
+  const [showCarePlanRemarks, setShowCarePlanRemarks] = useState(false);
+  const [showCarePlanPanel, setShowCarePlanPanel] = useState(false);
+
   const formItemLayout = {
     labelCol: { span: 7 },
     wrapperCol: { span: 10 },
@@ -169,11 +175,6 @@ const ProcedureTertiary: React.FC = () => {
 
   const handleCancel1 = () => {
     setIsModalVisible1(false);
-  };
-
-  const [isModalVisible2, setIsModalVisible2] = useState(false);
-  const showModal2 = () => {
-    setIsModalVisible2(true);
   };
 
   const handleOk2 = () => {
@@ -892,194 +893,13 @@ const ProcedureTertiary: React.FC = () => {
 
                 <pre style={{ fontSize: '30' }}> </pre>
                 <Button
-                  onClick={showModal2}
+                  onClick={() => {
+                    setShowCarePlanPanel(true);
+                  }}
                   style={{ color: 'black', width: '13%' }}
                 >
                   Care Plan
                 </Button>
-                <Modal
-                  title="Care Plan"
-                  visible={isModalVisible2}
-                  //  footer={[]}
-                  onOk={handleOk2}
-                  //  onOk={() => {
-                  //   handleOk2;
-                  // }}
-                  onCancel={handleCancel2}
-                  width={600}
-                  style={{ fontSize: 20 }}
-                >
-                  {/* <ProForm
-            labelCol={{ span: 0 }}
-            wrapperCol={{ span: 200 }}
-            layout="horizontal"
-            
-          > */}
-
-                  <Row>
-                    <Col span={1}> </Col>
-                    <Col span={3}>
-                      <Text>
-                        <strong>Create</strong>
-                      </Text>
-                    </Col>
-
-                    <Col span={3}>
-                      <Text>
-                        <strong>Update</strong>
-                      </Text>
-                    </Col>
-                  </Row>
-
-                  <Card>
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={5}>
-                        <Text style={{ fontSize: 17 }}>Orthodontics</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={3}>
-                        <Text style={{ fontSize: 17 }}>Scaling</Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={3}>
-                        <Text style={{ fontSize: 17 }}>Filling</Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={5}>
-                        <Text style={{ fontSize: 17 }}>Extraction</Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={8}>
-                        <Text style={{ fontSize: 17 }}>
-                          Fixed prosthodontics
-                        </Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={10}>
-                        <Text style={{ fontSize: 17 }}>
-                          Removable prosthodontics
-                        </Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={5}>
-                        <Text style={{ fontSize: 17 }}>Endodontics</Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={5}>
-                        <Text style={{ fontSize: 17 }}>Periodontics</Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={3}>
-                        <Text style={{ fontSize: 17 }}>OMS</Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={10}>
-                        <Text style={{ fontSize: 17 }}>Oral Medicine</Text>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col span={2}>
-                        <ProFormCheckbox></ProFormCheckbox>
-                      </Col>
-                      <Col span={5}>
-                        <Button>Update</Button>
-                      </Col>
-                      <Col span={13}>
-                        <Text style={{ fontSize: 17 }}>
-                          Return to GP/SAF/polyclinic
-                        </Text>
-                      </Col>
-                    </Row>
-
-                    <pre> </pre>
-                    <pre> </pre>
-                    <pre> </pre>
-
-                    <Row>
-                      <Col span={10}>
-                        <Button>Confirm Care Plan Created</Button>
-                      </Col>
-                    </Row>
-                  </Card>
-                </Modal>
 
                 <pre style={{ fontSize: '30' }}> </pre>
                 <Button
@@ -1298,11 +1118,20 @@ const ProcedureTertiary: React.FC = () => {
                         //   </Button>
                         // }
                       >
-                        <CKEditor
-                          style={{ width: '90%' }}
-                          editor={Editor}
-                          data="<br></br>"
-                        />
+                        {showCarePlanRemarks ? (
+                          <>
+                            <p>This is a test remarks for demo purpose</p>
+                            <p>This is a test remarks for demo purpose</p>
+                            <p>This is a test remarks for demo purpose</p>
+                            <p>This is a test remarks for demo purpose</p>
+                            <p>This is a test remarks for demo purpose</p>
+                            <p>This is a test remarks for demo purpose</p>
+                            <p>This is a test remarks for demo purpose</p>
+                            <p>This is a test remarks for demo purpose</p>
+                          </>
+                        ) : (
+                          ''
+                        )}
                       </Panel>
 
                       {/* <Panel
@@ -1334,129 +1163,15 @@ const ProcedureTertiary: React.FC = () => {
           </Form>
         </Col>
         <Col span={3}>
-          <Tabs tabPosition="bottom" style={{ height: '60%' }}>
-            <TabPane tab="Care Plan" key="d1">
-              <Card size="small" style={{ width: '90%' }}>
-                <Dropdown overlay={menu} trigger={['contextMenu']}>
-                  <div
-                    className="site-dropdown-context-menu"
-                    style={{
-                      textAlign: 'center',
-                    }}
-                  >
-                    <strong>
-                      <p style={{ fontSize: 20, width: '60%' }}>Orthodontics</p>
-                      <p style={{ width: '40%' }}>Shirely Tan</p>
-                    </strong>
-                    <p style={{ fontSize: 10, textAlign: 'right' }}>
-                      Updated on 08 Mar 18
-                    </p>
-                  </div>
-                </Dropdown>
-              </Card>
-
-              <Card size="small" style={{ width: '90%' }}>
-                <Dropdown overlay={menu} trigger={['contextMenu']}>
-                  <div
-                    className="site-dropdown-context-menu"
-                    style={{
-                      textAlign: 'center',
-                    }}
-                  >
-                    <strong>
-                      <p style={{ fontSize: 20, width: '30%' }}>Scaling</p>
-                      <p style={{ width: '35%' }}>Shirley Tan</p>
-                    </strong>
-                    <p style={{ fontSize: 10, textAlign: 'right' }}>
-                      Updated on 08 Mar 18
-                    </p>
-                  </div>
-                </Dropdown>
-                {/*<strong>
-                  <p style={{ fontSize: 20 }}>Scaling</p>
-                  <p>Shirely Tan</p>
-                </strong>
-                <p style={{ fontSize: 10, textAlign: 'right' }}>
-                  Updated on 08 Mar 18
-               </p>*/}
-              </Card>
-              <Card size="small" style={{ width: '90%' }}>
-                <Dropdown overlay={menu} trigger={['contextMenu']}>
-                  <div
-                    className="site-dropdown-context-menu"
-                    style={{
-                      textAlign: 'center',
-                    }}
-                  >
-                    <strong>
-                      <p style={{ fontSize: 20, width: '30%' }}>Extraction</p>
-                      <p style={{ width: '35%' }}>Shirley Tan</p>
-                    </strong>
-                    <p style={{ fontSize: 10, textAlign: 'right' }}>
-                      Updated on 08 Mar 18
-                    </p>
-                  </div>
-                </Dropdown>
-              </Card>
-              <Card size="small" style={{ width: '90%' }}>
-                <Dropdown overlay={menu} trigger={['contextMenu']}>
-                  <div
-                    className="site-dropdown-context-menu"
-                    style={{
-                      textAlign: 'center',
-                    }}
-                  >
-                    <strong>
-                      <p style={{ fontSize: 20, width: '25%' }}>Filling</p>
-                      <p style={{ width: '35%' }}>Shirley Tan</p>
-                    </strong>
-                    <p style={{ fontSize: 10, textAlign: 'right' }}>
-                      Updated on 08 Mar 18
-                    </p>
-                  </div>
-                </Dropdown>
-              </Card>
-              <Card size="small" style={{ width: '90%' }}>
-                <strong>
-                  <p style={{ fontSize: 20 }}></p>
-                  <p></p>
-                </strong>
-                <pre> </pre>
-                <pre> </pre>
-                <pre> </pre>
-                <pre> </pre>
-                <pre> </pre>
-                <pre> </pre>
-                <pre> </pre>
-                <pre> </pre>
-                <p style={{ fontSize: 10, textAlign: 'right' }}></p>
-              </Card>
-            </TabPane>
-            <TabPane tab="Image" key="d2" style={{ width: '90%' }}>
-              <Row>
-                <Button type="primary" icon={<PlusOutlined />}>
-                  Add
-                </Button>
-                <pre> </pre>
-                <Button type="primary" icon={<CloseOutlined />}>
-                  delete
-                </Button>
-              </Row>
-              <TextArea style={{ height: 800 }} />
-            </TabPane>
-            <TabPane tab="Instrument" key="d3" style={{ width: '90%' }}>
-              <Row>
-                <Button type="primary" icon={<PlusOutlined />}>
-                  Add
-                </Button>
-                <pre> </pre>
-                <Button type="primary" icon={<CloseOutlined />}>
-                  delete
-                </Button>
-              </Row>
-              <TextArea style={{ height: 800 }} />
-            </TabPane>
-          </Tabs>
+          {showCarePlanPanel ? (
+            <CarePlan
+              CreateClicked={() => {
+                setShowCarePlanRemarks(true);
+              }}
+            />
+          ) : (
+            <Orthodontics />
+          )}
         </Col>
       </Row>
     </div>
