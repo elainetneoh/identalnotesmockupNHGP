@@ -183,8 +183,9 @@ const ProcedureTertiary: React.FC = () => {
     setIsModalVisible2(false);
   };
 
-  const [IsModaldepartmentVisible, setIsModaldepartmentVisible] =
-    useState(false);
+  const [IsModaldepartmentVisible, setIsModaldepartmentVisible] = useState(
+    false,
+  );
   const showModaldepartment = () => {
     setIsModaldepartmentVisible(true);
   };
@@ -238,7 +239,7 @@ const ProcedureTertiary: React.FC = () => {
           <Collapse defaultActiveKey={['2']}>
             <Panel
               header="Complaint/History (Dental / Social)"
-              key="1"
+              key="a1"
               className="boldheader"
             >
               <Image src={capture} style={{ height: 200 }} />
@@ -1221,7 +1222,7 @@ const ProcedureTertiary: React.FC = () => {
                     <Collapse defaultActiveKey={['1']}>
                       <Panel
                         header="Assesment"
-                        key="1"
+                        key="b1"
                         className="boldheader"
                         extra={
                           <div>
@@ -1285,7 +1286,7 @@ const ProcedureTertiary: React.FC = () => {
                       </Panel>
                       <Panel
                         header="Care Plan"
-                        key="1"
+                        key="c1"
                         className="boldheader"
                         // extra={
                         //   <Button
@@ -1327,13 +1328,13 @@ const ProcedureTertiary: React.FC = () => {
                   </div>
                 </Form.Item>
               </Col>
-              <col span={1} />
+              <Col span={1} />
             </Row>
           </Form>
         </Col>
         <Col span={3}>
           <Tabs tabPosition="bottom" style={{ height: '60%' }}>
-            <TabPane tab="Care Plan" key="1">
+            <TabPane tab="Care Plan" key="d1">
               <Card size="small" style={{ width: '90%' }}>
                 <Dropdown overlay={menu} trigger={['contextMenu']}>
                   <div
@@ -1430,7 +1431,7 @@ const ProcedureTertiary: React.FC = () => {
                 <p style={{ fontSize: 10, textAlign: 'right' }}></p>
               </Card>
             </TabPane>
-            <TabPane tab="Image" key="2" style={{ width: '90%' }}>
+            <TabPane tab="Image" key="d2" style={{ width: '90%' }}>
               <Row>
                 <Button type="primary" icon={<PlusOutlined />}>
                   Add
@@ -1442,7 +1443,7 @@ const ProcedureTertiary: React.FC = () => {
               </Row>
               <TextArea style={{ height: 800 }} />
             </TabPane>
-            <TabPane tab="Instrument" key="3" style={{ width: '90%' }}>
+            <TabPane tab="Instrument" key="d3" style={{ width: '90%' }}>
               <Row>
                 <Button type="primary" icon={<PlusOutlined />}>
                   Add
