@@ -16,6 +16,7 @@ import {
   Typography,
   Radio,
   Table,
+  Popover,
 } from 'antd';
 import style from './index.less';
 import chestpain from './images/chestpain.jpeg';
@@ -34,6 +35,8 @@ const { TextArea } = Input;
 const { Text } = Typography;
 const { Option } = Select;
 const { Column } = Table;
+const PatientAlertTitle = <span>Patient Alert</span>;
+const DialogTitle = <span>Dialog</span>;
 
 const NEHRhomescreen: React.FC = () => {
   const [fall, setClass] = useState<boolean>(false);
@@ -105,6 +108,43 @@ const NEHRhomescreen: React.FC = () => {
     setEDDDateVisible(true);
     setSignatureVisible(false);
   };
+
+  const contentPatientAlert = (
+    <div>
+      <TextArea style={{ width: '100%', height: 250 }}></TextArea>
+    </div>
+  );
+
+  const contentDialog = (
+    <div>
+      <Row>
+        <Col>
+          <button>Clear</button>
+        </Col>
+        <pre> </pre>
+        <Col>
+          <button>Save</button>
+        </Col>
+        <pre> </pre>
+        <Col>
+          <button>Delete</button>
+        </Col>
+        <Row></Row>
+      </Row>
+
+      <Row gutter={{ sm: 8 }}>
+        <Col>
+          <TextArea style={{ width: 700, height: 200 }}></TextArea>
+        </Col>
+      </Row>
+
+      <Row style={{ marginBottom: 50 }}></Row>
+
+      <Text>Saved on 7/Jan/2021 17:08 </Text>
+
+      <p />
+    </div>
+  );
   return (
     <div className={style.NEHRhome}>
       <Row gutter={{ sm: 8 }}>
@@ -819,7 +859,7 @@ const NEHRhomescreen: React.FC = () => {
                         htmlType="submit"
                         style={{ width: '150%' }}
                         onClick={showModal}
-                        className={fall ? style.fallrish : style.nonfallrisk}
+                        // className={fall ? style.fallrish : style.nonfallrisk}
                       >
                         Financial Assistance
                       </Button>
@@ -1229,9 +1269,8 @@ const NEHRhomescreen: React.FC = () => {
                       labelCol={{ span: 4 }}
                       labelAlign={'left'}
                     >
-                      <TextArea style={{ width: '100%', height: 150 }} />
+                      <TextArea style={{ width: '100%', height: 250 }} />
                     </Form.Item>
-
                     <Row>
                       <Col span={4}>
                         <Text>Travel / Medical Alert :</Text>
@@ -1255,28 +1294,52 @@ const NEHRhomescreen: React.FC = () => {
                         <pre></pre>
                         <pre></pre>
                         <pre></pre>
-                        <Space direction="vertical">
-                          {/* <Button
-                        style={{ width: 120 }}
-                        className={fall ? style.fallrish : style.nonfallrisk}
-                        type="ghost"
-                        // danger
-                        htmlType="submit"
-                        onClick={() => {
-                          setPatientAlertModalVisible(true);
-                        }}
-                      >
-                        Patient Alert
-                      </Button>
+                        <pre></pre>
+                        <pre></pre>
+                        <pre></pre>
+                        <pre></pre>
+                        <pre></pre>
+                        <pre></pre>
 
-                      <Button
-                        style={{ width: 120 }}
-                        // type="primary"
-                        htmlType="submit"
-                        onClick={showModal2}
-                      >
-                        Dialog
-                      </Button> */}
+                        <Space direction="vertical">
+                          <Popover
+                            placement="rightBottom"
+                            title={PatientAlertTitle}
+                            content={contentPatientAlert}
+                            trigger="click"
+                            overlayStyle={{ width: '30%' }}
+                          >
+                            <Button
+                              style={{ width: 120 }}
+                              //   className={fall ? style.fallrish : style.nonfallrisk}
+                              type="primary"
+                              // danger
+                              htmlType="submit"
+
+                              // onClick={() => {
+                              //    setPatientAlertModalVisible(true);
+                              // }}
+                            >
+                              Patient Alert
+                            </Button>
+                          </Popover>
+
+                          <Popover
+                            placement="rightBottom"
+                            title={DialogTitle}
+                            content={contentDialog}
+                            trigger="click"
+                            overlayStyle={{ width: '30%' }}
+                          >
+                            <Button
+                              style={{ width: 120 }}
+                              // type="primary"
+                              htmlType="submit"
+                              // onClick={showModal2}
+                            >
+                              Dialog
+                            </Button>
+                          </Popover>
                         </Space>
 
                         {/* <Modal
@@ -1318,22 +1381,22 @@ const NEHRhomescreen: React.FC = () => {
                       <p />
                     </Modal> */}
 
-                        {/* <Modal
-                      visible={patientAlertModalVisible}
-                      title="Patient Alert"
-                      onOk={() => {
-                        setPatientAlertModalVisible(false);
-                      }}
-                      width={500}
-                      bodyStyle={{ height: 300 }}
-                      style={{ fontSize: 20, left: -500, top: 720 }}
-                    >
-                      Paitent alert content here ...
-                    </Modal> */}
+                        <Modal
+                          visible={patientAlertModalVisible}
+                          title="Patient Alert"
+                          onOk={() => {
+                            setPatientAlertModalVisible(false);
+                          }}
+                          width={500}
+                          bodyStyle={{ height: 300 }}
+                          style={{ fontSize: 20, left: -500, top: 720 }}
+                        >
+                          Paitent alert content here ...
+                        </Modal>
                       </Col>
 
                       <Col span={20}>
-                        <TextArea style={{ height: 150 }}></TextArea>
+                        <TextArea style={{ height: 250 }}></TextArea>
                       </Col>
                     </Row>
 
@@ -1341,17 +1404,44 @@ const NEHRhomescreen: React.FC = () => {
                   </Col>
                 </Row>
 
-                <Row gutter={{ xs: 4, sm: 8 }}>
-                  <Col span={4}>
-                    <Space direction="vertical">
-                      <Button
+                {/* <Row>
+                      <Col span={4}>
+                        <Text>Travel / Medical Alert :</Text> */}
+
+                {/*<Form.Item
+                  label="Travel / Medical Alert"
+                  name="MedicalAlert"
+                  labelCol={{ span: 24 }}
+                  labelAlign={'left'}
+                  
+                >
+                
+                 
+                {/*<TextArea style={{height:200}}></TextArea> */}
+
+                {/*</Form.Item>*/}
+
+                {/* <pre></pre> */}
+
+                {/* <pre></pre>
+<pre></pre>
+<pre></pre>
+<pre></pre>
+<pre></pre>
+<pre></pre>
+<pre></pre>
+<pre></pre>
+<pre></pre>
+<pre></pre> */}
+                {/* <Space direction="vertical"> */}
+                {/* <Button
                         style={{ width: 120 }}
                         className={fall ? style.fallrish : style.nonfallrisk}
                         type="ghost"
                         // danger
                         htmlType="submit"
                         onClick={() => {
-                          togglefunction();
+                          setPatientAlertModalVisible(true);
                         }}
                       >
                         Patient Alert
@@ -1364,19 +1454,111 @@ const NEHRhomescreen: React.FC = () => {
                         onClick={showModal2}
                       >
                         Dialog
+                      </Button> */}
+                {/* </Space> */}
+
+                {/* <Modal
+                      title="Dialog"
+                      visible={isModalVisible2}
+                      onOk={handleOk2}
+                      onCancel={handleCancel2}
+                      width={500}
+                      bodyStyle={{ height: 300 }}
+                      style={{ fontSize: 20, left: -500, top: 720 }}
+                    >
+                      <Row>
+                        <Col>
+                          <button>Clear</button>
+                        </Col>
+                        <pre> </pre>
+                        <Col>
+                          <button>Save</button>
+                        </Col>
+                        <pre> </pre>
+                        <Col>
+                          <button>Delete</button>
+                        </Col>
+                        <Row></Row>
+                      </Row>
+
+                      <Row gutter={{ sm: 8 }}>
+                        <Col>
+                          <TextArea
+                            style={{ width: 700, height: 100 }}
+                          ></TextArea>
+                        </Col>
+                      </Row>
+
+                      <Row style={{ marginBottom: 80 }}></Row>
+
+                      <Text>Saved on 7/Jan/2021 17:08 </Text>
+
+                      <p />
+                    </Modal> */}
+
+                {/* <Modal
+                      visible={patientAlertModalVisible}
+                      title="Patient Alert"
+                      onOk={() => {
+                        setPatientAlertModalVisible(false);
+                      }}
+                      width={500}
+                      bodyStyle={{ height: 300 }}
+                      style={{ fontSize: 20, left: -500, top: 720 }}
+                    >
+                      Paitent alert content here ...
+                    </Modal> */}
+                {/* </Col> */}
+
+                {/* <Col span={20}>
+                        <TextArea style={{ height: 250 }}></TextArea>
+                      </Col>
+                    </Row>
+
+                    <pre></pre>
+                  </Col>
+                </Row> */}
+
+                {/* <Row gutter={{ xs: 4, sm: 8 }}>
+                  <Col span={4}>
+                    <Space direction="vertical">
+                    <Popover placement="rightBottom" title={PatientAlertTitle} content={contentPatientAlert} trigger="click" overlayStyle={{width:"30%"}}>
+                      <Button
+                        style={{ width: 120 }}
+                        className={fall ? style.fallrish : style.nonfallrisk}
+                        type="ghost"
+                        // danger
+                        htmlType="submit"
+                        // onClick={() => {
+                        //   togglefunction();
+                        // }}
+                      >
+                        Patient Alert
                       </Button>
+                      </Popover>
+
+                      <Popover placement="rightBottom" title={DialogTitle} content={contentDialog} trigger="click" overlayStyle={{width:"30%"}}>
+                      <Button
+                        style={{ width: 120 }}
+                        // type="primary"
+                        htmlType="submit"
+                        // onClick={showModal2}
+                      >
+                        Dialog
+                      </Button>
+                      </Popover>
                     </Space>
                   </Col>
 
-                  <Col span={20}>
+                  {/* <Col span={20}>
                     <TextArea
                       style={{ height: 160 }}
                       hidden={patientAlertModalVisible}
                     ></TextArea>
-                  </Col>
-                </Row>
+                  </Col> */}
+                {/* </Row>  */}
 
-                <pre></pre>
+                {/* <pre></pre> */}
 
                 <Form.Item>
                   {/* <Button htmlType="submit">New/Retrieve Patient</Button>
@@ -2251,7 +2433,7 @@ const NEHRhomescreen: React.FC = () => {
                   }
                   name="allergies"
                 >
-                  <TextArea style={{ height: 130 }} />
+                  <TextArea style={{ height: 140 }} />
                 </Form.Item>
                 <Form.Item
                   label={
@@ -2262,7 +2444,7 @@ const NEHRhomescreen: React.FC = () => {
                   }
                   name="Infectious"
                 >
-                  <TextArea style={{ height: 130 }} />
+                  <TextArea style={{ height: 140 }} />
                 </Form.Item>
                 <Form.Item
                   label={<strong style={{ fontSize: '20px' }}>Comments</strong>}
@@ -2485,7 +2667,7 @@ const NEHRhomescreen: React.FC = () => {
               <div>
                 {explain === 'defualt' && (
                   <div>
-                    <TextArea style={{ height: 420 }} />
+                    <TextArea style={{ width: 450, height: 450 }} />
                   </div>
                 )}
                 {explain === 'chestpain' && (
@@ -2519,7 +2701,7 @@ const NEHRhomescreen: React.FC = () => {
                 layout="vertical"
               >
                 <Form.Item label="Pain Score" name="Painscore">
-                  <Select defaultValue="0" style={{ width: '30%' }}>
+                  <Select defaultValue="0" style={{ width: '40%' }}>
                     <Option value="0">0</Option>
                     <Option value="1">1</Option>
                     <Option value="2">2</Option>
@@ -2563,7 +2745,7 @@ const NEHRhomescreen: React.FC = () => {
                 <Button
                   size="large"
                   style={{
-                    width: '60%',
+                    width: '50%',
                     backgroundColor: isPregnantConsentSigned ? 'red' : 'white',
                   }}
                   onClick={() => {
@@ -2666,9 +2848,7 @@ const NEHRhomescreen: React.FC = () => {
                   <Input style={{ width: '60%' }} />
                 </Form.Item>
                 <Form.Item>
-                  <Button type="primary" htmlType="submit">
-                    Confirm
-                  </Button>
+                  <Button htmlType="submit">Confirm</Button>
                 </Form.Item>
               </Form>
             </Col>
