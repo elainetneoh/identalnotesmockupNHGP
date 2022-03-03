@@ -178,9 +178,8 @@ const ProcedureTertiary: React.FC = () => {
     setIsModalVisible1(false);
   };
 
-  const [IsModaldepartmentVisible, setIsModaldepartmentVisible] = useState(
-    false,
-  );
+  const [IsModaldepartmentVisible, setIsModaldepartmentVisible] =
+    useState(false);
   const showModaldepartment = () => {
     setIsModaldepartmentVisible(true);
   };
@@ -912,13 +911,20 @@ const ProcedureTertiary: React.FC = () => {
                 >
                   <Card>
                     <Row>
-                      <Col span={2}>
+                      <Col span={3}>
+                        <Text style={{ fontSize: 20 }}>Time : </Text>
+                      </Col>
+                      <Col span={21}>
+                        <TimePicker></TimePicker>
+                      </Col>
+                    </Row>
+                    <pre> </pre>
+                    <Row>
+                      <Col span={3}>
                         <Checkbox />
                       </Col>
-                      <Col span={22}>
-                        <Text style={{ fontSize: 20 }}>
-                          Pre-procedure Verification
-                        </Text>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>✔Correct patient</Text>
                       </Col>
                     </Row>
                     <Row>
@@ -926,7 +932,7 @@ const ProcedureTertiary: React.FC = () => {
                         <Checkbox />
                       </Col>
                       <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Correct patient</Text>
+                        <Text style={{ fontSize: 20 }}>✔Correct procedure</Text>
                       </Col>
                     </Row>
                     <Row>
@@ -934,25 +940,7 @@ const ProcedureTertiary: React.FC = () => {
                         <Checkbox />
                       </Col>
                       <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Correct procedure</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Correct site</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>
-                          Correct documents/radiographs
-                        </Text>
+                        <Text style={{ fontSize: 20 }}>✔Correct site</Text>
                       </Col>
                     </Row>
                     <Row>
@@ -961,7 +949,7 @@ const ProcedureTertiary: React.FC = () => {
                       </Col>
                       <Col span={21}>
                         <Text style={{ fontSize: 20 }}>
-                          Functioning Equipment
+                          ✔Correct radiographs/ medical records
                         </Text>
                       </Col>
                     </Row>
@@ -970,24 +958,22 @@ const ProcedureTertiary: React.FC = () => {
                         <Checkbox />
                       </Col>
                       <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Consent taken</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={2}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={22}>
                         <Text style={{ fontSize: 20 }}>
-                          Site Marking Done (Dental Chart)
+                          ✔Functionality of equipment
                         </Text>
                       </Col>
                     </Row>
-                    <p />
-                    <strong>
-                      <Text style={{ fontSize: 20 }}> Time Out: </Text>
-                    </strong>
-                    <TimePicker />
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          ✔Review of anticoagulant/ antiplatelet
+                        </Text>
+                      </Col>
+                    </Row>
+
                     <p />
                     <strong>
                       <Text style={{ fontSize: 20 }}> Documented by:</Text>

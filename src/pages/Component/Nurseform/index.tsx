@@ -341,27 +341,56 @@ const Nurseform: React.FC = () => {
                       </Col>
                       <Col span={22}>
                         <Text style={{ fontSize: 20 }}>
-                          Pre-procedure Verification
+                          ✔Extraction/Root Canal Treatment (No giddiness after
+                          procedure)
+                        </Text>
+                        <br></br>
+                        <Text style={{ fontSize: 20 }}>
+                          Patient is discharged after bleeding stops, not
+                          feeling giddy and has pain score less than 4.
                         </Text>
                       </Col>
                     </Row>
                     <Row>
-                      <Col span={3}>
+                      <Col span={2}>
                         <Checkbox />
                       </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Correct patient</Text>
+                      <Col span={22}>
+                        <Text style={{ fontSize: 20 }}>
+                          ✔Extraction/Root Canal Treatment (Giddiness after
+                          procedure)
+                        </Text>
+                        <br></br>
+                        <Text style={{ fontSize: 20 }}>
+                          1. Patient is assisted to recovery room.
+                        </Text>
+                        <br></br>
+                        <Text style={{ fontSize: 20 }}>
+                          2. Patient is only discharged after bleeding stops,
+                          not feeling giddy and pain score less than 4.
+                        </Text>
                       </Col>
                     </Row>
                     <Row>
-                      <Col span={3}>
+                      <Col span={2}>
                         <Checkbox />
                       </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Correct procedure</Text>
+                      <Col span={22}>
+                        <Text style={{ fontSize: 20 }}>
+                          ✔Surgical procedures under LA
+                        </Text>
+                        <br></br>
+                        <Text style={{ fontSize: 20 }}>
+                          1. Patient is assisted to recovery room.
+                        </Text>
+                        <br></br>
+                        <Text style={{ fontSize: 20 }}>
+                          2. Patient is only discharged after bleeding stops,
+                          not feeling giddy and pain score less than 4.
+                        </Text>
                       </Col>
                     </Row>
-                    <Row>
+                    {/* <Row>
                       <Col span={3}>
                         <Checkbox />
                       </Col>
@@ -406,13 +435,14 @@ const Nurseform: React.FC = () => {
                           Site Marking Done (Dental Chart)
                         </Text>
                       </Col>
-                    </Row>
-                    <p />
+                    </Row> */}
+                    {/* <p />
                     <strong>
                       <Text style={{ fontSize: 20 }}> Time Out: </Text>
                     </strong>
                     <TimePicker />
-                    <p />
+                    <p /> */}
+                    <pre> </pre>
                     <strong>
                       <Text style={{ fontSize: 20 }}> Documented by:</Text>
                     </strong>
@@ -449,46 +479,22 @@ const Nurseform: React.FC = () => {
                 >
                   <Card>
                     <Row>
-                      <Col span={2}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={22}>
-                        <Text style={{ fontSize: 20 }}>
-                          Pre-procedure Verification
-                        </Text>
-                      </Col>
-                    </Row>
-                    <Row>
                       <Col span={3}>
-                        <Checkbox />
+                        <Text style={{ fontSize: 20 }}>Time : </Text>
                       </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Correct patient</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Correct procedure</Text>
+
+                      <Col span={17}>
+                        <TimePicker></TimePicker>
                       </Col>
                     </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Correct site</Text>
-                      </Col>
-                    </Row>
+                    <pre> </pre>
                     <Row>
                       <Col span={3}>
                         <Checkbox />
                       </Col>
                       <Col span={21}>
                         <Text style={{ fontSize: 20 }}>
-                          Correct documents/radiographs
+                          ✔Procedure unchanged
                         </Text>
                       </Col>
                     </Row>
@@ -498,7 +504,7 @@ const Nurseform: React.FC = () => {
                       </Col>
                       <Col span={21}>
                         <Text style={{ fontSize: 20 }}>
-                          Functioning Equipment
+                          ✔Complete instrument and needle count
                         </Text>
                       </Col>
                     </Row>
@@ -507,25 +513,24 @@ const Nurseform: React.FC = () => {
                         <Checkbox />
                       </Col>
                       <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>Consent taken</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={2}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={22}>
                         <Text style={{ fontSize: 20 }}>
-                          Site Marking Done (Dental Chart)
+                          ✔Labelling of specimens (if applicable) 
                         </Text>
                       </Col>
                     </Row>
-                    <p />
-                    <strong>
-                      <Text style={{ fontSize: 20 }}> Time Out: </Text>
-                    </strong>
-                    <TimePicker />
-                    <p />
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          ✔Functioning equipment
+                        </Text>
+                      </Col>
+                    </Row>
+
+                    <pre> </pre>
+
                     <strong>
                       <Text style={{ fontSize: 20 }}> Documented by:</Text>
                     </strong>
