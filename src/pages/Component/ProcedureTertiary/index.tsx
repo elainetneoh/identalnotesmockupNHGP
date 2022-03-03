@@ -41,11 +41,11 @@ import Editor from '@medisys/ckeditor5-custom-build';
 // import {Highlight} from '@ckeditor/ckeditor5-highlight'
 import { Divider } from 'antd';
 import { Modal, Image } from 'antd';
-import dentalChart from './images/DentalChart.jpeg';
 import capture from './images/Capture.png';
 import { useForm } from 'antd/lib/Form/Form';
 import Orthodontics from './components/Orthodontics';
 import CarePlan from './components/CarePlan';
+import Chart from './components/Chart';
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -143,6 +143,7 @@ const menu = (
 const ProcedureTertiary: React.FC = () => {
   const [showCarePlanRemarks, setShowCarePlanRemarks] = useState(false);
   const [showCarePlanPanel, setShowCarePlanPanel] = useState(false);
+  const [showChart, setShowChart] = useState(false);
 
   const formItemLayout = {
     labelCol: { span: 7 },
@@ -175,14 +176,6 @@ const ProcedureTertiary: React.FC = () => {
 
   const handleCancel1 = () => {
     setIsModalVisible1(false);
-  };
-
-  const handleOk2 = () => {
-    setIsModalVisible2(false);
-  };
-
-  const handleCancel2 = () => {
-    setIsModalVisible2(false);
   };
 
   const [IsModaldepartmentVisible, setIsModaldepartmentVisible] = useState(
@@ -238,15 +231,19 @@ const ProcedureTertiary: React.FC = () => {
     <div className={style.ProcedureTer}>
       <Row className={style.fixedHeader}>
         <Col span={24}>
-          <Collapse defaultActiveKey={['2']}>
-            <Panel
-              header="Complaint/History (Dental / Social)"
-              key="a1"
-              className="boldheader"
-            >
-              <Image src={capture} style={{ height: 200 }} />
-            </Panel>
-          </Collapse>
+          {showChart ? (
+            <Chart />
+          ) : (
+            <Collapse defaultActiveKey={['2']}>
+              <Panel
+                header="Complaint/History (Dental / Social)"
+                key="a1"
+                className="boldheader"
+              >
+                <Image src={capture} style={{ height: 200 }} />
+              </Panel>
+            </Collapse>
+          )}
         </Col>
       </Row>
       <Row>
@@ -660,18 +657,14 @@ const ProcedureTertiary: React.FC = () => {
                   </Col>
                   <Col span={2}></Col>
                   <Col span={3}>
-                    <Button style={{ width: '70%' }} onClick={showModal}>
+                    <Button
+                      style={{ width: '70%' }}
+                      onClick={() => {
+                        setShowChart(true);
+                      }}
+                    >
                       Chart
                     </Button>
-                    <Modal
-                      title="Dental Chart"
-                      visible={isModalVisible}
-                      onOk={handleOk}
-                      onCancel={handleCancel}
-                      width={1200}
-                    >
-                      <Image src={dentalChart} />
-                    </Modal>
                   </Col>
                 </Row>
               </Form>

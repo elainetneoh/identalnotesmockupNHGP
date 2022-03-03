@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col, Card, Checkbox, Button, Input } from 'antd';
 import style from '../index.less';
-import { TextAreaRef } from 'antd/lib/input/TextArea';
 
 type CarePlanProps = {
   CreateClicked: () => void;
