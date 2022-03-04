@@ -1019,7 +1019,7 @@ const ProcedureTertiary: React.FC = () => {
               <Col span={23}>
                 <Form.Item labelCol={{ span: 5 }} labelAlign={'left'}>
                   <div className="App">
-                    <Collapse defaultActiveKey={['1']}>
+                    <Collapse defaultActiveKey={['b1']}>
                       <Panel
                         header="Assesment"
                         key="b1"

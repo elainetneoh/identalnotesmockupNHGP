@@ -39,6 +39,7 @@ import epos_otherfinancalassistance_Y from '../NHGPhomescreen/icon/otherfinancal
 import epos_safcoverage_Y from '../NHGPhomescreen/icon/SAFcoverage.png';
 import epos_outstandingpayment_Y from '../NHGPhomescreen/icon/outstandingpayment.png';
 import Bottom from '../Bottom';
+import { EditOutlined } from '@ant-design/icons';
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -55,11 +56,19 @@ const KTPHhomescreenNewVersion: React.FC = () => {
   const [pregnantHistoryModalVisible, setPregnantHistoryModalVisible] =
     useState(false);
   const [isPregnantConsentSigned, setIsPregnantConsentSigned] = useState(false);
+
+  const [iscolour, setiscolour] = useState(false);
   const [EDDDate, setEDDDateVisible] = useState(true);
   const [Signature, setSignatureVisible] = useState(true);
   const [patientAlertModalVisible, setPatientAlertModalVisible] =
     useState(false);
 
+  const [isBisphosnateClick, setIsBisphosnateClick] = useState(false);
+  const [isRadiotherapyClick, setIsRadiotherapyClick] = useState(false);
+  const [isAntiCoagulantClick, setIsAntiCoagulantClick] = useState(false);
+  const [isPregnancyClick, setIsPregnancyClick] = useState(false);
+  const [pregnantSignModalVisible, setPregnantSignModalVisible] =
+    useState(false);
   const handleBtnClick1 = () => {
     setClass1((pre) => !pre);
   };
@@ -106,13 +115,22 @@ const KTPHhomescreenNewVersion: React.FC = () => {
   const divStyle = { color: 'blue' };
 
   function togglefunction() {
-    if (isToggledOn) {
-      setPatientAlertModalVisible(true);
-    } else {
-      setPatientAlertModalVisible(false);
-    }
+    // if (true) {
+    //   setIsBisphosnateClick(true);
+    // } else {
+    //   setIsBisphosnateClick(false);
+    // }
+    setIsBisphosnateClick(!isBisphosnateClick);
   }
-
+  function togglefunction2() {
+    setIsRadiotherapyClick(!isRadiotherapyClick);
+  }
+  function togglefunction3() {
+    setIsAntiCoagulantClick(!isAntiCoagulantClick);
+  }
+  function togglefunction4() {
+    setIsPregnancyClick(!isPregnancyClick);
+  }
   const contentPatientAlert = (
     <div>
       <TextArea style={{ width: '100%', height: 250 }}></TextArea>
@@ -300,12 +318,12 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     // style={{ width: '65%' }}
                     // labelAlign={'left'}
                   >
-                    <Select defaultValue="Select one" style={{ width: '100%' }}>
+                    <Select defaultValue="PG" style={{ width: '100%' }}>
+                      <Option value="Non-residence">NR</Option>
                       <Option value="SC">SC</Option>
                       <Option value="PR">PR</Option>
-                      <Option value="Non-residence">Non-residence</Option>
-                      <Option value="PG">PG</Option>
                       <Option value="MG">MG</Option>
+                      <Option value="PG">PG</Option>
                     </Select>
                   </Form.Item>
                 </Col>
@@ -362,16 +380,17 @@ const KTPHhomescreenNewVersion: React.FC = () => {
 
                 <Col span={9}>
                   <Form.Item
-                    label="CHAS"
+                    label="CHAS Status"
                     name="CHAS"
                     labelCol={{ span: 9 }}
                     //style={{ width: '65%' }}
                     labelAlign={'left'}
                   >
-                    <Select defaultValue="Select one" style={{ width: '100%' }}>
+                    <Select defaultValue="Orange" style={{ width: '100%' }}>
                       <Option value="NIL">NIL</Option>
-                      <Option value="Blue">Blue</Option>
+                      <Option value="Blue">Green</Option>
                       <Option value="Orange">Orange</Option>
+                      <Option value="Blue">Blue</Option>
                     </Select>
                   </Form.Item>
                 </Col>
@@ -564,25 +583,26 @@ const KTPHhomescreenNewVersion: React.FC = () => {
 
                 <Col span={6}>
                   <Button
-                    type="primary"
-                    htmlType="submit"
-                    style={{ width: '150%' }}
+                    //  type="primary"
+                    // htmlType="submit"
+                    style={{ width: '150%', backgroundColor: '#BADEEE' }}
                     onClick={showModal}
-                    className={fall ? style.fallrish : style.nonfallrisk}
+
+                    // className={fall ? style.fallrish : style.nonfallrisk}
                   >
-                    Financial Assistance
+                    <strong>Financial Assistance</strong>
                   </Button>
                   <Modal
                     title="Financial"
                     visible={isModalVisible}
                     onOk={handleOk}
                     onCancel={handleCancel}
-                    width={600}
+                    width={800}
                     style={{ fontSize: 20 }}
                   >
                     <Card>
                       <Row>
-                        <Col span={2}>
+                        <Col>
                           <button>Edit</button>
                         </Col>
                         <pre> </pre>
@@ -611,11 +631,13 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                               style={{ width: '500px' }}
                             >
                               <Select
-                                defaultValue="TTSH"
+                                defaultValue="PA"
                                 style={{ width: '80%' }}
                               >
-                                <Option value="TTHS">TTHS</Option>
-                                <Option value="KTPH">KTPH</Option>
+                                <Option value="KTPH">MFEC</Option>
+                                <Option value="TTHS">PA</Option>
+                                <Option value="KTPH">KTPH Medifund</Option>
+                                <Option value="KTPH">SMTA</Option>
                               </Select>
                             </Form.Item>
                           </Form>
@@ -663,7 +685,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       </Row>
 
                       <Row gutter={{ sm: 8 }}>
-                        <Col span={10}>
+                        <Col span={24}>
                           <Form
                             labelCol={{ span: 0 }}
                             wrapperCol={{ span: 100 }}
@@ -672,17 +694,19 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                             <Form.Item
                               label="Remarks"
                               name="remarks"
-                              labelCol={{ span: 4 }}
+                              labelCol={{ span: 3 }}
                               labelAlign={'left'}
-                              style={{ width: '500px' }}
+                              //  style={{ width: '500px' }}
                             >
-                              <TextArea style={{ width: '80%' }}></TextArea>
+                              <TextArea
+                                style={{ width: '100%', height: 250 }}
+                              ></TextArea>
                             </Form.Item>
                           </Form>
                         </Col>
                       </Row>
 
-                      <Row style={{ marginBottom: 80 }}></Row>
+                      <Row style={{ marginBottom: 50 }}></Row>
 
                       <Text>Updated By : Elaine - 7/Jan/2021 17:08 </Text>
 
@@ -938,7 +962,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             >
               <Col offset={20}>
                 <Button htmlType="submit" style={{ width: '100%' }}>
-                  Refresh CMIS
+                  <strong>Refresh CMIS</strong>
                 </Button>
               </Col>
             </Form.Item>
@@ -1007,7 +1031,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     <pre></pre>
                     <pre></pre>
 
-                    <Space direction="vertical">
+                    {/* <Space direction="vertical">
                       <Popover
                         placement="rightBottom"
                         title={PatientAlertTitle}
@@ -1046,9 +1070,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           Dialog
                         </Button>
                       </Popover>
-                    </Space>
+                    </Space> */}
 
-                    <Modal
+                    {/* <Modal
                       title="Dialog"
                       visible={isModalVisible2}
                       onOk={handleOk2}
@@ -1085,9 +1109,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       <Text>Saved on 7/Jan/2021 17:08 </Text>
 
                       <p />
-                    </Modal>
+                    </Modal> */}
 
-                    <Modal
+                    {/* <Modal
                       visible={patientAlertModalVisible}
                       title="Patient Alert"
                       onOk={() => {
@@ -1098,7 +1122,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       style={{ fontSize: 20, left: -500, top: 720 }}
                     >
                       Paitent alert content here ...
-                    </Modal>
+                    </Modal> */}
                   </Col>
 
                   <Col span={20}>
@@ -1109,6 +1133,53 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <pre></pre>
               </Col>
             </Row>
+
+            <Row>
+              <Col span={20}></Col>
+              <Col span={3}>
+                <Space direction="vertical">
+                  <Popover
+                    placement="leftBottom"
+                    title={PatientAlertTitle}
+                    content={contentPatientAlert}
+                    trigger="click"
+                    overlayStyle={{ width: '30%' }}
+                  >
+                    <Button
+                      style={{ width: 150, backgroundColor: '#BADEEE' }}
+                      //className={fall ? style.fallrish : style.nonfallrisk}
+                      type="ghost"
+                      // danger
+                      htmlType="submit"
+
+                      // onClick={() => {
+                      //    setPatientAlertModalVisible(true);
+                      // }}
+                    >
+                      <strong>Patient Alert</strong>
+                    </Button>
+                  </Popover>
+
+                  <Popover
+                    placement="leftBottom"
+                    title={DialogTitle}
+                    content={contentDialog}
+                    trigger="click"
+                    overlayStyle={{ width: '30%' }}
+                  >
+                    <Button
+                      style={{ width: 150 }}
+                      // type="primary"
+                      htmlType="submit"
+                      // onClick={showModal2}
+                    >
+                      <strong>Dialog</strong>
+                    </Button>
+                  </Popover>
+                </Space>
+              </Col>
+            </Row>
+            <Divider style={{ borderColor: 'black' }}></Divider>
 
             {/* <Row gutter={{ xs: 4, sm: 8 }}>
               <Col span={4}>
@@ -1175,9 +1246,14 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Col span={6}>
                   <Button
                     htmlType="submit"
-                    style={{ fontSize: 18, height: 40, width: '100%' }}
+                    style={{
+                      fontSize: 18,
+                      height: 40,
+                      width: '100%',
+                      backgroundColor: '#BADEEE',
+                    }}
                   >
-                    New/Retrieve Patient
+                    <strong>New/Retrieve Patient</strong>
                   </Button>
                 </Col>
                 <pre> </pre>
@@ -1186,22 +1262,32 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     //type="primary"
                     // style={{ background: 'orange', border: 'orange' }}
                     htmlType="submit"
-                    style={{ fontSize: 18, height: 40, width: '100%' }}
+                    style={{
+                      fontSize: 18,
+                      height: 40,
+                      width: '100%',
+                      backgroundColor: '#BADEEE',
+                    }}
                   >
-                    Examine
+                    <strong>Examine</strong>
                   </Button>
                 </Col>
                 <pre> </pre>
                 <Col span={4}>
                   <Button
                     htmlType="submit"
-                    style={{ fontSize: 18, height: 40, width: '100%' }}
+                    style={{
+                      fontSize: 18,
+                      height: 40,
+                      width: '110%',
+                      backgroundColor: '#BADEEE',
+                    }}
                   >
-                    Search Patient
+                    <strong>Search Patient</strong>
                   </Button>
                 </Col>
                 <pre> </pre>
-                <Col span={3} offset={4}>
+                <Col span={3} offset={5}>
                   {/* <Button
                     htmlType="submit"
                     style={{ width: '130%', background: 'orange' }}
@@ -1211,7 +1297,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
 
                   <Select
                     defaultValue="Audit"
-                    style={{ width: '180%', fontSize: 18 }}
+                    style={{ width: '150%', fontSize: 18 }}
                   >
                     <Option value="DA">Document Audit</Option>
                     <Option value="XA">Xray Audit</Option>
@@ -1517,7 +1603,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   }
                   name="Ltmp"
                 >
-                  <TextArea style={{ height: 130 }} />
+                  <TextArea style={{ height: 160 }} />
                 </Form.Item>
                 <Form.Item
                   label={
@@ -1527,7 +1613,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   }
                   name="Ltmp"
                 >
-                  <TextArea style={{ height: 130 }} />
+                  <TextArea style={{ height: 160 }} />
                 </Form.Item>
                 <Form.Item
                   label={
@@ -1537,7 +1623,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   }
                   name="allergies"
                 >
-                  <TextArea style={{ height: 130 }} />
+                  <TextArea style={{ height: 160 }} />
                 </Form.Item>
                 <Form.Item
                   label={
@@ -1548,13 +1634,13 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   }
                   name="Infectious"
                 >
-                  <TextArea style={{ height: 140 }} />
+                  <TextArea style={{ height: 160 }} />
                 </Form.Item>
                 <Form.Item
                   label={<strong style={{ fontSize: '20px' }}>Comments</strong>}
                   name="Infectious"
                 >
-                  <TextArea style={{ height: 140 }} />
+                  <TextArea style={{ height: 160 }} />
                 </Form.Item>
 
                 <Form
@@ -1598,38 +1684,58 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       <Col span={6}>
                         <Button
                           htmlType="submit"
-                          style={{ fontSize: 18, height: 40, width: '100%' }}
+                          style={{
+                            fontSize: 18,
+                            height: 40,
+                            width: '100%',
+                            backgroundColor: '#BADEEE',
+                          }}
                         >
-                          Blank Form
+                          <strong>Blank Form</strong>
                         </Button>
                       </Col>
                       <pre> </pre>
-                      <Col span={4}>
+                      <Col span={5}>
                         <Button
                           //type="primary"
                           // style={{ background: 'orange', border: 'orange' }}
                           htmlType="submit"
-                          style={{ fontSize: 18, height: 40, width: '100%' }}
+                          style={{
+                            fontSize: 18,
+                            height: 40,
+                            width: '100%',
+                            backgroundColor: '#BADEEE',
+                          }}
                         >
-                          Print
+                          <strong>Print</strong>
                         </Button>
                       </Col>
                       <pre> </pre>
-                      <Col span={4}>
+                      <Col span={5}>
                         <Button
                           htmlType="submit"
-                          style={{ fontSize: 18, height: 40, width: '100%' }}
+                          style={{
+                            fontSize: 18,
+                            height: 40,
+                            width: '100%',
+                            backgroundColor: '#BADEEE',
+                          }}
                         >
-                          Save
+                          <strong>Save</strong>
                         </Button>
                       </Col>
                       <pre> </pre>
-                      <Col span={4}>
+                      <Col span={5}>
                         <Button
                           htmlType="submit"
-                          style={{ fontSize: 18, height: 40, width: '100%' }}
+                          style={{
+                            fontSize: 18,
+                            height: 40,
+                            width: '100%',
+                            backgroundColor: '#BADEEE',
+                          }}
                         >
-                          Cancel
+                          <strong>Cancel</strong>
                         </Button>
                       </Col>
                     </Row>
@@ -1644,8 +1750,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               </Form>
             </Col>
             <Col span={12}>
-              <Button type="primary" style={{ background: 'darkcyan' }}>
-                NEHR
+              {/* <Button type="primary" style={{ background: 'darkcyan',backgroundColor:'#BADEEE'  }}> */}
+              <Button style={{ backgroundColor: '#BADEEE' }}>
+                <strong>NEHR</strong>
               </Button>
               <p />
               <div>
@@ -1671,6 +1778,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               </div>
 
               <div className={style.marginTop}>
+                <Row style={{ marginBottom: 70 }}></Row>
                 <Row>
                   <Col span={17}>
                     {/*  <Image src={epos_PG_Y} width={70} />
@@ -1696,9 +1804,13 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       <Button
                         className={fall ? style.fallrish : style.nonfallrisk}
                         onClick={handleBtnClick1}
-                        style={{ width: '33%' }}
+                        style={{
+                          width: '33%',
+                          backgroundColor: '#7FFF00',
+                          borderColor: 'black',
+                        }}
                       >
-                        Fall Risk
+                        <strong></strong>Fall Risk
                       </Button>
                     </Row>
                     <Row style={{ marginBottom: 20 }}></Row>
@@ -1708,22 +1820,21 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     <pre></pre>
                     <Row>
                       {' '}
-                      <Button size="large" style={{ width: '60%' }}>
-                        Bisphosnate Therapy
-                      </Button>
-                    </Row>
-                    <pre></pre>
-                    <Row>
-                      {' '}
-                      <Button size="large" style={{ width: '60%' }}>
-                        Radiotherapy
-                      </Button>
-                    </Row>
-                    <pre></pre>
-                    <Row>
-                      {' '}
-                      <Button size="large" style={{ width: '60%' }}>
-                        Anti-coagulant Therapy
+                      {/* <Button size="large" style={{ width: '60%' }} onClick={buttonbghandle}> */}
+                      {/* <Button size="large" style={{ width: '60%', backgroundColor: isBisphosnateClick
+                            ? 'blue'
+                            : 'white' }} onClick={() =>{setIsBisphosnateClick(true)}}> */}
+                      <Button
+                        size="large"
+                        style={{
+                          width: '60%',
+                          backgroundColor: isBisphosnateClick
+                            ? '#BADEEE'
+                            : 'white',
+                        }}
+                        onClick={togglefunction}
+                      >
+                        <strong>Bisphosnate Therapy</strong>
                       </Button>
                     </Row>
                     <pre></pre>
@@ -1733,25 +1844,138 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         size="large"
                         style={{
                           width: '60%',
-                          backgroundColor: isPregnantConsentSigned
-                            ? 'red'
+                          backgroundColor: isRadiotherapyClick
+                            ? '#BADEEE'
                             : 'white',
                         }}
-                        onClick={() => {
-                          setPregnantModalVisible(true);
-                        }}
+                        onClick={togglefunction2}
                       >
-                        {isPregnantConsentSigned
-                          ? 'Xray'
-                          : // ? 'Pregnancy '
-                            'Xray'}
+                        <strong>Radiotherapy</strong>
                       </Button>
+                    </Row>
+                    <pre></pre>
+                    <Row>
+                      {' '}
+                      <Button
+                        size="large"
+                        style={{
+                          width: '60%',
+                          backgroundColor: isAntiCoagulantClick
+                            ? '#BADEEE'
+                            : 'white',
+                        }}
+                        onClick={togglefunction3}
+                      >
+                        <strong>Anti-coagulant Therapy</strong>
+                      </Button>
+                    </Row>
+                    <pre></pre>
+                    <Row>
+                      {' '}
+                      <Button
+                        size="large"
+                        // style={{
+                        //   width: '60%',
+                        //   backgroundColor: isPregnantConsentSigned
+                        //     ? 'red'
+                        //     : 'white',
+                        // }}
+                        // onClick={() => {
+
+                        //   setPregnantModalVisible(true);
+
+                        // }}
+                        style={{
+                          width: '60%',
+                          backgroundColor: isPregnancyClick
+                            ? '#BADEEE'
+                            : 'white',
+                        }}
+                        onClick={togglefunction4}
+                      >
+                        <strong>Pregnancy</strong>
+                        {/* {isPregnantConsentSigned
+                          ? 'Pregnancy'
+                          : // ? 'Pregnancy '
+                            'Pregnancy'} */}
+                      </Button>
+                      <pre> </pre>
+                      <EditOutlined
+                        style={{ fontSize: '20px' }}
+                        onClick={() => {
+                          setPregnantSignModalVisible(true);
+                        }}
+                      ></EditOutlined>
+                      <Modal
+                        visible={pregnantSignModalVisible}
+                        //title="Pregnancy"
+                        onOk={() => {
+                          setPregnantSignModalVisible(false);
+                          //    setIsPregnantConsentSigned(true);
+                        }}
+                        width={'30%'}
+                      >
+                        <Row>
+                          <Col span={5} style={{ fontSize: '20px' }}>
+                            Pregnancy :
+                          </Col>
+
+                          <Col span={1}>
+                            <Checkbox style={{ fontSize: '20px' }}></Checkbox>
+                          </Col>
+
+                          <Col span={2}>
+                            <Text style={{ fontSize: '20px' }}>Yes</Text>
+                          </Col>
+
+                          <Col span={1}>
+                            <Checkbox style={{ fontSize: '20px' }}></Checkbox>
+                          </Col>
+
+                          <Col span={2}>
+                            <Text style={{ fontSize: '20px' }}>No</Text>
+                          </Col>
+                        </Row>
+                        <pre> </pre>
+
+                        <Row>
+                          <Col
+                            span={24}
+
+                            // style={{ height: 200 }}
+                          >
+                            <TextArea
+                              style={{ height: 120 }}
+                              placeholder="Signature"
+                            />
+                          </Col>
+                        </Row>
+                        <pre> </pre>
+
+                        <Row gutter={[16, 20]}>
+                          <Col span={5} style={{ fontSize: '20px' }}>
+                            Name :
+                          </Col>
+                          <Col span={17}>
+                            <Text style={{ fontSize: '20px' }}>
+                              Tan Mei Kuan
+                            </Text>
+                          </Col>
+
+                          <Col span={5} style={{ fontSize: '20px' }}>
+                            NRIC :
+                          </Col>
+                          <Col span={17} style={{ fontSize: '20px' }}>
+                            <Text>S0000000J</Text>
+                          </Col>
+                        </Row>
+                      </Modal>
                       <Modal
                         visible={pregnantModalVisible}
                         //title="Pregnancy"
                         onOk={() => {
                           setPregnantModalVisible(false);
-                          //  setIsPregnantConsentSigned(true);
+                          //    setIsPregnantConsentSigned(true);
                         }}
                         width={'30%'}
                       >
@@ -1845,7 +2069,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           <Col span={12}>
                             <Input placeholder="Elaine Liu"></Input>
                           </Col> */}
-                          <Col span={7}>Is Pregnant :</Col>
+                          <Col span={7}>Preganancy :</Col>
                           <Col span={12}>
                             <Radio.Group buttonStyle="solid">
                               <Radio.Button
@@ -1925,7 +2149,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         </Row>
                       </Modal>
                     </Row>
-                    <Row style={{ marginBottom: 20 }}></Row>
+                    <Row style={{ marginBottom: 50 }}></Row>
 
                     {/*<Form.Item label="Pain Score" name="Painscore">
                       <Select defaultValue="0" style={{ width: '70%' }}>
@@ -1942,22 +2166,30 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         <Option value="10">10</Option>
                       </Select>
             </Form.Item>*/}
-                    <Row style={{ marginBottom: 30 }}></Row>
-                    <Form
-                      labelCol={{ span: 0 }}
-                      wrapperCol={{ span: 200 }}
-                      layout="vertical"
+                    {/* <Row style={{ marginBottom: 30 }}></Row> */}
+
+                    <Card
+                      style={{
+                        backgroundColor: 'transparent',
+                        borderColor: '#D3D3D3',
+                      }}
                     >
-                      <Form.Item label="Updated On:" name="updatedon">
-                        <Input style={{ width: '90%' }} />
-                      </Form.Item>
-                      <Form.Item label="Updated By:" name="Updatedby">
-                        <Input style={{ width: '90%' }} />
-                      </Form.Item>
-                      <Form.Item>
-                        <Button htmlType="submit">Confirm</Button>
-                      </Form.Item>
-                    </Form>
+                      <Form
+                        labelCol={{ span: 0 }}
+                        wrapperCol={{ span: 200 }}
+                        layout="vertical"
+                      >
+                        <Form.Item label="Updated On:" name="updatedon">
+                          <Input style={{ width: '90%' }} />
+                        </Form.Item>
+                        <Form.Item label="Updated By:" name="Updatedby">
+                          <Input style={{ width: '90%' }} />
+                        </Form.Item>
+                        <Form.Item>
+                          <Button htmlType="submit">Confirm</Button>
+                        </Form.Item>
+                      </Form>
+                    </Card>
                   </Col>
                   {/*<Col span={6}>
                     <Image src={epos_antibioticsprogram_Y} width={70} />
