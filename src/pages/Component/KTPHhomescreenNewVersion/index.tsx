@@ -16,6 +16,8 @@ import {
   Typography,
   Radio,
   Popover,
+  Dropdown,
+  //  Menu
 } from 'antd';
 import style from './index.less';
 
@@ -167,6 +169,12 @@ const KTPHhomescreenNewVersion: React.FC = () => {
       <p />
     </div>
   );
+
+  // const menu = (
+  //   <Menu>
+  //     <Menu.Item key="10"></Menu.Item>
+  //   </Menu>
+  // );
 
   return (
     <div className={style.KTPHhome}>
@@ -1146,8 +1154,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     overlayStyle={{ width: '30%' }}
                   >
                     <Button
-                      style={{ width: 150, backgroundColor: '#BADEEE' }}
-                      //className={fall ? style.fallrish : style.nonfallrisk}
+                      style={{ width: 150, backgroundColor: '#7FFF00' }}
+                      // className={fall ? style.fallrish : style.nonfallrisk}
+                      //className={fall ? '#7FFF00' : style.nonfallrisk}
                       type="ghost"
                       // danger
                       htmlType="submit"
@@ -1873,6 +1882,11 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     <Row>
                       {' '}
                       <Button
+                        // icon={<EditOutlined style={{ fontSize: '20px'}}
+                        // onClick={() => {
+                        //   setPregnantSignModalVisible(true);
+                        // }}></EditOutlined>}
+                        // overlay={''}
                         size="large"
                         // style={{
                         //   width: '60%',
@@ -1886,7 +1900,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
 
                         // }}
                         style={{
-                          width: '60%',
+                          // width: '60%',
+                          // style="width: 170px",
+                          width: '45%',
                           backgroundColor: isPregnancyClick
                             ? '#BADEEE'
                             : 'white',
@@ -1899,13 +1915,32 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           : // ? 'Pregnancy '
                             'Pregnancy'} */}
                       </Button>
-                      <pre> </pre>
+                      <Button
+                        size="large"
+                        style={{
+                          // width: '60%',
+                          // style="width: 170px",
+                          width: '15%',
+                        }}
+                      >
+                        <EditOutlined
+                          style={{ fontSize: '20px' }}
+                          onClick={() => {
+                            setPregnantSignModalVisible(true);
+                          }}
+                        ></EditOutlined>
+                        {/* {isPregnantConsentSigned
+                          ? 'Pregnancy'
+                          : // ? 'Pregnancy '
+                            'Pregnancy'} */}
+                      </Button>
+                      {/* <pre> </pre>
                       <EditOutlined
                         style={{ fontSize: '20px' }}
                         onClick={() => {
                           setPregnantSignModalVisible(true);
                         }}
-                      ></EditOutlined>
+                      ></EditOutlined> */}
                       <Modal
                         visible={pregnantSignModalVisible}
                         //title="Pregnancy"
@@ -1944,11 +1979,32 @@ const KTPHhomescreenNewVersion: React.FC = () => {
 
                             // style={{ height: 200 }}
                           >
-                            <TextArea
+                            <div className={style.signaturebox}>
+                              <br></br>
+                              <br></br>
+                              <br></br>
+                              <br></br>
+                              <br></br>
+                              <br></br>
+
+                              <h1>Signature</h1>
+                            </div>
+
+                            {/* <TextArea
                               style={{ height: 120 }}
                               // placeholder="Signature"
                               placeholder="Signature"
-                            />
+                            /> */}
+                            {/* <div style={{
+                        
+                        backgroundColor: 'transparent',
+                        borderColor: '#D3D3D3',
+                      }}> <div >
+
+                      </div>
+                       
+
+                      </div> */}
                           </Col>
                         </Row>
                         <pre> </pre>
@@ -2070,7 +2126,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           <Col span={12}>
                             <Input placeholder="Elaine Liu"></Input>
                           </Col> */}
-                          <Col span={7}>Preganancy :</Col>
+                          <Col span={7}>Pregnancy :</Col>
                           <Col span={12}>
                             <Radio.Group buttonStyle="solid">
                               <Radio.Button
