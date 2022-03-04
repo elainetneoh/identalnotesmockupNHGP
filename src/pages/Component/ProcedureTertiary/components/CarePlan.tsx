@@ -34,7 +34,7 @@ const CarePlan: React.FC<CarePlanProps> = (props) => {
         </Col>
 
         <Col span={24}>
-          <TextArea />
+          <TextArea style={{ height: 543 }} />
         </Col>
 
         <Col span={24}>
