@@ -1946,6 +1946,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           >
                             <TextArea
                               style={{ height: 120 }}
+                              // placeholder="Signature"
                               placeholder="Signature"
                             />
                           </Col>
@@ -2186,7 +2187,12 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           <Input style={{ width: '90%' }} />
                         </Form.Item>
                         <Form.Item>
-                          <Button htmlType="submit">Confirm</Button>
+                          <Button
+                            htmlType="submit"
+                            style={{ backgroundColor: '#BADEEE' }}
+                          >
+                            <strong>Confirm</strong>
+                          </Button>
                         </Form.Item>
                       </Form>
                     </Card>
