@@ -196,9 +196,8 @@ const ProcedureTertiary: React.FC = () => {
     setIsModalVisible1(false);
   };
 
-  const [IsModaldepartmentVisible, setIsModaldepartmentVisible] = useState(
-    false,
-  );
+  const [IsModaldepartmentVisible, setIsModaldepartmentVisible] =
+    useState(false);
   const showModaldepartment = () => {
     setIsModaldepartmentVisible(true);
   };
@@ -926,86 +925,306 @@ const ProcedureTertiary: React.FC = () => {
                   style={{ fontSize: 20 }}
                 >
                   <Card>
-                    <Row>
-                      <Col span={3}>
-                        <Text style={{ fontSize: 20 }}>Time : </Text>
-                      </Col>
-                      <Col span={21}>
-                        <TimePicker></TimePicker>
-                      </Col>
-                    </Row>
-                    <pre> </pre>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>✔Correct patient</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>✔Correct procedure</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>✔Correct site</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>
-                          ✔Correct radiographs/ medical records
-                        </Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>
-                          ✔Functionality of equipment
-                        </Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={3}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={21}>
-                        <Text style={{ fontSize: 20 }}>
-                          ✔Review of anticoagulant/ antiplatelet
-                        </Text>
-                      </Col>
-                    </Row>
+                    <Collapse defaultActiveKey={['1']}>
+                      <Panel header="Time Out" key="1">
+                        <Row>
+                          <Col span={3}>
+                            <Text style={{ fontSize: 20 }}>Time : </Text>
+                          </Col>
+                          <Col span={21}>
+                            <TimePicker></TimePicker>
+                          </Col>
+                        </Row>
+                        <pre> </pre>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Correct patient
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Correct procedure
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>Correct site</Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Correct radiographs/ medical records
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Functionality of equipment
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Review of anticoagulant/ antiplatelet
+                            </Text>
+                          </Col>
+                        </Row>
 
-                    <p />
-                    <strong>
-                      <Text style={{ fontSize: 20 }}> Documented by:</Text>
-                    </strong>
-                    <Row>
-                      <Input style={{ width: '60%' }} />
-                    </Row>
-                    <p />
-                    <Row>
+                        <p />
+                        <strong>
+                          <Text style={{ fontSize: 20 }}> Documented by:</Text>
+                        </strong>
+                        <Row>
+                          <Input style={{ width: '60%' }} />
+                          <Button style={{ fontSize: 20, height: '40px' }}>
+                            Export
+                          </Button>
+                        </Row>
+                        <p />
+                        {/* <Row>
                       <Col span={19} />
                       <Col>
                         <Button style={{ fontSize: 20, height: '40px' }}>
                           Export
                         </Button>
                       </Col>
+                    </Row> */}
+                      </Panel>
+                    </Collapse>
+
+                    <Collapse defaultActiveKey={['3']}>
+                      <Panel header="Sign Out" key="2">
+                        <Row>
+                          <Col span={3}>
+                            <Text style={{ fontSize: 20 }}>Time : </Text>
+                          </Col>
+
+                          <Col span={17}>
+                            <TimePicker></TimePicker>
+                          </Col>
+                        </Row>
+                        <pre> </pre>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Procedure unchanged
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Complete instrument and needle count
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Labelling of specimens (if applicable) 
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Functioning equipment
+                            </Text>
+                          </Col>
+                        </Row>
+
+                        <pre> </pre>
+
+                        <strong>
+                          <Text style={{ fontSize: 20 }}> Documented by:</Text>
+                        </strong>
+                        <Row>
+                          <Input style={{ width: '60%' }} />
+                          <Button style={{ fontSize: 20, height: '40px' }}>
+                            Export
+                          </Button>
+                        </Row>
+                        <p />
+                        {/* <Row>
+                      <Col span={19} />
+                      <Col>
+                        <Button style={{ fontSize: 20, height: '40px' }}>
+                          Export
+                        </Button>
+                      </Col>
+                    </Row> */}
+                      </Panel>
+                    </Collapse>
+
+                    <Collapse defaultActiveKey={['2']}>
+                      <Panel header="Fall risk" key="3">
+                        <Row>
+                          <Col span={2}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={22}>
+                            <Text style={{ fontSize: 20 }}>
+                              Extraction/Root Canal Treatment (No giddiness
+                              after procedure)
+                            </Text>
+                            <br></br>
+                            <Text style={{ fontSize: 20 }}>
+                              Patient is discharged after bleeding stops, not
+                              feeling giddy and has pain score less than 4.
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={2}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={22}>
+                            <Text style={{ fontSize: 20 }}>
+                              Extraction/Root Canal Treatment (Giddiness after
+                              procedure)
+                            </Text>
+                            <br></br>
+                            <Text style={{ fontSize: 20 }}>
+                              1. Patient is assisted to recovery room.
+                            </Text>
+                            <br></br>
+                            <Text style={{ fontSize: 20 }}>
+                              2. Patient is only discharged after bleeding
+                              stops, not feeling giddy and pain score less than
+                              4.
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={2}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={22}>
+                            <Text style={{ fontSize: 20 }}>
+                              Surgical procedures under LA
+                            </Text>
+                            <br></br>
+                            <Text style={{ fontSize: 20 }}>
+                              1. Patient is assisted to recovery room.
+                            </Text>
+                            <br></br>
+                            <Text style={{ fontSize: 20 }}>
+                              2. Patient is only discharged after bleeding
+                              stops, not feeling giddy and pain score less than
+                              4.
+                            </Text>
+                          </Col>
+                        </Row>
+                        {/* <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Correct site</Text>
+                      </Col>
                     </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Correct documents/radiographs
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>
+                          Functioning Equipment
+                        </Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={21}>
+                        <Text style={{ fontSize: 20 }}>Consent taken</Text>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={2}>
+                        <Checkbox />
+                      </Col>
+                      <Col span={22}>
+                        <Text style={{ fontSize: 20 }}>
+                          Site Marking Done (Dental Chart)
+                        </Text>
+                      </Col>
+                    </Row> */}
+                        {/* <p />
+                    <strong>
+                      <Text style={{ fontSize: 20 }}> Time Out: </Text>
+                    </strong>
+                    <TimePicker />
+                    <p /> */}
+                        <pre> </pre>
+                        <strong>
+                          <Text style={{ fontSize: 20 }}> Documented by:</Text>
+                        </strong>
+                        <Row>
+                          <Input style={{ width: '60%' }} />
+                          <Button style={{ fontSize: 20, height: '40px' }}>
+                            Export
+                          </Button>
+                        </Row>
+                        <p />
+                        {/* <Row>
+                      <Col span={19} />
+                      <Col>
+                        <Button style={{ fontSize: 20, height: '40px' }}>
+                          Export
+                        </Button>
+                      </Col>
+                    </Row> */}
+                      </Panel>
+                    </Collapse>
                   </Card>
                 </Modal>
 

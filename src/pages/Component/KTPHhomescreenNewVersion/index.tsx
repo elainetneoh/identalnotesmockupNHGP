@@ -197,16 +197,19 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <Row>
                 <Input style={{ width: '55%' }} />
                 <pre> </pre>
-                <Button htmlType="submit" style={{ width: '21%' }}>
-                  Verify
+                <Button
+                  htmlType="submit"
+                  style={{ width: '21%', borderColor: 'black' }}
+                >
+                  <strong>Verify</strong>
                 </Button>
                 <pre> </pre>
                 <Button
                   // type="primary"
                   htmlType="submit"
-                  style={{ width: '21%' }}
+                  style={{ width: '21%', borderColor: 'black' }}
                 >
-                  Label
+                  <strong>Label</strong>
                 </Button>
               </Row>
             </Form.Item>
@@ -233,17 +236,17 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 <Button
                   // type="primary"
                   htmlType="submit"
-                  style={{ width: '21%' }}
+                  style={{ width: '21%', borderColor: 'black' }}
                 >
-                  Generate
+                  <strong>Generate</strong>
                 </Button>
                 <pre> </pre>
                 <Button
                   // type="primary"
                   htmlType="submit"
-                  style={{ width: '21%' }}
+                  style={{ width: '21%', borderColor: 'black' }}
                 >
-                  UIN Label
+                  <strong>UIN Label</strong>
                 </Button>
               </Row>
             </Form.Item>
@@ -593,7 +596,11 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   <Button
                     //  type="primary"
                     // htmlType="submit"
-                    style={{ width: '150%', backgroundColor: '#BADEEE' }}
+                    style={{
+                      width: '150%',
+                      backgroundColor: '#BADEEE',
+                      borderColor: 'black',
+                    }}
                     onClick={showModal}
 
                     // className={fall ? style.fallrish : style.nonfallrisk}
@@ -876,7 +883,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               <Row>
                 <Input style={{ width: '90%' }} />
                 <pre> </pre>
-                <Button htmlType="submit">SMS</Button>
+                <Button htmlType="submit" style={{ borderColor: 'black' }}>
+                  <strong>SMS</strong>
+                </Button>
               </Row>
             </Form.Item>
             <Form.Item
@@ -969,7 +978,10 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             // labelAlign={'right'}
             >
               <Col offset={20}>
-                <Button htmlType="submit" style={{ width: '100%' }}>
+                <Button
+                  htmlType="submit"
+                  style={{ width: '100%', borderColor: 'black' }}
+                >
                   <strong>Refresh CMIS</strong>
                 </Button>
               </Col>
@@ -1154,7 +1166,11 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     overlayStyle={{ width: '30%' }}
                   >
                     <Button
-                      style={{ width: 150, backgroundColor: '#7FFF00' }}
+                      style={{
+                        width: 150,
+                        backgroundColor: '#7FFF00',
+                        borderColor: 'black',
+                      }}
                       // className={fall ? style.fallrish : style.nonfallrisk}
                       //className={fall ? '#7FFF00' : style.nonfallrisk}
                       type="ghost"
@@ -1177,9 +1193,10 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     overlayStyle={{ width: '30%' }}
                   >
                     <Button
-                      style={{ width: 150 }}
+                      style={{ width: 150, borderColor: 'black' }}
                       // type="primary"
                       htmlType="submit"
+
                       // onClick={showModal2}
                     >
                       <strong>Dialog</strong>
@@ -1260,6 +1277,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       height: 40,
                       width: '100%',
                       backgroundColor: '#BADEEE',
+                      borderColor: 'black',
                     }}
                   >
                     <strong>New/Retrieve Patient</strong>
@@ -1276,6 +1294,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       height: 40,
                       width: '100%',
                       backgroundColor: '#BADEEE',
+                      borderColor: 'black',
                     }}
                   >
                     <strong>Examine</strong>
@@ -1290,6 +1309,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       height: 40,
                       width: '110%',
                       backgroundColor: '#BADEEE',
+                      borderColor: 'black',
                     }}
                   >
                     <strong>Search Patient</strong>
@@ -1612,27 +1632,28 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   }
                   name="Ltmp"
                 >
-                  <TextArea style={{ height: 160 }} />
+                  <TextArea style={{ height: 155 }} />
                 </Form.Item>
                 <Form.Item
                   label={
                     <strong style={{ fontSize: '20px' }}>
-                      Are you on long term medication?{' '}
+                      Please list the medications that you are taking for the
+                      long term.{' '}
                     </strong>
                   }
                   name="Ltmp"
                 >
-                  <TextArea style={{ height: 160 }} />
+                  <TextArea style={{ height: 155 }} />
                 </Form.Item>
                 <Form.Item
                   label={
                     <strong style={{ fontSize: '20px' }}>
-                      Do you have any allergies?
+                      Please list the medications that you are allergic to.
                     </strong>
                   }
                   name="allergies"
                 >
-                  <TextArea style={{ height: 160 }} />
+                  <TextArea style={{ height: 155 }} />
                 </Form.Item>
                 <Form.Item
                   label={
@@ -1643,13 +1664,13 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                   }
                   name="Infectious"
                 >
-                  <TextArea style={{ height: 160 }} />
+                  <TextArea style={{ height: 155 }} />
                 </Form.Item>
                 <Form.Item
                   label={<strong style={{ fontSize: '20px' }}>Comments</strong>}
                   name="Infectious"
                 >
-                  <TextArea style={{ height: 160 }} />
+                  <TextArea style={{ height: 155 }} />
                 </Form.Item>
 
                 <Form
@@ -1698,6 +1719,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                             height: 40,
                             width: '100%',
                             backgroundColor: '#BADEEE',
+                            borderColor: 'black',
                           }}
                         >
                           <strong>Blank Form</strong>
@@ -1714,6 +1736,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                             height: 40,
                             width: '100%',
                             backgroundColor: '#BADEEE',
+                            borderColor: 'black',
                           }}
                         >
                           <strong>Print</strong>
@@ -1728,6 +1751,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                             height: 40,
                             width: '100%',
                             backgroundColor: '#BADEEE',
+                            borderColor: 'black',
                           }}
                         >
                           <strong>Save</strong>
@@ -1742,6 +1766,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                             height: 40,
                             width: '100%',
                             backgroundColor: '#BADEEE',
+                            borderColor: 'black',
                           }}
                         >
                           <strong>Cancel</strong>
@@ -1760,7 +1785,9 @@ const KTPHhomescreenNewVersion: React.FC = () => {
             </Col>
             <Col span={12}>
               {/* <Button type="primary" style={{ background: 'darkcyan',backgroundColor:'#BADEEE'  }}> */}
-              <Button style={{ backgroundColor: '#BADEEE' }}>
+              <Button
+                style={{ backgroundColor: '#BADEEE', borderColor: 'black' }}
+              >
                 <strong>NEHR</strong>
               </Button>
               <p />
@@ -1787,7 +1814,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               </div>
 
               <div className={style.marginTop}>
-                <Row style={{ marginBottom: 70 }}></Row>
+                <Row style={{ marginBottom: 50 }}></Row>
                 <Row>
                   <Col span={17}>
                     {/*  <Image src={epos_PG_Y} width={70} />
@@ -1811,7 +1838,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
 
                     <Row>
                       <Button
-                        className={fall ? style.fallrish : style.nonfallrisk}
+                        //   className={fall ? style.fallrish : style.nonfallrisk}
                         onClick={handleBtnClick1}
                         style={{
                           width: '33%',
@@ -1819,7 +1846,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           borderColor: 'black',
                         }}
                       >
-                        <strong></strong>Fall Risk
+                        <strong>Fall Risk</strong>
                       </Button>
                     </Row>
                     <Row style={{ marginBottom: 20 }}></Row>
@@ -1827,6 +1854,29 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                       <Image src={happyface} width={110} height={110} />
                     </Row>
                     <pre></pre>
+
+                    <Form.Item
+                      label={
+                        <strong style={{ fontSize: 15 }}>Pain Score</strong>
+                      }
+                      name="Painscore"
+                    >
+                      {/* <Select defaultValue="0" style={{ width: '50%' }}> */}
+                      <Select style={{ width: '48%' }}>
+                        <Option value="0">0</Option>
+                        <Option value="1">1</Option>
+                        <Option value="2">2</Option>
+                        <Option value="3">3</Option>
+                        <Option value="4">4</Option>
+                        <Option value="5">5</Option>
+                        <Option value="6">6</Option>
+                        <Option value="7">7</Option>
+                        <Option value="8">8</Option>
+                        <Option value="9">9</Option>
+                        <Option value="10">10</Option>
+                      </Select>
+                    </Form.Item>
+                    <Row style={{ marginBottom: 10 }}></Row>
                     <Row>
                       {' '}
                       {/* <Button size="large" style={{ width: '60%' }} onClick={buttonbghandle}> */}
@@ -1837,6 +1887,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         size="large"
                         style={{
                           width: '60%',
+                          borderColor: 'black',
                           backgroundColor: isBisphosnateClick
                             ? '#BADEEE'
                             : 'white',
@@ -1853,6 +1904,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         size="large"
                         style={{
                           width: '60%',
+                          borderColor: 'black',
                           backgroundColor: isRadiotherapyClick
                             ? '#BADEEE'
                             : 'white',
@@ -1869,6 +1921,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         size="large"
                         style={{
                           width: '60%',
+                          borderColor: 'black',
                           backgroundColor: isAntiCoagulantClick
                             ? '#BADEEE'
                             : 'white',
@@ -1903,6 +1956,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                           // width: '60%',
                           // style="width: 170px",
                           width: '45%',
+                          borderColor: 'black',
                           backgroundColor: isPregnancyClick
                             ? '#BADEEE'
                             : 'white',
@@ -1920,6 +1974,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         style={{
                           // width: '60%',
                           // style="width: 170px",
+                          borderColor: 'black',
                           width: '15%',
                         }}
                       >
@@ -2206,24 +2261,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         </Row>
                       </Modal>
                     </Row>
-                    <Row style={{ marginBottom: 50 }}></Row>
-
-                    {/*<Form.Item label="Pain Score" name="Painscore">
-                      <Select defaultValue="0" style={{ width: '70%' }}>
-                        <Option value="0">0</Option>
-                        <Option value="1">1</Option>
-                        <Option value="2">2</Option>
-                        <Option value="3">3</Option>
-                        <Option value="4">4</Option>
-                        <Option value="5">5</Option>
-                        <Option value="6">6</Option>
-                        <Option value="7">7</Option>
-                        <Option value="8">8</Option>
-                        <Option value="9">9</Option>
-                        <Option value="10">10</Option>
-                      </Select>
-            </Form.Item>*/}
-                    {/* <Row style={{ marginBottom: 30 }}></Row> */}
+                    <Row style={{ marginBottom: 30 }}></Row>
 
                     <Card
                       style={{
@@ -2245,7 +2283,10 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         <Form.Item>
                           <Button
                             htmlType="submit"
-                            style={{ backgroundColor: '#BADEEE' }}
+                            style={{
+                              backgroundColor: '#BADEEE',
+                              borderColor: 'black',
+                            }}
                           >
                             <strong>Confirm</strong>
                           </Button>

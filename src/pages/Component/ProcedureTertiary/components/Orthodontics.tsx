@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tabs, Card, Dropdown, Row, Button, Input, Menu } from 'antd';
-import { PlusOutlined, CloseOutlined } from '@ant-design/icons';
+import { PlusCircleOutlined, CloseOutlined } from '@ant-design/icons';
 
 const Orthodontics: React.FC = () => {
   const { TabPane } = Tabs;
@@ -19,6 +19,23 @@ const Orthodontics: React.FC = () => {
   return (
     <Tabs tabPosition="bottom" style={{ height: '60%' }}>
       <TabPane tab="Care Plan" key="1">
+        <Row>
+          <Button
+            type="primary"
+            icon={<PlusCircleOutlined />}
+            style={{ width: '38%' }}
+          >
+            Add
+          </Button>
+          <pre> </pre>
+          <Button
+            type="primary"
+            icon={<CloseOutlined />}
+            style={{ width: '38%' }}
+          >
+            Delete
+          </Button>
+        </Row>
         <Card size="small" style={{ width: '90%' }}>
           <Dropdown overlay={menu} trigger={['contextMenu']}>
             <div
@@ -117,7 +134,7 @@ const Orthodontics: React.FC = () => {
       </TabPane>
       <TabPane tab="Image" key="2" style={{ width: '90%' }}>
         <Row>
-          <Button type="primary" icon={<PlusOutlined />}>
+          <Button type="primary" icon={<PlusCircleOutlined />}>
             Add
           </Button>
           <pre> </pre>
@@ -129,7 +146,7 @@ const Orthodontics: React.FC = () => {
       </TabPane>
       <TabPane tab="Instrument" key="3" style={{ width: '90%' }}>
         <Row>
-          <Button type="primary" icon={<PlusOutlined />}>
+          <Button type="primary" icon={<PlusCircleOutlined />}>
             Add
           </Button>
           <pre> </pre>

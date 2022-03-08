@@ -200,19 +200,19 @@ const NEHRhomescreen: React.FC = () => {
                   labelAlign={'left'}
                 >
                   <Row>
-                    <Input style={{ width: '55%' }} />
-                    <pre> </pre>
-                    <Button htmlType="submit" style={{ width: '21%' }}>
-                      Verify
+                    <Input style={{ width: '100%' }} />
+                    {/* <pre> </pre> */}
+                    {/* <Button htmlType="submit" style={{ width: '21%',borderColor:'black' }}>
+                      <strong>Verify</strong>
                     </Button>
                     <pre> </pre>
                     <Button
                       // type="primary"
                       htmlType="submit"
-                      style={{ width: '21%' }}
+                      style={{ width: '21%' ,borderColor:'black'}}
                     >
-                      Label
-                    </Button>
+                      <strong>Label</strong>
+                    </Button> */}
                   </Row>
                 </Form.Item>
               </Form>
@@ -252,7 +252,7 @@ const NEHRhomescreen: React.FC = () => {
 
               <Form
                 labelCol={{ span: 0 }}
-                wrapperCol={{ span: 100 }}
+                wrapperCol={{ span: 200 }}
                 layout="horizontal"
               >
                 <Form.Item
@@ -262,27 +262,28 @@ const NEHRhomescreen: React.FC = () => {
                   labelAlign={'left'}
                 >
                   <Row>
-                    <Input style={{ width: '55%' }} />
-                    <pre> </pre>
+                    {/* <Input style={{ width: '55%' }} /> */}
+                    <Input />
+                    {/* <pre> </pre> */}
 
                     {/* <Input style={{ width: '10%' }} placeholder="Lab" />
                 <pre> </pre> */}
 
-                    <Button
+                    {/* <Button
                       // type="primary"
                       htmlType="submit"
-                      style={{ width: '21%' }}
+                      style={{ width: '21%' ,borderColor:'black'}}
                     >
-                      Generate
+                      <strong>Generate</strong>
                     </Button>
                     <pre> </pre>
                     <Button
                       // type="primary"
                       htmlType="submit"
-                      style={{ width: '21%' }}
+                      style={{ width: '21%',borderColor:'black' }}
                     >
-                      UIN Label
-                    </Button>
+                      <strong>UIN Label</strong>
+                    </Button> */}
                   </Row>
                 </Form.Item>
               </Form>
@@ -855,13 +856,17 @@ const NEHRhomescreen: React.FC = () => {
 
                     <Col span={6}>
                       <Button
-                        type="primary"
+                        //  type="primary"
                         htmlType="submit"
-                        style={{ width: '150%' }}
+                        style={{
+                          width: '150%',
+                          backgroundColor: '#BADEEE',
+                          borderColor: 'black',
+                        }}
                         onClick={showModal}
                         // className={fall ? style.fallrish : style.nonfallrisk}
                       >
-                        Financial Assistance
+                        <strong>Financial Assistance</strong>
                       </Button>
                       <Modal
                         title="Financial"
@@ -971,7 +976,9 @@ const NEHRhomescreen: React.FC = () => {
                                   labelAlign={'left'}
                                   style={{ width: '500px' }}
                                 >
-                                  <TextArea style={{ width: '80%' }}></TextArea>
+                                  <TextArea
+                                    style={{ width: '80%', height: 200 }}
+                                  ></TextArea>
                                 </Form.Item>
                               </Form>
                             </Col>
@@ -1139,7 +1146,15 @@ const NEHRhomescreen: React.FC = () => {
                   <Row>
                     <Input style={{ width: '90%' }} />
                     <pre> </pre>
-                    <Button htmlType="submit">SMS</Button>
+                    <Button
+                      htmlType="submit"
+                      style={{
+                        backgroundColor: '#BADEEE',
+                        borderColor: 'black',
+                      }}
+                    >
+                      <strong>SMS</strong>
+                    </Button>
                   </Row>
                 </Form.Item>
                 <Form.Item
@@ -1232,8 +1247,11 @@ const NEHRhomescreen: React.FC = () => {
                 // labelAlign={'right'}
                 >
                   <Col offset={20}>
-                    <Button htmlType="submit" style={{ width: '100%' }}>
-                      Refresh CMIS
+                    <Button
+                      htmlType="submit"
+                      style={{ width: '100%', borderColor: 'black' }}
+                    >
+                      <strong>Refresh CMIS</strong>
                     </Button>
                   </Col>
                 </Form.Item>
@@ -1301,7 +1319,7 @@ const NEHRhomescreen: React.FC = () => {
                         <pre></pre>
                         <pre></pre>
 
-                        <Space direction="vertical">
+                        {/* <Space direction="vertical">
                           <Popover
                             placement="rightBottom"
                             title={PatientAlertTitle}
@@ -1340,7 +1358,7 @@ const NEHRhomescreen: React.FC = () => {
                               Dialog
                             </Button>
                           </Popover>
-                        </Space>
+                        </Space> */}
 
                         {/* <Modal
                       title="Dialog"
@@ -1391,7 +1409,7 @@ const NEHRhomescreen: React.FC = () => {
                           bodyStyle={{ height: 300 }}
                           style={{ fontSize: 20, left: -500, top: 720 }}
                         >
-                          Paitent alert content here ...
+                          Patient alert content here ...
                         </Modal>
                       </Col>
 
@@ -1590,9 +1608,15 @@ const NEHRhomescreen: React.FC = () => {
                     <Col span={6}>
                       <Button
                         htmlType="submit"
-                        style={{ fontSize: 18, height: 40, width: '100%' }}
+                        style={{
+                          fontSize: 18,
+                          height: 40,
+                          width: '100%',
+                          backgroundColor: '#BADEEE',
+                          borderColor: 'black',
+                        }}
                       >
-                        New/Retrieve Patient
+                        <strong>New/Retrieve Patient</strong>
                       </Button>
                     </Col>
                     <pre> </pre>
@@ -1601,19 +1625,31 @@ const NEHRhomescreen: React.FC = () => {
                         //type="primary"
                         // style={{ background: 'orange', border: 'orange' }}
                         htmlType="submit"
-                        style={{ fontSize: 18, height: 40, width: '100%' }}
+                        style={{
+                          fontSize: 18,
+                          height: 40,
+                          width: '100%',
+                          backgroundColor: '#BADEEE',
+                          borderColor: 'black',
+                        }}
                       >
-                        Examine
+                        <strong>Examine</strong>
                       </Button>
                     </Col>
                     <pre> </pre>
                     <Col span={4}>
                       <Button
                         htmlType="submit"
-                        style={{ fontSize: 18, height: 40, width: '100%' }}
+                        style={{
+                          fontSize: 18,
+                          height: 40,
+                          width: '100%',
+                          backgroundColor: '#BADEEE',
+                          borderColor: 'black',
+                        }}
                         onClick={showModalsearchpatient}
                       >
-                        Search Patient
+                        <strong>Search Patient</strong>
                       </Button>
 
                       <Modal
@@ -1979,10 +2015,20 @@ const NEHRhomescreen: React.FC = () => {
             <Col span={2}>
               <Space>
                 <Col>
+                  <pre> </pre>
                   <Image src={epos_medifund_Y} width={60} />
                   <Image src={epos_chas_Y} width={60} />
                   <Image src={epos_PG_Y} width={60} />
 
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
+                  <pre> </pre>
                   <pre> </pre>
                   <pre> </pre>
                   <pre> </pre>
@@ -2408,7 +2454,8 @@ const NEHRhomescreen: React.FC = () => {
                 <Form.Item
                   label={
                     <strong style={{ fontSize: '20px' }}>
-                      Past or present medical condition not stated above.
+                      Are you on long term medication or pregnant
+                      {/* Past or present medical condition not stated above. */}
                     </strong>
                   }
                   name="Ltmp"
@@ -2418,7 +2465,8 @@ const NEHRhomescreen: React.FC = () => {
                 <Form.Item
                   label={
                     <strong style={{ fontSize: '20px' }}>
-                      Are you on long term medication?{' '}
+                      {/* Are you on long term medication?{' '} */}
+                      Do you have any allergies
                     </strong>
                   }
                   name="Ltmp"
@@ -2428,29 +2476,32 @@ const NEHRhomescreen: React.FC = () => {
                 <Form.Item
                   label={
                     <strong style={{ fontSize: '20px' }}>
-                      Do you have any allergies?
+                      {/* Do you have any allergies? */}
+                      Are you a carrier of any infectious desease eg.Hepatitis
+                      B, HIV
                     </strong>
                   }
                   name="allergies"
                 >
-                  <TextArea style={{ height: 140 }} />
+                  <TextArea style={{ height: 130 }} />
                 </Form.Item>
                 <Form.Item
                   label={
                     <strong style={{ fontSize: '20px' }}>
-                      Are you a carrier of any infectious desease eg.Hepatitis
-                      B, HIV?
+                      {/* Are you a carrier of any infectious desease eg.Hepatitis
+                      B, HIV? */}
+                      Do you have any significant past medical or family history
                     </strong>
                   }
                   name="Infectious"
                 >
-                  <TextArea style={{ height: 140 }} />
+                  <TextArea style={{ height: 130 }} />
                 </Form.Item>
                 <Form.Item
                   label={<strong style={{ fontSize: '20px' }}>Comments</strong>}
                   name="Infectious"
                 >
-                  <TextArea style={{ height: 140 }} />
+                  <TextArea style={{ height: 130 }} />
                 </Form.Item>
 
                 <Form
@@ -2464,29 +2515,51 @@ const NEHRhomescreen: React.FC = () => {
             </Form.Item> */}
 
                   <Form.Item name="Comment">
-                    <Button style={{ fontSize: 18, height: 40 }}>
-                      Blank Form
+                    <Button
+                      style={{
+                        fontSize: 18,
+                        height: 40,
+                        backgroundColor: '#BADEEE',
+                        borderColor: 'black',
+                      }}
+                    >
+                      <strong>Blank Form</strong>
                     </Button>
                     <span> </span>
                     <Button
                       htmlType="submit"
-                      style={{ fontSize: 18, height: 40 }}
+                      style={{
+                        fontSize: 18,
+                        height: 40,
+                        backgroundColor: '#BADEEE',
+                        borderColor: 'black',
+                      }}
                     >
-                      Print
+                      <strong>Print</strong>
                     </Button>
                     <span> </span>
                     <Button
                       htmlType="submit"
-                      style={{ fontSize: 18, height: 40 }}
+                      style={{
+                        fontSize: 18,
+                        height: 40,
+                        backgroundColor: '#BADEEE',
+                        borderColor: 'black',
+                      }}
                     >
-                      Save
+                      <strong>Save</strong>
                     </Button>
                     <span> </span>
                     <Button
                       htmlType="submit"
-                      style={{ fontSize: 18, height: 40 }}
+                      style={{
+                        fontSize: 18,
+                        height: 40,
+                        backgroundColor: '#BADEEE',
+                        borderColor: 'black',
+                      }}
                     >
-                      Cancel
+                      <strong>Cancel</strong>
                     </Button>
                   </Form.Item>
                 </Form>
@@ -2660,8 +2733,11 @@ const NEHRhomescreen: React.FC = () => {
               </Form>
             </Col> */}
             <Col span={12}>
-              <Button type="primary" style={{ background: 'darkcyan' }}>
-                NEHR
+              {/* <Button type="primary" style={{ background: 'darkcyan' }}> */}
+              <Button
+                style={{ backgroundColor: '#BADEEE', borderColor: 'black' }}
+              >
+                <strong>NEHR</strong>
               </Button>
               <p />
               <div>
@@ -2687,12 +2763,15 @@ const NEHRhomescreen: React.FC = () => {
               </div>
 
               <p />
-              <Row style={{ marginBottom: 370 }}></Row>
+              <Row style={{ marginBottom: 520 }}></Row>
               <Button
-                className={fall ? style.fallrish : style.nonfallrisk}
+                // className={fall ? style.fallrish : style.nonfallrisk}
                 onClick={handleBtnClick1}
+                // style={{fontSize:20}}
+                size="large"
+                style={{ backgroundColor: '#7FFF00' }}
               >
-                Fall Risk
+                <strong>Fall Risk</strong>
               </Button>
               <p />
               <Form
@@ -2701,7 +2780,7 @@ const NEHRhomescreen: React.FC = () => {
                 layout="vertical"
               >
                 <Form.Item label="Pain Score" name="Painscore">
-                  <Select defaultValue="0" style={{ width: '40%' }}>
+                  <Select style={{ width: '40%' }}>
                     <Option value="0">0</Option>
                     <Option value="1">1</Option>
                     <Option value="2">2</Option>
@@ -2742,7 +2821,7 @@ const NEHRhomescreen: React.FC = () => {
 
               <Row>
                 {' '}
-                <Button
+                {/* <Button
                   size="large"
                   style={{
                     width: '50%',
@@ -2756,8 +2835,8 @@ const NEHRhomescreen: React.FC = () => {
                     ? 'Xray'
                     : // ? 'Pregnancy '
                       'Xray'}
-                </Button>
-                <Modal
+                </Button> */}
+                {/* <Modal
                   visible={pregnantModalVisible}
                   //title="Pregnancy"
                   onOk={() => {
@@ -2765,9 +2844,9 @@ const NEHRhomescreen: React.FC = () => {
                     //  setIsPregnantConsentSigned(true);
                   }}
                   width={'30%'}
-                >
-                  <Row gutter={[16, 24]}>
-                    <Col span={7}>Is Pregnant :</Col>
+                > */}
+                {/* <Row gutter={[16, 24]}> */}
+                {/* <Col span={7}>Is Pregnant :</Col>
                     <Col span={12}>
                       <Radio.Group buttonStyle="solid">
                         <Radio.Button
@@ -2790,67 +2869,81 @@ const NEHRhomescreen: React.FC = () => {
                           }}
                         >
                           {/* //  onClick={() =>{ setIsPregnantConsentSigned(false);setEDDDateVisible(true); */}
-                          {/* //      setSignatureVisible(false);}}> */}
-                          No
+                {/* //      setSignatureVisible(false);}}> */}
+                {/* No
                         </Radio.Button>
                       </Radio.Group>
-                    </Col>
-
+                    </Col> */}
+                {/* 
                     <Col span={24} hidden={Signature} style={{ height: 200 }}>
                       <TextArea
                         style={{ height: 200 }}
                         placeholder="Signature"
                       />
-                    </Col>
-                    {/* <Col span={7} hidden={Signature}>
+                    </Col> */}
+                {/* <Col span={7} hidden={Signature}>
                             Date of Signature :
                           </Col>
                           <Col span={12} hidden={Signature}>
                             <DatePicker />
                           </Col> */}
-
-                    <Col span={7} hidden={Signature}>
+                {/* <Col span={7} hidden={Signature}>
                       Name :
                     </Col>
                     <Col span={12} hidden={Signature}>
                       <Input></Input>
-                    </Col>
-                    {/* <Col span={7}>Sign Consent of X-Ray :</Col> */}
-
-                    {/* <Col span={12}>
+                    </Col> */}
+                {/* <Col span={7}>Sign Consent of X-Ray :</Col> */}
+                {/* <Col span={12}>
                             <TextArea />
                           </Col> */}
-                    {/* <Col span={7}>Remarks :</Col>
+                {/* <Col span={7}>Remarks :</Col>
                           <Col span={12}>
                             <TextArea />
                           </Col> */}
-                    <Col span={7} hidden={Signature}>
+                {/* <Col span={7} hidden={Signature}>
                       NRIC :
                     </Col>
                     <Col span={12} hidden={Signature}>
                       <Input></Input>
-                    </Col>
+                    </Col> 
                   </Row>
-                </Modal>
+                </Modal> */}
               </Row>
 
               <Row style={{ marginBottom: 30 }}></Row>
 
-              <Form
-                labelCol={{ span: 0 }}
-                wrapperCol={{ span: 200 }}
-                layout="vertical"
+              <Card
+                style={{
+                  backgroundColor: 'transparent',
+                  borderColor: '#D3D3D3',
+                  width: '70%',
+                }}
               >
-                <Form.Item label="Updated On:" name="updatedon">
-                  <Input style={{ width: '60%' }} />
-                </Form.Item>
-                <Form.Item label="Updated By:" name="Updatedby">
-                  <Input style={{ width: '60%' }} />
-                </Form.Item>
-                <Form.Item>
-                  <Button htmlType="submit">Confirm</Button>
-                </Form.Item>
-              </Form>
+                <Form
+                  labelCol={{ span: 0 }}
+                  wrapperCol={{ span: 200 }}
+                  layout="vertical"
+                >
+                  <Form.Item label="Updated On:" name="updatedon">
+                    <Input style={{ width: '80%' }} />
+                  </Form.Item>
+                  <Form.Item label="Updated By:" name="Updatedby">
+                    <Input style={{ width: '80%' }} />
+                  </Form.Item>
+                  <Form.Item>
+                    <Button
+                      htmlType="submit"
+                      style={{
+                        backgroundColor: '#BADEEE',
+                        borderColor: 'black',
+                      }}
+                    >
+                      <strong>Confirm</strong>
+                    </Button>
+                  </Form.Item>
+                </Form>
+              </Card>
             </Col>
           </Row>
           {/* <Row>

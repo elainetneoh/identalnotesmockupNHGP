@@ -253,9 +253,9 @@ const Nurseform: React.FC = () => {
           </Row>
           <Divider />
 
-          <div style={{ color: 'red' }}>
+          {/* <div style={{ color: 'red' }}>
             *This will be linked to TOSP procedure for Billing
-          </div>
+          </div> */}
 
           <Row>
             <Col span={21}>
@@ -316,15 +316,17 @@ const Nurseform: React.FC = () => {
             <Col span={1}>
               <Text>Notes</Text>
             </Col>
-            <Col span={11} />
-            <Col span={12}>
+            {/* <Col span={11} /> */}
+            <Col span={15} />
+
+            <Col span={8}>
               <Row>
-                <Button
+                {/* <Button
                   style={{ color: 'black', width: '15%' }}
                   onClick={showModalfallrisk}
                 >
                   Fall Risk
-                </Button>
+                </Button> */}
 
                 <Modal
                   title=""
@@ -462,7 +464,7 @@ const Nurseform: React.FC = () => {
                 </Modal>
                 <pre> </pre>
                 {/*start*/}
-                <Button
+                {/* <Button
                   style={{ color: 'black', width: '15%' }}
                   onClick={showModalsignout}
                 >
@@ -547,11 +549,11 @@ const Nurseform: React.FC = () => {
                       </Col>
                     </Row>
                   </Card>
-                </Modal>
+                </Modal> */}
                 <pre> </pre>
                 <Button
                   onClick={showModal2}
-                  style={{ color: 'black', width: '14%' }}
+                  style={{ color: 'black', width: '20%' }}
                 >
                   INTRAOP
                 </Button>
@@ -827,7 +829,7 @@ const Nurseform: React.FC = () => {
 
                 <Button
                   onClick={showModal}
-                  style={{ color: 'black', width: '14%' }}
+                  style={{ color: 'black', width: '20%' }}
                 >
                   PERIOP
                 </Button>
@@ -1167,7 +1169,7 @@ const Nurseform: React.FC = () => {
 
                 <Button
                   onClick={showModal1}
-                  style={{ color: 'black', width: '15%' }}
+                  style={{ color: 'black', width: '20%' }}
                 >
                   Discharge
                 </Button>
@@ -1253,7 +1255,7 @@ const Nurseform: React.FC = () => {
                   </Card>
                 </Modal>
                 <pre> </pre>
-                <Button style={{ color: 'black', width: '15%' }}>
+                <Button style={{ color: 'black', width: '20%' }}>
                   Template
                 </Button>
               </Row>
