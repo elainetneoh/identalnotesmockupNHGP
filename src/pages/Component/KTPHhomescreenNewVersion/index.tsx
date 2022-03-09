@@ -2041,8 +2041,59 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                               <br></br>
                               <br></br>
                               <br></br>
+                              <Row>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
 
-                              <h1>Signature</h1>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+
+                                <h1>Signature</h1>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+
+                                <pre> </pre>
+                                <pre> </pre>
+                                <pre> </pre>
+
+                                <h1>Date</h1>
+                              </Row>
                             </div>
 
                             {/* <TextArea

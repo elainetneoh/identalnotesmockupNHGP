@@ -17,7 +17,7 @@ const Orthodontics: React.FC = () => {
   );
 
   return (
-    <Tabs tabPosition="bottom" style={{ height: '60%' }}>
+    <Tabs tabPosition="bottom" style={{ height: '100%' }}>
       <TabPane tab="Care Plan" key="1">
         <Row>
           <Button
@@ -116,7 +116,7 @@ const Orthodontics: React.FC = () => {
             </div>
           </Dropdown>
         </Card>
-        <Card size="small" style={{ width: '90%' }}>
+        {/* <Card size="small" style={{ width: '90%' }}>
           <strong>
             <p style={{ fontSize: 20 }}></p>
             <p></p>
@@ -125,12 +125,9 @@ const Orthodontics: React.FC = () => {
           <pre> </pre>
           <pre> </pre>
           <pre> </pre>
-          <pre> </pre>
-          <pre> </pre>
-          <pre> </pre>
-          <pre> </pre>
+        
           <p style={{ fontSize: 10, textAlign: 'right' }}></p>
-        </Card>
+        </Card> */}
       </TabPane>
       <TabPane tab="Image" key="2" style={{ width: '90%' }}>
         <Row>
@@ -142,7 +139,7 @@ const Orthodontics: React.FC = () => {
             delete
           </Button>
         </Row>
-        <TextArea style={{ height: 800 }} />
+        <TextArea style={{ height: 1000 }} />
       </TabPane>
       <TabPane tab="Instrument" key="3" style={{ width: '90%' }}>
         <Row>
@@ -154,7 +151,7 @@ const Orthodontics: React.FC = () => {
             delete
           </Button>
         </Row>
-        <TextArea style={{ height: 800 }} />
+        <TextArea style={{ height: 1000 }} />
       </TabPane>
     </Tabs>
   );

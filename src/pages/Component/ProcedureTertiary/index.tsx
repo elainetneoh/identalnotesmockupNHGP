@@ -926,6 +926,98 @@ const ProcedureTertiary: React.FC = () => {
                 >
                   <Card>
                     <Collapse defaultActiveKey={['1']}>
+                      <Panel header="Sign in" key="4">
+                        <Row>
+                          <Col span={3}>
+                            <Text style={{ fontSize: 20 }}>Time : </Text>
+                          </Col>
+                          <Col span={21}>
+                            <TimePicker></TimePicker>
+                          </Col>
+                        </Row>
+                        <pre> </pre>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Correct patient
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Correct procedure
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>Correct site</Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Correct radiographs/ medical records
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Functionality of equipment
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Review of anticoagulant/ antiplatelet
+                            </Text>
+                          </Col>
+                        </Row>
+
+                        <p />
+                        <strong>
+                          <Text style={{ fontSize: 20 }}> Documented by:</Text>
+                        </strong>
+                        <Row>
+                          <Input style={{ width: '60%' }} />
+                          <Button style={{ fontSize: 20, height: '40px' }}>
+                            Export
+                          </Button>
+                        </Row>
+                        <p />
+                        {/* <Row>
+                      <Col span={19} />
+                      <Col>
+                        <Button style={{ fontSize: 20, height: '40px' }}>
+                          Export
+                        </Button>
+                      </Col>
+                    </Row> */}
+                      </Panel>
+                    </Collapse>
+
+                    <Collapse defaultActiveKey={['1']}>
                       <Panel header="Time Out" key="1">
                         <Row>
                           <Col span={3}>
