@@ -1,18 +1,95 @@
-import React from 'react';
-import { Tabs, Card, Dropdown, Row, Button, Input, Menu } from 'antd';
+import React, { useState } from 'react';
+import {
+  Tabs,
+  Card,
+  Dropdown,
+  Row,
+  Button,
+  Input,
+  Menu,
+  Modal,
+  Typography,
+  Col,
+} from 'antd';
 import { PlusCircleOutlined, CloseOutlined } from '@ant-design/icons';
 
 const Orthodontics: React.FC = () => {
   const { TabPane } = Tabs;
   const { TextArea } = Input;
+  const { Text } = Typography;
+
+  const [updateVisible, setupdateVisible] = useState(false);
+
+  const handleUpdate = () => {
+    setupdateVisible(true);
+  };
+
+  const handleOkupdate = () => {
+    setupdateVisible(false);
+  };
+
+  const handleCancelupdate = () => {
+    setupdateVisible(false);
+  };
+
+  const [viewVisible, setviewVisible] = useState(false);
+
+  const handleView = () => {
+    setviewVisible(true);
+  };
+
+  const handleOkview = () => {
+    setviewVisible(false);
+  };
+
+  const handleCancelview = () => {
+    setviewVisible(false);
+  };
+
   const menu = (
     <Menu>
-      <Menu.Item key="1">View Plan</Menu.Item>
+      <Menu.Item key="1" onClick={handleView}>
+        View Plan
+      </Menu.Item>
+      <Modal
+        title=""
+        visible={viewVisible}
+        onOk={handleOkview}
+        onCancel={handleCancelview}
+        width={600}
+        style={{ fontSize: 20 }}
+      >
+        <Card>
+          <Text>The care plan is....</Text>
+          <TextArea style={{ height: 200 }}></TextArea>
+        </Card>
+      </Modal>
       <Menu.Item key="2">Delete</Menu.Item>
-      <Menu.Item key="3">Update</Menu.Item>
+
       <Menu.Item key="4">Start treatment</Menu.Item>
       <Menu.Item key="5">End treatment</Menu.Item>
       <Menu.Item key="6">Follow up</Menu.Item>
+      <Menu.Item key="3" onClick={handleUpdate}>
+        Update
+      </Menu.Item>
+      <Modal
+        title=""
+        visible={updateVisible}
+        onOk={handleOkupdate}
+        onCancel={handleCancelupdate}
+        width={600}
+        style={{ fontSize: 20 }}
+      >
+        <Text>The previous care plan is....</Text>
+        <TextArea style={{ height: 200 }}></TextArea>
+        <pre></pre>
+        <Row>
+          <Col span={20}></Col>
+          <Col span={3}>
+            <Button style={{ width: 90 }}>Update</Button>
+          </Col>
+        </Row>
+      </Modal>
     </Menu>
   );
 

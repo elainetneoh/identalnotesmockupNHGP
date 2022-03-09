@@ -42,6 +42,7 @@ import Editor from '@medisys/ckeditor5-custom-build';
 import { Divider } from 'antd';
 import { Modal, Image } from 'antd';
 import capture from './images/Capture.png';
+import ckeditorpic from './images/ckeditorpic.png';
 import { useForm } from 'antd/lib/Form/Form';
 import Orthodontics from './components/Orthodontics';
 import CarePlan from './components/CarePlan';
@@ -162,6 +163,18 @@ const ProcedureTertiary: React.FC = () => {
   const [showCarePlanRemarks, setShowCarePlanRemarks] = useState(false);
   const [showCarePlanPanel, setShowCarePlanPanel] = useState(false);
   const [showChart, setShowChart] = useState(false);
+  const [showdelete, setshowdelete] = useState(false);
+  const showdeletee = () => {
+    setshowdelete(true);
+  };
+
+  const handleCanceldelete = () => {
+    setshowdelete(false);
+  };
+
+  const handleOkdelete = () => {
+    setshowdelete(false);
+  };
 
   const formItemLayout = {
     labelCol: { span: 7 },
@@ -647,7 +660,7 @@ const ProcedureTertiary: React.FC = () => {
 
                                 <Space size="middle">
                                   <a>Add</a>
-                                  <a>Delete</a>
+                                  <a onClick={showdeletee}>Delete</a>
                                 </Space>
                               </div>
                             );
@@ -702,6 +715,13 @@ const ProcedureTertiary: React.FC = () => {
                       />
                       <Column
                         // title="Consumables code"
+                        title="LOT00113321"
+                        dataIndex="lotnumber"
+                        key="LotNo"
+                        width="10%"
+                      />
+                      <Column
+                        // title="Consumables code"
                         title="DLL051"
                         dataIndex="consumablescode"
                         key="consumablescode"
@@ -738,7 +758,19 @@ const ProcedureTertiary: React.FC = () => {
                             // </div>
                             <Space size="middle">
                               <a>Add</a>
-                              <a>Delete</a>
+                              <a onClick={showdeletee}>Delete</a>
+                              <Modal
+                                title=""
+                                visible={showdelete}
+                                onOk={handleOkdelete}
+                                onCancel={handleCanceldelete}
+                                width={600}
+                                style={{ fontSize: 20 }}
+                              >
+                                <Text>
+                                  Are you sure you want to delete tooth no. 12?
+                                </Text>
+                              </Modal>
                             </Space>
                           );
                         }}
@@ -848,6 +880,7 @@ const ProcedureTertiary: React.FC = () => {
                           // data="<div style='text-decoration: underline;'><strong>History:<br><br>Findings: <br><br>Investigation: <br><br><br></strong></div>"
                           data="<div style='  background-color: rgb(25, 156, 25)'><strong>Pre-op Procedure: <br><br><br> Procedure Description: <br><br><br>Findings:<br><br><br>Operative Procedure:<br><Br><br>Post-Operative Instruction:</strong></div>"
                         />
+
                         <pre> </pre>
 
                         <Form.Item
@@ -925,8 +958,8 @@ const ProcedureTertiary: React.FC = () => {
                   style={{ fontSize: 20 }}
                 >
                   <Card>
-                    <Collapse defaultActiveKey={['1']}>
-                      <Panel header="Sign in" key="4">
+                    <Collapse accordion defaultActiveKey={['1']}>
+                      <Panel header="Sign in" key="1">
                         <Row>
                           <Col span={3}>
                             <Text style={{ fontSize: 20 }}>Time : </Text>
@@ -1015,10 +1048,10 @@ const ProcedureTertiary: React.FC = () => {
                       </Col>
                     </Row> */}
                       </Panel>
-                    </Collapse>
+                      {/* </Collapse> */}
 
-                    <Collapse defaultActiveKey={['1']}>
-                      <Panel header="Time Out" key="1">
+                      {/* <Collapse defaultActiveKey={['1']}> */}
+                      <Panel header="Time Out" key="2">
                         <Row>
                           <Col span={3}>
                             <Text style={{ fontSize: 20 }}>Time : </Text>
@@ -1107,10 +1140,85 @@ const ProcedureTertiary: React.FC = () => {
                       </Col>
                     </Row> */}
                       </Panel>
-                    </Collapse>
 
-                    <Collapse defaultActiveKey={['3']}>
-                      <Panel header="Sign Out" key="2">
+                      <Panel header="Sign Out" key="3">
+                        <Row>
+                          <Col span={3}>
+                            <Text style={{ fontSize: 20 }}>Time : </Text>
+                          </Col>
+
+                          <Col span={17}>
+                            <TimePicker></TimePicker>
+                          </Col>
+                        </Row>
+                        <pre> </pre>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Procedure unchanged
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Complete instrument and needle count
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Labelling of specimens (if applicable) 
+                            </Text>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={3}>
+                            <Checkbox />
+                          </Col>
+                          <Col span={21}>
+                            <Text style={{ fontSize: 20 }}>
+                              Functioning equipment
+                            </Text>
+                          </Col>
+                        </Row>
+
+                        <pre> </pre>
+
+                        <strong>
+                          <Text style={{ fontSize: 20 }}> Documented by:</Text>
+                        </strong>
+                        <Row>
+                          <Input style={{ width: '60%' }} />
+                          <Button style={{ fontSize: 20, height: '40px' }}>
+                            Export
+                          </Button>
+                        </Row>
+                        <p />
+                        <Row>
+                          <Col span={19} />
+                          <Col>
+                            <Button style={{ fontSize: 20, height: '40px' }}>
+                              Export
+                            </Button>
+                          </Col>
+                        </Row>
+                      </Panel>
+
+                      {/* </Collapse> */}
+
+                      {/* <Collapse defaultActiveKey={['3']}> */}
+                      {/* <Panel header="Sign Out" key="2">
                         <Row>
                           <Col span={3}>
                             <Text style={{ fontSize: 20 }}>Time : </Text>
@@ -1181,12 +1289,12 @@ const ProcedureTertiary: React.FC = () => {
                           Export
                         </Button>
                       </Col>
-                    </Row> */}
-                      </Panel>
-                    </Collapse>
+                    </Row> 
+                      </Panel> */}
+                      {/* </Collapse> */}
 
-                    <Collapse defaultActiveKey={['2']}>
-                      <Panel header="Fall risk" key="3">
+                      {/* <Collapse defaultActiveKey={['2']}> */}
+                      <Panel header="Fall risk" key="4">
                         <Row>
                           <Col span={2}>
                             <Checkbox />
@@ -1369,7 +1477,7 @@ const ProcedureTertiary: React.FC = () => {
                           </div>
                         }
                       >
-                        <CKEditor
+                        {/* <CKEditor
                           //style={{ width: '90%'}}
 
                           editor={Editor}
@@ -1409,7 +1517,11 @@ const ProcedureTertiary: React.FC = () => {
                        <br>
                        &nbsp;
                    </p>'
-                        />
+                        /> */}
+                        <Image
+                          src={ckeditorpic}
+                          style={{ height: 350, width: 1800 }}
+                        ></Image>
                       </Panel>
                       <Panel
                         header="Care Plan"

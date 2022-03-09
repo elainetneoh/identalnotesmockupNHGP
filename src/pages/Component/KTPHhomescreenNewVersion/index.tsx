@@ -1814,7 +1814,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               </div>
 
               <div className={style.marginTop}>
-                <Row style={{ marginBottom: 50 }}></Row>
+                {/* <Row style={{ marginBottom: 50 }}></Row> */}
                 <Row>
                   <Col span={17}>
                     {/*  <Image src={epos_PG_Y} width={70} />
@@ -1834,7 +1834,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         <Image src={infectiousdisease} width={70} height={70} />
                       </Col>
                     </Row>
-                    <Row style={{ marginBottom: 10 }}></Row>
+                    <Row style={{ marginBottom: 40 }}></Row>
 
                     <Row>
                       <Button
@@ -2312,7 +2312,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                         </Row>
                       </Modal>
                     </Row>
-                    <Row style={{ marginBottom: 30 }}></Row>
+                    <Row style={{ marginBottom: 50 }}></Row>
 
                     <Card
                       style={{

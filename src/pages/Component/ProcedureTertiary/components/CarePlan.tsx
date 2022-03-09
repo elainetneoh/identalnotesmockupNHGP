@@ -33,9 +33,7 @@ const CarePlan: React.FC<CarePlanProps> = (props) => {
           <Checkbox.Group options={options} />
         </Col>
 
-        <Col span={24}>
-          <TextArea style={{ height: 543 }} />
-        </Col>
+        <Col span={24}>{/* <TextArea style={{ height: 543 }} /> */}</Col>
 
         <Col span={24}>
           <Button onClick={CreateClicked}>Confirm Care Plan Created</Button>

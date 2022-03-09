@@ -2454,8 +2454,9 @@ const NEHRhomescreen: React.FC = () => {
                 <Form.Item
                   label={
                     <strong style={{ fontSize: '20px' }}>
-                      Are you on long term medication or pregnant
+                      Are you on long term medication or pregnant?
                       {/* Past or present medical condition not stated above. */}
+                      {/* Please list the medications you are taking.(Pregnant?) */}
                     </strong>
                   }
                   name="Ltmp"
@@ -2466,7 +2467,8 @@ const NEHRhomescreen: React.FC = () => {
                   label={
                     <strong style={{ fontSize: '20px' }}>
                       {/* Are you on long term medication?{' '} */}
-                      Do you have any allergies
+                      {/* Do you have any allergies */}
+                      Please specify your allergies.
                     </strong>
                   }
                   name="Ltmp"
