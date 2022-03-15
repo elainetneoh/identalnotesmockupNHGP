@@ -265,11 +265,7 @@ const ProcedureTertiary: React.FC = () => {
             <Chart />
           ) : (
             <Collapse defaultActiveKey={['2']}>
-              <Panel
-                header="Complaint/History (Dental / Social)"
-                key="a1"
-                className="boldheader"
-              >
+              <Panel header="History Notes" key="a1" className="boldheader">
                 <Image src={capture} style={{ height: 200 }} />
               </Panel>
             </Collapse>
@@ -1178,7 +1174,7 @@ const ProcedureTertiary: React.FC = () => {
                           </Col>
                           <Col span={21}>
                             <Text style={{ fontSize: 20 }}>
-                              Labelling of specimens (if applicable) 
+                              Labelling of specimens (if applicable)
                             </Text>
                           </Col>
                         </Row>

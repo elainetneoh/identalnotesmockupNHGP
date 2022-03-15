@@ -6,7 +6,6 @@ import {
   Select,
   Row,
   Col,
-  DatePicker,
   Typography,
   TimePicker,
   Table,
@@ -14,17 +13,10 @@ import {
   Modal,
   Checkbox,
   Card,
-  Space,
+  Image,
 } from 'antd';
 import style from './index.less';
-import {
-  StepBackwardFilled,
-  CaretLeftFilled,
-  CaretRightOutlined,
-  StepForwardOutlined,
-  CloseOutlined,
-  PlusOutlined,
-} from '@ant-design/icons';
+import { CloseOutlined, PlusOutlined } from '@ant-design/icons';
 import moment from 'moment';
 // @ts-ignore
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -33,6 +25,9 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import Editor from '@medisys/ckeditor5-custom-build';
 import { Divider } from 'antd';
 import { Collapse } from 'antd';
+import HistoryNotes from './components/HistoryNotes';
+import ProcedureForm from './components/ProcedureForm';
+import toolbar from './images/toolbar.png';
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -42,21 +37,17 @@ const { TabPane } = Tabs;
 const { Panel } = Collapse;
 const { Column } = Table;
 
-const data = [
-  {
-    key: '2',
-    procedure: 'Filling (3surface)',
-    procedurecode: 'DBK003',
-    unit: '1',
-    price: '64.3',
-    totalprice: '64.3',
-    diagnosis: 'Abrasion',
-    toothnumber: '21',
-  },
-];
+{
+  /* <CKEditor
+  style={{ height: '-5px' }}
+  editor={Editor}
+// data="<br><br><br>"
+/> */
+}
 
 const ProcedurePrimary: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [showChart, setShowChart] = useState(false);
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -78,167 +69,13 @@ const ProcedurePrimary: React.FC = () => {
   }
   return (
     <div className={style.ProcedurePri}>
+      <HistoryNotes showChart={showChart} />
+      <br />
+
       <Row>
         <Col span={21}>
-          <Row>
-            <StepBackwardFilled style={{ fontSize: 25, color: 'royalblue' }} />
-            <CaretLeftFilled style={{ fontSize: 25, color: 'royalblue' }} />
-            <Input style={{ width: '2%', height: '30px' }} />
-            <Text style={{ fontSize: 16 }}> of 42 </Text>
-            <CaretRightOutlined style={{ fontSize: 25, color: 'royalblue' }} />
-            <StepForwardOutlined style={{ fontSize: 25, color: 'royalblue' }} />
-            <pre> </pre>
-            <Select style={{ width: '10%' }}>
-              <Option value="Completed">Completed</Option>
-            </Select>
-            <pre> </pre>
-            <Button>New</Button>
-            <pre> </pre>
-            <Button>Save As Final</Button>
-            <pre> </pre>
-            <Button>Delete</Button>
-            <pre> </pre>
-            <Button>Unlock</Button>
-            <pre> </pre>
-            <Select style={{ width: '5%' }}>
-              <Option value="Print">Print</Option>
-            </Select>
-            <pre> </pre>
-            <Button style={{ color: 'red' }}>Audit(LAOP)</Button>
-            <pre> </pre>
-            <Button style={{ color: 'red' }}>Audit(REST)</Button>
-            <pre> </pre>
-            <Button style={{ width: '8%' }}>Prescribe Drug</Button>
-            <pre> </pre>
-            <pre> </pre>
-            <pre> </pre>
-            <pre> </pre>
-            <Form
-              labelCol={{ span: 0 }}
-              wrapperCol={{ span: 50 }}
-              layout="horizontal"
-            >
-              {/* <Form.Item label="Visit No">
-                <Input style={{ width: '100%' }} />
-              </Form.Item> */}
-              <Form.Item
-                label="Visit No"
-                labelCol={{ span: 8 }}
-                labelAlign={'left'}
-              >
-                <Input style={{ width: '150%' }} />
-              </Form.Item>
-            </Form>
-          </Row>
-          <Row>
-            <Col span={22}>
-              <Form
-                labelCol={{ span: 0 }}
-                wrapperCol={{ span: 500 }}
-                layout="horizontal"
-              >
-                <Row>
-                  <Col span={6}>
-                    <Form.Item
-                      label="Date"
-                      labelCol={{ span: 5 }}
-                      labelAlign={'left'}
-                    >
-                      <DatePicker style={{ width: '90%' }} />
-                    </Form.Item>
-                  </Col>
-                  <Col span={6}>
-                    <Form.Item
-                      label="Ref"
-                      labelCol={{ span: 3 }}
-                      labelAlign={'left'}
-                    >
-                      <Input style={{ width: '90%' }} />
-                    </Form.Item>
-                  </Col>
-                  <Col span={5}>
-                    <Form.Item
-                      label="Location"
-                      labelCol={{ span: 5 }}
-                      labelAlign={'left'}
-                    >
-                      <Input style={{ width: '90%' }} />
-                    </Form.Item>
-                  </Col>
+          <ProcedureForm setShowChart={setShowChart} />
 
-                  <Col span={5}>
-                    <Form.Item
-                      label="Time in"
-                      labelCol={{ span: 6 }}
-                      labelAlign={'left'}
-                    >
-                      <TimePicker style={{ width: '90%' }} format={format} />
-                    </Form.Item>
-                  </Col>
-                  <Col span={2}>
-                    <Button style={{ background: 'red' }}>Bill</Button>
-                  </Col>
-                </Row>
-              </Form>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={22}>
-              <Form
-                labelCol={{ span: 0 }}
-                wrapperCol={{ span: 500 }}
-                layout="horizontal"
-              >
-                <Row>
-                  <Col span={6}>
-                    <Form.Item
-                      label="Doctor"
-                      labelCol={{ span: 5 }}
-                      labelAlign={'left'}
-                    >
-                      <Select style={{ width: '90%' }}>
-                        <Option value=""></Option>
-                      </Select>
-                    </Form.Item>
-                  </Col>
-                  <Col span={6}>
-                    <Form.Item
-                      label="Appt"
-                      labelCol={{ span: 3 }}
-                      labelAlign={'left'}
-                    >
-                      <Select style={{ width: '90%' }}>
-                        <Option value="a" children={undefined}></Option>
-                      </Select>
-                    </Form.Item>
-                  </Col>
-
-                  <Col span={5}>
-                    <Form.Item
-                      label="VIsit Type"
-                      labelCol={{ span: 5 }}
-                      labelAlign={'left'}
-                    >
-                      <Select style={{ width: '90%' }}>
-                        <Option value="a" children={undefined}></Option>
-                      </Select>
-                    </Form.Item>
-                  </Col>
-
-                  <Col span={5}>
-                    <Form.Item
-                      label="Time Out"
-                      labelCol={{ span: 6 }}
-                      labelAlign={'left'}
-                    >
-                      <TimePicker style={{ width: '90%' }} format={format} />
-                    </Form.Item>
-                  </Col>
-                </Row>
-              </Form>
-            </Col>
-          </Row>
-          <Divider />
           <Form
             labelCol={{ span: 0 }}
             wrapperCol={{ span: 200 }}
@@ -246,85 +83,10 @@ const ProcedurePrimary: React.FC = () => {
           >
             <Row>
               <Col span={21}>
-                <Form.Item
-                  label="Procedure/Diagnoses"
-                  labelCol={{ span: 3 }}
-                  labelAlign={'left'}
-                >
-                  <Table
-                    style={{ width: '99%' }}
-                    pagination={false}
-                    dataSource={data}
-                  >
-                    <Column
-                      title="Tooth No."
-                      dataIndex="toothnumber"
-                      key="toothnumber"
-                      width="5%"
-                    />
-                    <Column
-                      title="Procedure"
-                      dataIndex="procedure"
-                      key="procedure"
-                    />
-                    <Column
-                      title="Procedure code"
-                      dataIndex="procedurecode"
-                      key="procedurecode"
-                    />
-                    <Column
-                      title="Unit"
-                      dataIndex="unit"
-                      key="unit"
-                      width="5%"
-                    />
-                    <Column
-                      title="Price"
-                      dataIndex="price"
-                      key="price"
-                      width="10%"
-                    />
-                    <Column
-                      title="Total Price"
-                      dataIndex="totalprice"
-                      key="totalprice"
-                      width="10%"
-                    />
-                    <Column
-                      title="Diagnosis"
-                      dataIndex="diagnosis"
-                      key="diagnosis"
-                      width="25%"
-                    />
-                    <Column
-                      width="10%"
-                      title={() => {
-                        return (
-                          <div>
-                            <Button type="primary" icon={<PlusOutlined />}>
-                              Add
-                            </Button>
-                          </div>
-                        );
-                      }}
-                      key="action"
-                      render={() => (
-                        <Space size="middle">
-                          <a>Edit</a>
-                          <a>Delete</a>
-                        </Space>
-                      )}
-                    />
-                  </Table>
-                </Form.Item>
-
                 <Divider />
 
-                <CKEditor
-                  style={{ height: '-5px' }}
-                  editor={Editor}
-                  // data="<br><br><br>"
-                />
+                <Image src={toolbar} width="100%" />
+
                 <br></br>
                 <Collapse defaultActiveKey={['1']}>
                   <Panel
@@ -340,13 +102,9 @@ const ProcedurePrimary: React.FC = () => {
                       </div>
                     }
                   >
-                    {/*<CKEditor
-                      style={{ width: '90%' }}
-                      editor={ClassicEditor}
-                      data="<br><br><br>"
-                    />*/}
-                    <TextArea rows="5" cols="50"></TextArea>
+                    <TextArea rows={5} cols={50}></TextArea>
                   </Panel>
+
                   <Panel
                     header="Examination/Frindings/Investigations"
                     key="1"
@@ -360,13 +118,9 @@ const ProcedurePrimary: React.FC = () => {
                       </div>
                     }
                   >
-                    {/*<CKEditor
-                      style={{ width: '90%' }}
-                      editor={ClassicEditor}
-                      data="<br><br><br>"
-                    />*/}
-                    <TextArea rows="5" cols="50"></TextArea>
+                    <TextArea rows={5} cols={50}></TextArea>
                   </Panel>
+
                   <Panel
                     header="Diagnosis/Treatment/Prescription/Next Visit"
                     key="1"
@@ -511,13 +265,9 @@ const ProcedurePrimary: React.FC = () => {
                         </Row>
                       </Col>
                     </Row>
-                    {/*<CKEditor
-                      style={{ width: '90%' }}
-                      editor={ClassicEditor}
-                      data="<br><br><br>"
-                    />*/}
-                    <TextArea rows="5" cols="50"></TextArea>
+                    <TextArea rows={5} cols={50}></TextArea>
                   </Panel>
+
                   <Panel
                     header="Patient Education Material"
                     key="1"
@@ -531,12 +281,7 @@ const ProcedurePrimary: React.FC = () => {
                       </div>
                     }
                   >
-                    {/*<CKEditor
-                      style={{ width: '90%' }}
-                      editor={ClassicEditor}
-                      data="<br><br><br>"
-                    />*/}
-                    <TextArea rows="5" cols="50"></TextArea>
+                    <TextArea rows={5} cols={50}></TextArea>
                   </Panel>
                 </Collapse>
 
@@ -600,15 +345,10 @@ const ProcedurePrimary: React.FC = () => {
                   </div>
                 </Form.Item>
               </Col>
-
-              <Col span={2}>
-                <Button style={{ width: '85%' }}>Chart</Button>
-              </Col>
-
-              <col span={2} />
             </Row>
           </Form>
         </Col>
+
         <Col span={3}>
           <Tabs tabPosition="bottom" style={{ height: 1000 }}>
             <TabPane tab="Image" key="1">

@@ -1,0 +1,137 @@
+.wrapper {
+  display: inline-grid;
+  gap: 5px;
+
+  grid-template-columns: repeat(3, 80px 2fr) repeat(2, 70px 100px) 1fr;
+}
+
+.wrapper label {
+  display: flex;
+  align-items: center;
+}
+
+//First row
+.toolbar {
+  grid-column: 1 / span 8;
+  grid-row: 1 / span 1;
+}
+
+.visitno-label {
+  grid-column: 9 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.visitno-field {
+  grid-column: 10 / span 1;
+  grid-row: 1 / span 1;
+}
+
+//Second row
+.date-label {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.date-field {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.ref-label {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.ref-field {
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.location-label {
+  grid-column: 5 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.location-field {
+  grid-column: 6 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.time-in-label {
+  grid-column: 7 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.time-in-field {
+  grid-column: 8 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.bill-btn {
+  grid-column: 9 / span 2;
+  grid-row: 2 / span 1;
+}
+
+//Third row
+.time-out-label {
+  grid-column: 7 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.time-out-field {
+  grid-column: 8 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.doctor-label {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.doctor-field {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.appt-label {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.appt-field {
+  grid-column: 4 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.visit-label {
+  grid-column: 5 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.visit-field {
+  grid-column: 6 / span 1;
+  grid-row: 3 / span 1;
+}
+
+//Fourth row
+.divider {
+  grid-column: 1 / span 10;
+  grid-row: 4 / span 1;
+}
+
+//Fifth row
+.procedure-label {
+  grid-column: 1 / span 1;
+  grid-row: 6 / span 1;
+}
+
+.procedure-table {
+  grid-column: 2 / span 9;
+  grid-row: 6 / span 3;
+}
+
+//Outlier
+.chart-btn {
+  grid-column: 11 / span 1;
+  grid-row: 6 / span 1;
+}

@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.wrapper > * {
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.archive {
+  flex-grow: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.archive > * {
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+.archive > input {
+  flex-shrink: 1;
+  max-width: 30px;
+}
+
+.archive svg {
+  aspect-ratio: 1/1;
+  height: 25px;
+  width: auto;
+  fill: royalblue;
+}
+
+.select-status {
+  width: 100px;
+}
+
+.red-text,
+.red-text:hover {
+  color: red;
+}
+
+.red-text:hover {
+  border-color: red;
+}
