@@ -1,0 +1,97 @@
+.wrapper {
+  --font-size: 20px;
+}
+
+.header {
+  background-color: black;
+}
+
+.header > h1 {
+  width: 95%;
+  height: 50px;
+  color: white;
+  font-size: 25px;
+  font-weight: normal;
+
+  margin: 0 25px;
+}
+
+.h2 {
+  font-size: var(--font-size);
+}
+
+//Checkbox
+.checkbox-list {
+  margin: 10px 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-list > label {
+  margin: 2px 0 !important;
+  font-size: 20px;
+}
+
+//Fields
+.field-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-list > div {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.field-list label {
+  width: 100px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+//Remarks
+.remarks {
+  margin: 20px 0;
+}
+
+.remarks-textarea {
+  height: 80px !important;
+}
+
+//Record-by
+.recorded-by {
+  display: flex;
+  flex-direction: column;
+}
+
+.recorded-by > div {
+  display: flex;
+  font-size: 20px;
+}
+
+.recorded-by,
+.recorded-by input {
+  font-size: 16px;
+}
+
+.amphersand {
+  margin: 0;
+  text-align: center;
+  width: 100px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+//Export
+.export {
+  margin: 20px 0;
+  display: flex;
+  justify-content: end;
+}
+
+.export > button {
+  font-size: 20px;
+  height: 40px;
+}

@@ -555,7 +555,7 @@ const Nurseform: React.FC = () => {
                 <pre> </pre>
                 <Button
                   onClick={showModal2}
-                  style={{ color: 'black', width: '20%' }}
+                  style={{ color: 'red', width: '20%' }}
                 >
                   INTRAOP
                 </Button>
@@ -564,11 +564,13 @@ const Nurseform: React.FC = () => {
                   handleOk={handleOk2}
                   handleCancel={handleCancel2}
                 />
-                <pre></pre>
-
+                <pre> </pre>
                 {/*end*/}
 
-                <Button onClick={showModal} style={{ color: 'black' }}>
+                <Button
+                  onClick={showModal}
+                  style={{ color: 'black', width: '20%' }}
+                >
                   INTRA-PERI-OP
                 </Button>
                 <IntraPeriOpModal
@@ -576,11 +578,10 @@ const Nurseform: React.FC = () => {
                   handleOk={handleOk}
                   handleCancel={handleCancel}
                 />
-                <pre></pre>
-
+                <pre> </pre>
                 <Button
                   onClick={showModal1}
-                  style={{ color: 'black', width: '20%' }}
+                  style={{ color: 'red', width: '20%' }}
                 >
                   Discharge
                 </Button>
