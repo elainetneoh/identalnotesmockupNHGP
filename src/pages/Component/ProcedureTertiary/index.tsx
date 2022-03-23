@@ -47,6 +47,8 @@ import { useForm } from 'antd/lib/Form/Form';
 import Orthodontics from './components/Orthodontics';
 import CarePlan from './components/CarePlan';
 import Chart from './components/Chart';
+import ChartExtraction from './components/ChartExtraction';
+import ChartFilling from './components/ChartFilling';
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -86,9 +88,16 @@ const data2 = [
   {
     key: '1',
     // procedure: 'Consultation',
-    procedure: 'PERIAPICAL SURGERY (Tooth :17, 19, 22) ',
-    procedurecode: 'DLA001',
-    unit: '1',
+    // procedure: 'PERIAPICAL SURGERY (Tooth :17, 19, 22) ',
+    procedure: 'EXTRACTION (Tooth 13,14) ',
+    procedurecode: (
+      <Select defaultValue="DLJ001">
+        <option value="DLA001">DLA001 </option>
+        <option value="DLJ001">DLJ001 </option>
+        <option value="DLB031">DLB031</option>
+      </Select>
+    ),
+    unit: '2',
     price: '35',
     toothnumber: (
       // <Select
@@ -101,17 +110,24 @@ const data2 = [
       // >
       //   {children}
       // </Select>
-      <Input />
+      <Input defaultValue="13,14" />
     ),
   },
   {
     key: '2',
     // procedure: 'Consultation',
-    procedure: '',
-    procedurecode: '',
-    unit: '',
-    price: '',
-    toothnumber: '',
+    procedure: 'CONSULTATION(PACKAGE)',
+    procedurecode: (
+      <Select defaultValue="DLA001">
+        <option value="DLA001">DLA001 </option>
+        <option value="DLJ001">DLJ001 </option>
+        <option value="DLB031">DLB031</option>
+      </Select>
+    ),
+    unit: '1',
+    price: '10',
+    toothnumber: <Input />,
+    // toothnumber: <Input defaultValue="16"/>,
   },
   // {
   //   key: '2',
@@ -163,6 +179,8 @@ const ProcedureTertiary: React.FC = () => {
   const [showCarePlanRemarks, setShowCarePlanRemarks] = useState(false);
   const [showCarePlanPanel, setShowCarePlanPanel] = useState(false);
   const [showChart, setShowChart] = useState(false);
+  const [showChartExtraction, setShowChartExtraction] = useState(false);
+  const [showChartFilling, setShowChartFilling] = useState(false);
   const [showdelete, setshowdelete] = useState(false);
   const showdeletee = () => {
     setshowdelete(true);
@@ -263,6 +281,10 @@ const ProcedureTertiary: React.FC = () => {
         <Col span={24}>
           {showChart ? (
             <Chart />
+          ) : showChartExtraction ? (
+            <ChartExtraction />
+          ) : showChartFilling ? (
+            <ChartFilling />
           ) : (
             <Collapse defaultActiveKey={['2']}>
               <Panel header="History Notes" key="a1" className="boldheader">
@@ -594,6 +616,7 @@ const ProcedureTertiary: React.FC = () => {
                         pagination={false}
                         dataSource={data2}
                         size="small"
+                        // showHeader={false}
                       >
                         <Column
                           //  title="Tooth No."
@@ -608,7 +631,7 @@ const ProcedureTertiary: React.FC = () => {
                             // >
                             //   {children}
                             // </Select>
-                            <Input />
+                            <Input defaultValue={16} />
                           }
                           dataIndex="toothnumber"
                           key="toothnumber"
@@ -616,14 +639,22 @@ const ProcedureTertiary: React.FC = () => {
                         />
                         <Column
                           // title="Procedure"
-                          title="CONSULTATION(PACKAGE)"
+                          // title="CONSULTATION(PACKAGE)"
+                          title="FILLING, TOOTH COLOURED, 1 SURFACE"
                           dataIndex="procedure"
                           key="procedure"
                           width="70%"
                         />
                         <Column
                           // title="Procedure code"
-                          title="DLA000"
+                          title={
+                            <Select defaultValue="DLB031">
+                              <option value="DLA001">DLA001 </option>
+                              <option value="DLJ001">DLJ001 </option>
+                              <option value="DLB031">DLB031</option>
+                            </Select>
+                          }
+                          // "DLA000"
                           dataIndex="procedurecode"
                           key="procedurecode"
                           width="10%"
@@ -637,7 +668,7 @@ const ProcedureTertiary: React.FC = () => {
                         />
                         <Column
                           // title="Price"
-                          title="0"
+                          title="45"
                           dataIndex="price"
                           key="price"
                           width="5%"
@@ -655,7 +686,13 @@ const ProcedureTertiary: React.FC = () => {
                                 </Button> */}
 
                                 <Space size="middle">
-                                  <a>Add</a>
+                                  <a
+                                    onClick={() => {
+                                      setShowChartFilling(true);
+                                    }}
+                                  >
+                                    Add
+                                  </a>
                                   <a onClick={showdeletee}>Delete</a>
                                 </Space>
                               </div>
@@ -671,7 +708,13 @@ const ProcedureTertiary: React.FC = () => {
                             //   Delete
                             // </Button>
                             <Space size="middle">
-                              <a>Add</a>
+                              <a
+                                onClick={() => {
+                                  setShowChartExtraction(true);
+                                }}
+                              >
+                                Add
+                              </a>
                               <a>Delete</a>
                             </Space>
                           )}

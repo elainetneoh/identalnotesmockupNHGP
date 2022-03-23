@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Collapse, Image, Popconfirm } from 'antd';
-import DentalChart1 from '../images/DentalChart1.jpg';
-import DentalChart2 from '../images/DentalChart2.jpg';
-import DentalChart3 from '../images/DentalChart3.jpg';
+import DentalChart1 from '../images/DentalChart11.png';
+import DentalChart2 from '../images/DentalChart22.png';
+import DentalChart3 from '../images/DentalChart33.png';
 
 const Chart: React.FC = () => {
   const [image, setImage] = useState(1);
