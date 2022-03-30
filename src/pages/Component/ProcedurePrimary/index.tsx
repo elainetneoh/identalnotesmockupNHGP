@@ -88,7 +88,7 @@ const ProcedurePrimary: React.FC = () => {
                 <Image src={toolbar} width="100%" />
 
                 <br></br>
-                <Collapse defaultActiveKey={['1']}>
+                <Collapse defaultActiveKey={['1', '2', '3', '4']}>
                   <Panel
                     header="Complaint/History (Dental / Social)"
                     key="1"
@@ -107,7 +107,7 @@ const ProcedurePrimary: React.FC = () => {
 
                   <Panel
                     header="Examination/Frindings/Investigations"
-                    key="1"
+                    key="2"
                     className="boldheader"
                     extra={
                       <div>
@@ -123,7 +123,7 @@ const ProcedurePrimary: React.FC = () => {
 
                   <Panel
                     header="Diagnosis/Treatment/Prescription/Next Visit"
-                    key="1"
+                    key="3"
                     className="boldheader"
                     extra={
                       <div>
@@ -270,7 +270,7 @@ const ProcedurePrimary: React.FC = () => {
 
                   <Panel
                     header="Patient Education Material"
-                    key="1"
+                    key="4"
                     className="boldheader"
                     extra={
                       <div>
