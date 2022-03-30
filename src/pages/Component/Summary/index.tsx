@@ -47,9 +47,51 @@ const data = [
     surgeon: 'Susanna Tan Li Wen',
     speciality: 'Orthodontics',
     institution: 'KTPH',
-    toothNum: '10',
-    code: 'ABC001',
-    desc: 'Filling (2 Surfaces)',
+    toothNum: 'N/A',
+    code: 'DLA001',
+    desc: 'CONSULTATION(PACKAGE)',
+    status: 'In Progress',
+    timein: '11:05',
+    timeout: '13:00',
+    category: 'Procedure Record',
+  },
+  {
+    key: '2',
+    date: '4/1/2021',
+    surgeon: 'Susanna Tan Li Wen',
+    speciality: 'Orthodontics',
+    institution: 'KTPH',
+    toothNum: '13',
+    code: 'DLJ001',
+    desc: 'EXTRACTION',
+    status: 'In Progress',
+    timein: '11:05',
+    timeout: '13:00',
+    category: 'Procedure Record',
+  },
+  {
+    key: '3',
+    date: '4/1/2021',
+    surgeon: 'Susanna Tan Li Wen',
+    speciality: 'Orthodontics',
+    institution: 'KTPH',
+    toothNum: '14',
+    code: 'DLJ001',
+    desc: 'EXTRACTION',
+    status: 'In Progress',
+    timein: '11:05',
+    timeout: '13:00',
+    category: 'Procedure Record',
+  },
+  {
+    key: '4',
+    date: '4/1/2021',
+    surgeon: 'Susanna Tan Li Wen',
+    speciality: 'Orthodontics',
+    institution: 'KTPH',
+    toothNum: '16',
+    code: 'DLB031',
+    desc: 'FILLING(1 SURFACE)',
     status: 'In Progress',
     timein: '11:05',
     timeout: '13:00',
@@ -129,7 +171,7 @@ const Summary: React.FC = () => {
                       ...rowSelection,
                     }}
                     scroll={{ x: 1500 }}
-                    style={{ width: '100%', height: 250 }}
+                    style={{ width: '100%', height: 750 }}
                     dataSource={data}
                   >
                     <Column

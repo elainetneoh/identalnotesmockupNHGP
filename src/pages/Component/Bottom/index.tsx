@@ -22,6 +22,7 @@ import Summary from '@/pages/Component/Summary';
 import CarePlan from '@/pages/Component/CarePlan';
 import TOSP from '@/pages/Component/TOSP';
 import Test from '@/pages/Component/Test';
+import NHGChart from '../NHGChart';
 
 const Bottom: React.FC = () => {
   let gps3 = [1000, 300];
@@ -126,6 +127,12 @@ const Bottom: React.FC = () => {
           {div.bot === 'CF2' && (
             <div className={style.scrollable}>
               <Xray />
+            </div>
+          )}
+
+          {div.bot === 'C3' && (
+            <div className={style.scrollable}>
+              <NHGChart />
             </div>
           )}
         </div>

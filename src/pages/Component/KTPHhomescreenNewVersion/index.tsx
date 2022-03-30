@@ -881,9 +881,12 @@ const KTPHhomescreenNewVersion: React.FC = () => {
               labelAlign={'left'}
             >
               <Row>
-                <Input style={{ width: '90%' }} />
+                <Input style={{ width: '80%' }} />
                 <pre> </pre>
-                <Button htmlType="submit" style={{ borderColor: 'black' }}>
+                <Button
+                  htmlType="submit"
+                  style={{ borderColor: 'black', width: '18%' }}
+                >
                   <strong>SMS</strong>
                 </Button>
               </Row>
@@ -1799,16 +1802,16 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                 )}
                 {explain === 'chestpain' && (
                   <div>
-                    <Card style={{ height: 300 }}>
-                      <Image src={chestpain} />
-                    </Card>
+                    {/* <Card style={{ height: 300 }}> */}
+                    <Image src={chestpain} />
+                    {/* </Card> */}
                   </div>
                 )}
                 {explain === 'breathlessness' && (
                   <div>
-                    <Card style={{ height: 300 }}>
-                      <Image src={breathlessness} />
-                    </Card>
+                    {/* <Card style={{ height: 300 }}> */}
+                    <Image src={breathlessness} />
+                    {/* </Card> */}
                   </div>
                 )}
               </div>
@@ -1851,7 +1854,7 @@ const KTPHhomescreenNewVersion: React.FC = () => {
                     </Row>
                     <Row style={{ marginBottom: 20 }}></Row>
                     <Row>
-                      <Image src={happyface} width={110} height={110} />
+                      <Image src={happyface} width={100} height={100} />
                     </Row>
                     <pre></pre>
 

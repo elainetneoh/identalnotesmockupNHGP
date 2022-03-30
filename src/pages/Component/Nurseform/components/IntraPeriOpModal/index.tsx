@@ -25,9 +25,9 @@ const IntraPeriOpModal = ({
       className={style.wrapper}
     >
       <Row gutter={{ xs: 8 }}>
-        <PreOp span={8} />
-        <PeriOp span={8} />
-        <Discharge span={8} />
+        <PreOp span={12} />
+        {/* <PeriOp span={8} /> */}
+        <Discharge span={12} />
       </Row>
     </Modal>
   );

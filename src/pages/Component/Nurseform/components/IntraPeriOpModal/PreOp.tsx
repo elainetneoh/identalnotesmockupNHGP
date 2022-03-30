@@ -7,9 +7,9 @@ import style from './index.less';
 const PreOp = ({ span }: { span: number }) => {
   return (
     <Col span={span}>
-      <Card>
+      <Card style={{ height: '100%' }}>
         <Row className={style.header}>
-          <h1>Pre-Op</h1>
+          <h1>Pre-Operative Check List</h1>
         </Row>
 
         {/**Checkbox */}
@@ -17,30 +17,30 @@ const PreOp = ({ span }: { span: number }) => {
           <Checkbox>Correct patient</Checkbox>
           <Checkbox>Vaild consent</Checkbox>
           <Checkbox>Operation site and side verified </Checkbox>
-          <Checkbox>Fall precautions</Checkbox>
+          {/* <Checkbox>Fall precautions</Checkbox> */}
         </Row>
 
         {/**Parameters */}
         <Row className={style['field-list']}>
           <strong className={style.h2}>Parameters</strong>
           <div>
-            <label>PR/min:</label>
-            <Input />
+            <label className={style['parametertext']}>PR/min:</label>
+            <Input className={style['parametertextbox']} />
           </div>
 
           <div>
-            <label>Bp/mmHg:</label>
-            <Input />
+            <label className={style['parametertext']}>Bp/mmHg:</label>
+            <Input className={style['parametertextbox']} />
           </div>
 
           <div>
-            <label>O₂ saturation:</label>
-            <Input />
+            <label className={style['parametertext']}>O₂ saturation:</label>
+            <Input className={style['parametertextbox']} />
           </div>
 
           <div>
-            <label>Pain score:</label>
-            <Input />
+            <label className={style['parametertext']}>Pain score:</label>
+            <Input className={style['parametertextbox']} />
           </div>
         </Row>
 

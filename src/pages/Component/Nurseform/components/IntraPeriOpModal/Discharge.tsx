@@ -9,42 +9,42 @@ const Discharge = ({ span }: { span: number }) => {
     <Col span={span}>
       <Card>
         <Row className={style.header}>
-          <h1>Discharge</h1>
+          <h1>Pre-Discharge Check List</h1>
         </Row>
 
         {/**Checkbox */}
         <Row className={style['checkbox-list']}>
-          <Checkbox>Not dizzy</Checkbox>
           <Checkbox>No active bleeding</Checkbox>
+          <Checkbox>Not dizzy</Checkbox>
           <Checkbox>Not in severe pain</Checkbox>
         </Row>
 
         {/**Parameters */}
         <Row className={style['field-list']}>
-          <strong className={style.h2}>Parameter</strong>
+          <strong className={style.h2}>Parameters</strong>
           <div>
-            <label>PR/min:</label>
-            <Input />
+            <label className={style['parametertext']}>PR/min:</label>
+            <Input className={style['parametertextbox']} />
           </div>
 
           <div>
-            <label>Bp/mmHg:</label>
-            <Input />
+            <label className={style['parametertext']}>Bp/mmHg:</label>
+            <Input className={style['parametertextbox']} />
           </div>
 
           <div>
-            <label>O₂ saturation:</label>
-            <Input />
+            <label className={style['parametertext']}>O₂ saturation:</label>
+            <Input className={style['parametertextbox']} />
           </div>
 
           <div>
-            <label>Pain score:</label>
-            <Input />
+            <label className={style['parametertext']}>Pain score:</label>
+            <Input className={style['parametertextbox']} />
           </div>
         </Row>
 
         {/**Discharged with */}
-        <Row className={style['checkbox-list']}>
+        {/* <Row className={style['checkbox-list']}>
           <strong className={style.h2}>Discharged with:</strong>
           <Checkbox>Procedure summary</Checkbox>
           <Checkbox>Postoperative instructions</Checkbox>
@@ -52,7 +52,7 @@ const Discharge = ({ span }: { span: number }) => {
           <Checkbox>Gauze pack</Checkbox>
           <Checkbox>Instructions to collect medication</Checkbox>
           <Checkbox>Appointment for review, if any</Checkbox>
-        </Row>
+        </Row> */}
 
         {/**Remarks */}
         <Row className={style.remarks}>

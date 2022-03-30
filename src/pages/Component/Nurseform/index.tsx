@@ -25,6 +25,7 @@ import {
   StepForwardOutlined,
   CloseOutlined,
   PlusOutlined,
+  FieldTimeOutlined,
 } from '@ant-design/icons';
 import moment from 'moment';
 // @ts-ignore
@@ -35,6 +36,7 @@ import Editor from '@medisys/ckeditor5-custom-build';
 import { Divider } from 'antd';
 import IntraOpModal from './components/IntraOpModal';
 import IntraPeriOpModal from './components/IntraPeriOpModal';
+import OTRecords from './components/OTRecords';
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -207,6 +209,16 @@ const Nurseform: React.FC = () => {
                       <DatePicker style={{ width: '70%' }} />
                     </Form.Item>
                   </Col>
+                  <Col span={2}></Col>
+                  <Col>
+                    <Form.Item
+                      label="Location"
+                      labelCol={{ span: 7 }}
+                      labelAlign={'left'}
+                    >
+                      <Input style={{ width: '145%' }} />
+                    </Form.Item>
+                  </Col>
                 </Row>
                 <Row>
                   <Col span={8}>
@@ -218,26 +230,61 @@ const Nurseform: React.FC = () => {
                       <Input style={{ width: '70%' }} />
                     </Form.Item>
                   </Col>
-                  <Col span={2} />
-                  <Col>
+
+                  <Col span={2}></Col>
+
+                  <Col span={8}>
                     <Form.Item
+                      label="Doctor"
+                      labelCol={{ span: 3 }}
+                      labelAlign={'left'}
+                    >
+                      <Input style={{ width: '55%' }} />
+                    </Form.Item>
+                  </Col>
+                  {/* <Col span={2} /> */}
+
+                  {/* <Col>
+                  <Form.Item
+                      label="Doctor"
+                      labelCol={{ span: 7 }}
+                      labelAlign={'left'}
+                    >
+                      <Input style={{ width: '145%' }} />
+                    </Form.Item></Col> */}
+                  {/* <Col> */}
+                  {/* <Form.Item
+                      label="Doctor"
+                      labelCol={{ span: 7 }}
+                      labelAlign={'left'}
+                    >
+                      <Input style={{ width: '150%' }} />
+                    </Form.Item> */}
+                  {/* <Form.Item
                       label="Time in"
                       labelCol={{ span: 9 }}
                       labelAlign={'left'}
                     >
                       <TimePicker format={format} style={{ width: '110%' }} />
-                    </Form.Item>
-                  </Col>
+                    </Form.Item> */}
+                  {/* </Col> */}
                 </Row>
                 <Row>
                   <Col span={8}>
                     <Form.Item
+                      label="Time in"
+                      labelCol={{ span: 4 }}
+                      labelAlign={'left'}
+                    >
+                      <TimePicker format={format} style={{ width: '69%' }} />
+                    </Form.Item>
+                    {/* <Form.Item
                       label="location"
                       labelCol={{ span: 4 }}
                       labelAlign={'left'}
                     >
                       <Select style={{ width: '70%' }} />
-                    </Form.Item>
+                    </Form.Item> */}
                   </Col>
                   <Col span={2} />
                   <Col>
@@ -246,7 +293,7 @@ const Nurseform: React.FC = () => {
                       labelCol={{ span: 9 }}
                       labelAlign={'left'}
                     >
-                      <TimePicker format={format} style={{ width: '100%' }} />
+                      <TimePicker format={format} style={{ width: '199%' }} />
                     </Form.Item>
                   </Col>
                 </Row>
@@ -553,13 +600,16 @@ const Nurseform: React.FC = () => {
                   </Card>
                 </Modal> */}
                 <pre> </pre>
-                <Button
-                  onClick={showModal2}
-                  style={{ color: 'red', width: '20%' }}
-                >
-                  INTRAOP
+                <Button onClick={showModal2} style={{ width: '20%' }}>
+                  {/* INTRAOP */}
+                  OT RECORDS
                 </Button>
-                <IntraOpModal
+                {/* <IntraOpModal
+                  isVisible={isModalVisible2}
+                  handleOk={handleOk2}
+                  handleCancel={handleCancel2}
+                /> */}
+                <OTRecords
                   isVisible={isModalVisible2}
                   handleOk={handleOk2}
                   handleCancel={handleCancel2}
@@ -571,7 +621,8 @@ const Nurseform: React.FC = () => {
                   onClick={showModal}
                   style={{ color: 'black', width: '20%' }}
                 >
-                  INTRA-PERI-OP
+                  {/* INTRA-PERI-OP */}
+                  PERIOP
                 </Button>
                 <IntraPeriOpModal
                   isVisible={isModalVisible}
@@ -579,10 +630,7 @@ const Nurseform: React.FC = () => {
                   handleCancel={handleCancel}
                 />
                 <pre> </pre>
-                <Button
-                  onClick={showModal1}
-                  style={{ color: 'red', width: '20%' }}
-                >
+                <Button onClick={showModal1} style={{ width: '20%' }}>
                   Discharge
                 </Button>
                 <Modal
@@ -593,78 +641,79 @@ const Nurseform: React.FC = () => {
                   width={600}
                   style={{ fontSize: 20 }}
                 >
-                  <Card>
-                    <strong>
-                      <Text style={{ fontSize: 20 }}> Discharged with:</Text>
-                    </strong>
-                    <Row>
-                      <Col span={2}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={22}>
-                        <Text style={{ fontSize: 20 }}>Procedure summary</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={2}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={22}>
-                        <Text style={{ fontSize: 20 }}>
-                          Postoperative instructions
-                        </Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={2}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={22}>
-                        <Text style={{ fontSize: 20 }}>Gauze pack</Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={2}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={22}>
-                        <Text style={{ fontSize: 20 }}>
-                          Instructions to collect medication
-                        </Text>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={2}>
-                        <Checkbox />
-                      </Col>
-                      <Col span={22}>
-                        <Text style={{ fontSize: 20 }}>Review appointment</Text>
-                      </Col>
-                    </Row>
-                    <p />
-                    <strong>
-                      <Text style={{ fontSize: 20 }}> Remarks:</Text>
-                    </strong>
-                    <TextArea style={{ height: 80 }} />
-                    <p />
-                    <strong>
-                      <Text style={{ fontSize: 20 }}> Recorded by:</Text>
-                    </strong>
-                    <Row>
-                      <Input style={{ width: '60%' }} />
-                      <Text style={{ fontSize: 20 }}>@</Text>
-                      <TimePicker style={{ width: '30%' }} />
-                    </Row>
-                    <p />
-                    <Row>
-                      <Col span={19} />
-                      <Col>
-                        <Button style={{ fontSize: 20, height: '40px' }}>
-                          Export
-                        </Button>
-                      </Col>
-                    </Row>
-                  </Card>
+                  <strong>
+                    <Text style={{ fontSize: 20 }}> Discharged with:</Text>
+                  </strong>
+                  <Row>
+                    <Col span={2}>
+                      <Checkbox />
+                    </Col>
+                    <Col span={22}>
+                      <Text style={{ fontSize: 20 }}>Procedure summary</Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col span={2}>
+                      <Checkbox />
+                    </Col>
+                    <Col span={22}>
+                      <Text style={{ fontSize: 20 }}>
+                        Postoperative instructions
+                      </Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col span={2}>
+                      <Checkbox />
+                    </Col>
+                    <Col span={22}>
+                      <Text style={{ fontSize: 20 }}>Gauze pack</Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col span={2}>
+                      <Checkbox />
+                    </Col>
+                    <Col span={22}>
+                      <Text style={{ fontSize: 20 }}>
+                        Instructions to collect medication
+                      </Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col span={2}>
+                      <Checkbox />
+                    </Col>
+                    <Col span={22}>
+                      <Text style={{ fontSize: 20 }}>Review appointment</Text>
+                    </Col>
+                  </Row>
+                  <p />
+                  <strong>
+                    <Text style={{ fontSize: 20 }}> Remarks:</Text>
+                  </strong>
+                  <TextArea style={{ height: 80 }} />
+                  <p />
+                  <strong>
+                    <Text style={{ fontSize: 20 }}> Recorded by:</Text>
+                  </strong>
+                  <Row>
+                    <Input style={{ width: '60%' }} />
+                    <Text style={{ fontSize: 20 }}>@</Text>
+                    <TimePicker style={{ width: '36%' }} />
+                  </Row>
+                  <p />
+
+                  <Row>
+                    <Col span={19} />
+                    <Col>
+                      <Button
+                        style={{ fontSize: 20, height: '40px', width: '130%' }}
+                      >
+                        Export
+                      </Button>
+                    </Col>
+                  </Row>
                 </Modal>
                 <pre> </pre>
                 <Button style={{ color: 'black', width: '20%' }}>

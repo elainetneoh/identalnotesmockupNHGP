@@ -2750,16 +2750,16 @@ const NEHRhomescreen: React.FC = () => {
                 )}
                 {explain === 'chestpain' && (
                   <div>
-                    <Card style={{ height: 310 }}>
-                      <Image src={chestpain} />
-                    </Card>
+                    {/* <Card style={{ height: 310 }}> */}
+                    <Image src={chestpain} />
+                    {/* </Card> */}
                   </div>
                 )}
                 {explain === 'breathlessness' && (
                   <div>
-                    <Card style={{ height: 310 }}>
-                      <Image src={breathlessness} />
-                    </Card>
+                    {/* <Card style={{ height: 310 }}> */}
+                    <Image src={breathlessness} />
+                    {/* </Card> */}
                   </div>
                 )}
               </div>
