@@ -325,15 +325,15 @@ const ProcedureTertiary: React.FC = () => {
               <Option value="Completed">Completed</Option>
             </Select>
             <pre> </pre>
-            <Button>New</Button>
+            <Button style={{ width: '4%' }}>New</Button>
             <pre> </pre>
             <Button>Save As Final</Button>
             <pre> </pre>
             <Button>Save As Draft</Button>
             <pre> </pre>
-            <Button>Delete</Button>
+            <Button style={{ width: '5%' }}>Delete</Button>
             <pre> </pre>
-            <Button>Unlock</Button>
+            <Button style={{ width: '5%' }}>Unlock</Button>
             <pre> </pre>
             {/* <Select style={{ width: '5%' }} defaultValue={{ value: 'Print' }}>
               <Option value="Print">Print</Option>
@@ -355,7 +355,7 @@ const ProcedureTertiary: React.FC = () => {
               layout="horizontal"
             >
               <Form.Item label="Case No">
-                <Input style={{ width: '70%' }} />
+                <Input style={{ width: '75%' }} />
               </Form.Item>
             </Form>
           </Row>
@@ -1635,7 +1635,7 @@ const ProcedureTertiary: React.FC = () => {
                         /> */}
                         <Image
                           src={ckeditorpic}
-                          style={{ height: 350, width: 1680 }}
+                          style={{ height: 350, width: 1800 }}
                         ></Image>
                       </Panel>
                       <Panel
