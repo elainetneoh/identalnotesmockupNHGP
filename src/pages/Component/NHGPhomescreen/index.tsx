@@ -31,6 +31,9 @@ import epos_tlc_Y from './icon/epos_tlc_Y.png';
 import epos_immunosupressed_Y from './icon/epos_immunosupressed_Y.png';
 import epicIndicator1 from './icon/epicIndicator1.png';
 
+import documentaudit1 from './images/documentaudit1.png';
+import documentaudit2 from './images/documentaudit2.png';
+
 const { TextArea } = Input;
 const { Text } = Typography;
 const { Option } = Select;
@@ -40,8 +43,9 @@ const DialogTitle = <span>Dialog</span>;
 
 const NEHRhomescreen: React.FC = () => {
   const [fall, setClass] = useState<boolean>(false);
-  const [patientAlertModalVisible, setPatientAlertModalVisible] =
-    useState(false);
+  const [patientAlertModalVisible, setPatientAlertModalVisible] = useState(
+    false,
+  );
   const [isModalVisible2, setIsModalVisible2] = useState(false);
   let isToggledOn = true;
   function togglefunction() {
@@ -80,8 +84,10 @@ const NEHRhomescreen: React.FC = () => {
     setIsModalVisible(false);
   };
 
-  const [isModalVisiblesearchpatient, setIsModalVisiblesearchpatient] =
-    useState(false);
+  const [
+    isModalVisiblesearchpatient,
+    setIsModalVisiblesearchpatient,
+  ] = useState(false);
 
   const showModalsearchpatient = () => {
     setIsModalVisiblesearchpatient(true);
@@ -93,6 +99,22 @@ const NEHRhomescreen: React.FC = () => {
 
   const handleCancelsearchpatient = () => {
     setIsModalVisiblesearchpatient(false);
+  };
+
+  const [
+    isModalVisibleDocumentAudit,
+    setIsModalVisibleDocumentAudit,
+  ] = useState(false);
+
+  const showModalDocumentAudit = () => {
+    setIsModalVisibleDocumentAudit(true);
+  };
+  const handleOkDocumentAudit = () => {
+    setIsModalVisibleDocumentAudit(false);
+  };
+
+  const handleCancelDocumentAudit = () => {
+    setIsModalVisibleDocumentAudit(false);
   };
 
   const [isPregnantConsentSigned, setIsPregnantConsentSigned] = useState(false);
@@ -145,6 +167,7 @@ const NEHRhomescreen: React.FC = () => {
       <p />
     </div>
   );
+
   return (
     <div className={style.NEHRhome}>
       <Row gutter={{ sm: 8 }}>
@@ -1867,13 +1890,52 @@ const NEHRhomescreen: React.FC = () => {
                     Audit
                   </Button> */}
 
-                      <Select
+                      {/* <Select
                         defaultValue="Audit"
                         style={{ width: '180%', fontSize: 18 }}
+                        
                       >
-                        <Option value="DA">Document Audit</Option>
+                        <Option value="DA" >Document Audit </Option>
                         <Option value="XA">Xray Audit</Option>
-                      </Select>
+                      </Select> */}
+                      <Button
+                        //type="primary"
+                        // style={{ background: 'orange', border: 'orange' }}
+                        htmlType="submit"
+                        style={{
+                          fontSize: 18,
+                          height: 40,
+                          width: '180%',
+                          backgroundColor: '#BADEEE',
+                          borderColor: 'black',
+                        }}
+                        onClick={showModalDocumentAudit}
+                      >
+                        <strong>Document Audit</strong>
+                      </Button>
+                      <Modal
+                        title="Document Audit"
+                        visible={isModalVisibleDocumentAudit}
+                        onOk={handleOkDocumentAudit}
+                        onCancel={handleCancelDocumentAudit}
+                        width={1500}
+                        style={{ fontSize: 20 }}
+                        bodyStyle={{ overflowY: 'scroll' }}
+                        footer={false}
+                      >
+                        <Card style={{ height: 1300, width: 700 }}>
+                          <Image
+                            src={documentaudit1}
+                            width={1300}
+                            height={1100}
+                          />
+                          <Image
+                            src={documentaudit2}
+                            width={1300}
+                            height={1100}
+                          />
+                        </Card>
+                      </Modal>
                     </Col>
                   </Row>
                 </Form.Item>

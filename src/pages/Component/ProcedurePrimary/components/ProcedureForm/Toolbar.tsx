@@ -22,6 +22,7 @@ const Toolbar = ({ className }: { className?: string }) => (
     </Select>
 
     <Button>New</Button>
+    <Button>Draft</Button>
     <Button>Save As Final</Button>
     <Button>Delete</Button>
     <Button>Unlock</Button>

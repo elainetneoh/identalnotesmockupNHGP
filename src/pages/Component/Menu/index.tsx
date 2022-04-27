@@ -85,7 +85,7 @@ const Mainmenu: React.FC = () => {
           <Menu.Item key="R1">Intra-oral</Menu.Item>
           {/* <Menu.Item key="R2">Orthopantogram</Menu.Item> */}
           <Menu.Item key="R2">OPG</Menu.Item>
-          <Menu.Item key="R3">Cephalogram</Menu.Item>
+          <Menu.Item key="R3">Others</Menu.Item>
           {/* <Menu.Item key="R4">Other</Menu.Item> */}
         </SubMenu>
         <SubMenu key="sub4" title="Images">
@@ -116,7 +116,7 @@ const Mainmenu: React.FC = () => {
 
         <SubMenu key="sub9" title="Scanned Documents">
           <Menu.Item key="CF1">Consent Forms</Menu.Item>
-          <Menu.Item key="CF3">Medisave Forms</Menu.Item>
+          {/* <Menu.Item key="CF3">Medisave Forms</Menu.Item> */}
           <Menu.Item key="sub5">Lab Reports</Menu.Item>
           <Menu.Item key="CF4">Refferal Letter</Menu.Item>
           <Menu.Item key="CF5">Other</Menu.Item>
@@ -150,6 +150,7 @@ const Mainmenu: React.FC = () => {
         <SubMenu key="sub10" title="Homescreen">
           {/*<Menu.Item key="TTSHF1">TTSH</Menu.Item>*/}
           <Menu.Item key="NHGPF1">NHGP</Menu.Item>
+          {/* <Menu.Item key="F9">Procedure Tertiary</Menu.Item> */}
           {/* <Menu.Item key="KTPHF1">KTPH/TTSH</Menu.Item>
           <Menu.Item key="KTPHF2">KTPH/TTSH(New Version)</Menu.Item> */}
           {/* <Menu.Item key="Test1">Test</Menu.Item> */}
