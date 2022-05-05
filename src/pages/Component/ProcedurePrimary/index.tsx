@@ -932,7 +932,12 @@ const ProcedurePrimary: React.FC = () => {
                       </div>
                     }
                   >
-                    <TextArea rows={5} cols={50}></TextArea>
+                    <TextArea
+                      rows={5}
+                      cols={50}
+                      placeholder="1. Filling on XXX date
+2. Extraction on xxx date"
+                    ></TextArea>
                   </Panel>
 
                   <Panel

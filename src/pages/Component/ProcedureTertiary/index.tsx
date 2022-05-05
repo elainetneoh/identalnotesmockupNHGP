@@ -228,8 +228,9 @@ const ProcedureTertiary: React.FC = () => {
     setIsModalVisible1(false);
   };
 
-  const [IsModaldepartmentVisible, setIsModaldepartmentVisible] =
-    useState(false);
+  const [IsModaldepartmentVisible, setIsModaldepartmentVisible] = useState(
+    false,
+  );
   const showModaldepartment = () => {
     setIsModaldepartmentVisible(true);
   };
@@ -1048,7 +1049,7 @@ const ProcedureTertiary: React.FC = () => {
                           <Col span={21}>
                             <Text style={{ fontSize: 20 }}>
                               {/* Correct site */}
-                              Medications reviewed (include blood thinners)
+                              Medications reviewed
                             </Text>
                           </Col>
                         </Row>
